@@ -1,0 +1,2 @@
+class ShopingCart < ApplicationRecord
+end
