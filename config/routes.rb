@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'shopingcarts/index'
+  get 'shopingcarts/show'
+  get 'shopingcarts/new'
+  get 'shopingcarts/edit'
+  get 'shopingcarts/destroy'
   get 'wishlists/index'
   get 'wishlists/show'
   get 'wishlists/new'
