@@ -1,0 +1,64 @@
+<nav>
+  <div class="navbar-mobily">
+      <ul class="navbar-links">
+        <li class="navbar-logo">
+          <%= link_to "Mobily.", "#" %>
+        </li>
+        <li>
+          <div class="navbar-search-btn">
+            <form class="form-inline">
+                <%= form_tag "#", method: :get do %>
+                  <%#= submit_tag <i class="fas fa-search"></i>, class: "search-glass" %>
+                    <!-- <i class="fas fa-search"></i>
+                  <%# end %> -->
+                  <%= button_tag(type: 'submit', class: "search-glass") do %>
+                    <%= "<i class='fas fa-search'></i>".html_safe %>
+                  <% end %>
+                  <%= text_field_tag :query,
+                    params[:query],
+                    class: "search-text",
+                    placeholder: "Search"
+                  %>
+                <% end %>
+            </form>
+          </div>
+        </li>
+        <li class="navbar-user">
+          <div class="nav-main">
+            <%= link_to "#", class: "nav-item" do %>
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+            <% end %>
+            <div class="nav-content">
+              <div class="nav-sub">
+                <ul>
+                  <li>
+                    <%= link_to "Invite a Friend", "#" %>
+                    <i class="fas fa-chevron-right"></i>
+                  </li>
+                  <li>
+                    <%= link_to "Settings", "#" %>
+                    <i class="fas fa-chevron-right"></i>
+                  </li>
+                  <li>
+                    <%= link_to "Privacy", "#" %>
+                    <i class="fas fa-chevron-right"></i>
+                  </li>
+                  <li>
+                    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+                    <i class="fas fa-chevron-right"></i>
+                  </li>
+                  <li>
+                    <%= link_to "Report a Problem", "#" %>
+                    <i class="fas fa-chevron-right"></i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="navbar-sell-btn">
+            <%= link_to "Sell", "#" %>
+          </div>
+        </li>
+      </ul>
+  </div>
+</nav>
