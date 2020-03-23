@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'wishlists/index'
+  get 'wishlists/show'
+  get 'wishlists/new'
+  get 'wishlists/edit'
+  get 'wishlists/destroy'
   get 'products/index'
   get 'products/show'
   get 'products/new'
