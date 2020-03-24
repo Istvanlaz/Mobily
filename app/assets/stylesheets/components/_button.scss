@@ -1,0 +1,107 @@
+.navbar-search-btn {
+  display: flex;
+
+  box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  height: 30px;
+  width: 300px;
+}
+
+.navbar-search-btn a {
+  color: $skin;
+}
+
+.navbar-search-btn i {
+  color: $skin;
+}
+
+.search-glass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 30px;
+  width: 50px;
+  background-color: $bright;
+  color: $skin;
+  border: 0.5px solid #AAAAAA;
+  box-sizing: border-box;
+  border-radius: 5px 0px 0px 5px;
+  z-index: 300000;
+}
+
+.search-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: $lightGrey;
+  background-color: transparent;
+  padding-left: 5%;
+  border: none;
+  height: 100%;
+  width: 250px;
+}
+
+  input[class="search-text"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $skin;
+    font-size: 14px;
+  }
+  input[class="search-text"]::-moz-placeholder { /* Firefox 19+ */
+    color: $skin;
+    font-size: 14px;
+  }
+  input[class="search-text"]:-ms-input-placeholder { /* IE 10+ */
+    color: $skin;
+    font-size: 14px;
+  }
+  input[class="search-text"]:-moz-placeholder { /* Firefox 18- */
+    color: $skin;
+    font-size: 14px;
+  }
+
+input[class="search-text"]:focus {
+     box-shadow: none;
+}
+// .form-control:focus {
+//   border-color: #FF0000;
+//   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+// }
+
+.search-text:focus {
+  outline: none !important;
+  box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.25);;
+}
+
+// .search-glass input {
+//   width: 250px;
+//     border-radius: 0px 5px 5px 0px;
+// }
+
+.navbar-sell-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 40px;
+  width: 120px;
+  background-color: $skin;
+}
+
+.navbar-sell-btn a {
+  color: $bright;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.space-btn {
+  height: 150px;
+  width: 150px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
