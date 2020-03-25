@@ -63,20 +63,11 @@
 input[class="search-text"]:focus {
      box-shadow: none;
 }
-// .form-control:focus {
-//   border-color: #FF0000;
-//   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
-// }
 
 .search-text:focus {
   outline: none !important;
   box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.25);;
 }
-
-// .search-glass input {
-//   width: 250px;
-//     border-radius: 0px 5px 5px 0px;
-// }
 
 .navbar-sell-btn {
   display: flex;
@@ -89,12 +80,27 @@ input[class="search-text"]:focus {
 }
 
 .navbar-sell-btn a {
-  color: $bright;
-  height: 100%;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  cursor: pointer;
+
+  color: $bright;
+  height: 100%;
+  width: 100%;
+  &:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+}
+
+.login-input {
+  height: 30px;
+  color: $lightGrey;
+  background-color: transparent;
+  padding-left: 5%;
+  border: none;
+  width: 250px;
 }
 
 .space-btn {
@@ -105,3 +111,79 @@ input[class="search-text"]:focus {
   justify-content: center;
   align-items: center;
 }
+
+.login-password {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 30px;
+  width: 100px;
+  background-color: $skin;
+}
+
+.login-password a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  color: $bright;
+  height: 100%;
+  width: 100%;
+  &:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+}
+
+  input[class="login-password"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $skin;
+    font-size: 14px;
+  }
+  input[class="login-password"]::-moz-placeholder { /* Firefox 19+ */
+    color: $skin;
+    font-size: 14px;
+  }
+  input[class="login-password"]:-ms-input-placeholder { /* IE 10+ */
+    color: $skin;
+    font-size: 14px;
+  }
+  input[class="login-password"]:-moz-placeholder { /* Firefox 18- */
+    color: $skin;
+    font-size: 14px;
+  }
+
+input[class="login-password"]:focus {
+     box-shadow: none;
+}
+
+.login-password:focus {
+  outline: none !important;
+  box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.25);;
+}
+
+.login-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  height: 30px;
+  width: 80px;
+  color: $bright;
+  background-color: $skin;
+  &:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+}
+
+// .login-btn a {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+
+//   height: 100%;
+//   width: 100%;
+// }
