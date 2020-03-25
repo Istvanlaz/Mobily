@@ -34,11 +34,6 @@
   // color: $skin;
   text-decoration: none;
   // font-weight: bold;
-  font-size: 9px;
-  color: $lightGrey;
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 .navbar-logo a {
@@ -126,202 +121,221 @@
   opacity: 1;
 }
 
-.nav-item:focus ~ .nav-content {
+// .nav-item:focus ~
+.dropdown-active {
   max-height: 210px;
   -webkit-transition: max-height 0.2s ease-in-out;
   -moz-transition: max-height 0.2s ease-in-out;
   transition: max-height 0.2s ease-in-out;
 }
 
+// .nav-content:focus ~ ul {
+//   max-height: 210px;
+//   -webkit-transition: max-height 0.2s ease-in-out;
+//   -moz-transition: max-height 0.2s ease-in-out;
+//   transition: max-height 0.2s ease-in-out;
+// }
+
+// .nav-item:focus ~ .nav-content {
+//   max-height: 210px;
+//   -webkit-transition: max-height 0.2s ease-in-out;
+//   -moz-transition: max-height 0.2s ease-in-out;
+//   transition: max-height 0.2s ease-in-out;
+// }
+
 // Login Navbar
 
-.navbar-login {
+.loginbox {
+  position: relative;
+  color: $bright;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: green;
+  align-items: flex-end;
+  height: 10vh;
+  // margin-top: 2vh;
 }
 
 .login-sub {
   display: flex;
   // justify-content: space-around;
   align-items: center;
-}
-
-  .login-sub input[type="email"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: $skin;
-    font-size: 14px;
-    background-color: $bright;
-    height: 100%;
-    width: 100%;
-    box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-  }
-  .login-sub input[type="email"]::-moz-placeholder { /* Firefox 19+ */
-    color: $skin;
-    font-size: 14px;
-    background-color: $bright;
-    height: 100%;
-    width: 100%;
-    box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-  }
-  .login-sub input[type="email"]:-ms-input-placeholder { /* IE 10+ */
-    color: $skin;
-    font-size: 14px;
-    background-color: $bright;
-    height: 100%;
-    width: 100%;
-    box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-  }
-  .login-sub input[type="email"]:-moz-placeholder { /* Firefox 18- */
-    color: $skin;
-    font-size: 14px;
-    background-color: $bright;
-    height: 100%;
-    width: 100%;
-    box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-  }
-
-.login-sub input[type="email"]:focus {
-     box-shadow: none;
-}
-
-  .login-sub input[type="password"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: $skin;
-    font-size: 14px;
-    background-color: $bright;
-    height: 100%;
-    width: 100%;
-    box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-  }
-  .login-sub input[type="password"]::-moz-placeholder { /* Firefox 19+ */
-    color: $skin;
-    font-size: 14px;
-    background-color: $bright;
-    height: 100%;
-    width: 100%;
-    box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-  }
-  .login-sub input[type="password"]:-ms-input-placeholder { /* IE 10+ */
-    color: $skin;
-    font-size: 14px;
-    background-color: $bright;
-    height: 100%;
-    width: 100%;
-    box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-  }
-  .login-sub input[type="password"]:-moz-placeholder { /* Firefox 18- */
-    color: $skin;
-    font-size: 14px;
-    background-color: $bright;
-    height: 100%;
-    width: 100%;
-    box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-  }
-
-.login-sub input[type="password"]:focus {
-     box-shadow: none;
-
-}
-
-.loginbox {
-  height: 7vh;
-  width: max-content;
-  margin-top: 3vh;
-  margin-right: 3vw;
-  // background-color: $skin;
   color: $bright;
-  margin-left: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: flex-end;
+  // height: 7vh;
+  width: max-content;
 }
 
-.loginbox a {
+.shared-links {
+  position: absolute;
+  left: 45%;
+  bottom: 3%;
+}
+
+.shared-links a {
+  font-size: 9px;
+  color: $lightGrey;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.login-sub a {
   font-size: 9px;
   text-decoration: none;
   color: $lightGrey;
 }
 
 
-.loginbox input {
+.login-sub input {
   margin: 0 4px;
   color: $skin;
   border-radius: 5px;
 }
 
-.loginbox input[type="text"], input[type="password"] {
+.login-sub input[type="email"], input[type="password"] {
   border: none;
   box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.25);
   background: transparent;
   outline: none;
   color: $skin;
   height: 30px;
+  width: 200px;
+  padding-left: 5%;
+  font-size: 14px;
 }
 
-.loginbox input[type="text"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.login-sub input[type="email"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: $skin;
     font-size: 14px;
-    padding-left: 5%;
   }
-  .loginbox input[type="text"]::-moz-placeholder { /* Firefox 19+ */
+  .login-sub input[type="email"]::-moz-placeholder { /* Firefox 19+ */
     color: $skin;
     font-size: 14px;
-    padding-left: 5%;
   }
-  .loginbox input[type="text"]:-ms-input-placeholder { /* IE 10+ */
+  .login-sub input[type="email"]:-ms-input-placeholder { /* IE 10+ */
     color: $skin;
     font-size: 14px;
-    padding-left: 5%;
   }
-  .loginbox input[type="text"]:-moz-placeholder { /* Firefox 18- */
+  .login-sub input[type="email"]:-moz-placeholder { /* Firefox 18- */
     color: $skin;
     font-size: 14px;
-    padding-left: 5%;
   }
 
-.loginbox input[type="text"]:focus {
+.login-sub input[type="email"]:focus {
     box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.25);
     color: $black;
     font-size: 14px;
 }
 
-.loginbox input[type="password"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.login-sub input[type="password"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: $skin;
     font-size: 14px;
-    padding-left: 5%;
   }
-  .loginbox input[type="password"]::-moz-placeholder { /* Firefox 19+ */
+  .login-sub input[type="password"]::-moz-placeholder { /* Firefox 19+ */
     color: $skin;
     font-size: 14px;
-    padding-left: 5%;
   }
-  .loginbox input[type="password"]:-ms-input-placeholder { /* IE 10+ */
+  .login-sub input[type="password"]:-ms-input-placeholder { /* IE 10+ */
     color: $skin;
     font-size: 14px;
-    padding-left: 5%;
   }
-  .loginbox input[type="password"]:-moz-placeholder { /* Firefox 18- */
+  .login-sub input[type="password"]:-moz-placeholder { /* Firefox 18- */
     color: $skin;
     font-size: 14px;
-    padding-left: 5%;
   }
 
-.loginbox input[type="password"]:focus {
+.login-sub input[type="password"]:focus {
     box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.25);
     color: $black;
     font-size: 14px;
 }
 
-.loginbox:focus {
+.login-sub:focus {
   outline: none !important;
   box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.25);;
 }
+
+// Tryouts
+
+
+
+// .loginbox a {
+//   font-size: 9px;
+//   text-decoration: none;
+//   color: $lightGrey;
+// }
+
+
+// .loginbox input {
+//   margin: 0 4px;
+//   color: $skin;
+//   border-radius: 5px;
+// }
+
+// .loginbox input[type="text"], input[type="password"] {
+//   border: none;
+//   box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.25);
+//   background: transparent;
+//   outline: none;
+//   color: $skin;
+//   height: 30px;
+// }
+
+// .loginbox input[type="text"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+//     color: $skin;
+//     font-size: 14px;
+//     padding-left: 5%;
+//   }
+//   .loginbox input[type="text"]::-moz-placeholder { /* Firefox 19+ */
+//     color: $skin;
+//     font-size: 14px;
+//     padding-left: 5%;
+//   }
+//   .loginbox input[type="text"]:-ms-input-placeholder { /* IE 10+ */
+//     color: $skin;
+//     font-size: 14px;
+//     padding-left: 5%;
+//   }
+//   .loginbox input[type="text"]:-moz-placeholder { /* Firefox 18- */
+//     color: $skin;
+//     font-size: 14px;
+//     padding-left: 5%;
+//   }
+
+// .loginbox input[type="text"]:focus {
+//     box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.25);
+//     color: $black;
+//     font-size: 14px;
+// }
+
+// .loginbox input[type="password"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+//     color: $skin;
+//     font-size: 14px;
+//     padding-left: 5%;
+//   }
+//   .loginbox input[type="password"]::-moz-placeholder { /* Firefox 19+ */
+//     color: $skin;
+//     font-size: 14px;
+//     padding-left: 5%;
+//   }
+//   .loginbox input[type="password"]:-ms-input-placeholder { /* IE 10+ */
+//     color: $skin;
+//     font-size: 14px;
+//     padding-left: 5%;
+//   }
+//   .loginbox input[type="password"]:-moz-placeholder { /* Firefox 18- */
+//     color: $skin;
+//     font-size: 14px;
+//     padding-left: 5%;
+//   }
+
+// .loginbox input[type="password"]:focus {
+//     box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.25);
+//     color: $black;
+//     font-size: 14px;
+// }
+
+// .loginbox:focus {
+//   outline: none !important;
+//   box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.25);;
+// }

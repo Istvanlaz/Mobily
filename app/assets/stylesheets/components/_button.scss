@@ -170,9 +170,9 @@ input[class="login-password"]:focus {
 
   cursor: pointer;
   height: 30px;
-  width: 80px;
-  color: $bright;
-  background-color: $skin;
+  width: 60px;
+  color: $skin;
+  background-color: #FEFEFE;
   &:hover {
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
   }
