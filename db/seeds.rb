@@ -5,4 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Product.destroy_all
+product1 = Product.create({:name=>"Long Diner Table", :price => 1})
+product2 = Product.create({:name=>"Rocking Chair", :price => 3})
+product3 = Product.create({:name=>"Working Desk", :price => 5.50})
+product4 = Product.create({:name=>"Sofa", :price => 10})
+product5 = Product.create({:name=>"Bed Frame", :price => 3.20})
 
+puts "Total number of products: #{Product.all.count}"
+puts "Product names: #{Product.all.pluck("name")}"
+puts "Product1: #{product1.name} price: #{product1.price.round(2)}"
+puts "Product2: #{product2.name} price: #{product2.price.round(2)}"
+puts "Product3: #{product3.name} price: #{product3.price.round(2)}"
+puts "Product4: #{product4.name} price: #{product4.price.round(2)}"
+puts "Product5: #{product5.name} price: #{product5.price.round(2)}"
