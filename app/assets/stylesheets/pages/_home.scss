@@ -4,13 +4,67 @@ body {
   top: 10vh;
 }
 
-.signup{
-  position: absolute;
-  top: 30vh;
-  left: 15vw;
+.container-landing {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.signup, h1{
-  color: $black;
+.bg_landing {
+  position: absolute;
+
+  z-index: 1;
 }
+
+.bg_landing img {
+  height:90vh;
+  width:100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.bg_dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 90vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+
+  z-index: 2;
+}
+
+.title-ban {
+  display: block;
+  color: rgb(240,240,240);
+  width: 50%;
+  top: 250px;
+  z-index: 3;
+}
+
+.title-ban h1{
+  font-weight: bold;
+  color: $orange;
+}
+
+.title-ban strong {
+  color: $orange;
+}
+
+.signup {
+  z-index: 3;
+}
+
+.signup {
+  color: $white;
+}
+
+.bold-white strong {
+  color: $bright;
+}
+
+
 
