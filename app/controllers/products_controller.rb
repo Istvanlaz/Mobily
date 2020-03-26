@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
 
   def new
     authorize @product = Product.new
+    @product.user = current_user
   end
 
   def create
@@ -49,6 +50,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :price, :description, :category)
+    params.require(:product).permit(:name, :price, :description, :category, :user)
   end
 end
