@@ -1,29 +1,49 @@
 class ProductsController < ApplicationController
+  skip_after_action :verify_authorized, except: :index, unless: :skip_pundit?
+  skip_after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
+
   def index
-    @products = Product.all
+    # @products = Product.all
+    @products = policy_scope(Product)
   end
 
   def show
-    @product = Product.find(params[:id])
+    authorize @product = Product.find(params[:id])
+    # authorize @product
   end
 
   def new
-    @product = Product.new
+    authorize @product = Product.new
   end
 
   def create
-    @product = Product.create(product_params)
+    authorize @product = Product.new(product_params)
+    @product.user = current_user
     if @product.save!
-      redirect_to products_path(@product)
+      redirect_to products_path(@product), notice: "Product was saved"
     else
       render :new
     end
   end
 
   def edit
+    authorize @product = Product.new
+  end
+
+  def update
+    authorize @product = Product.find(params[:id])
+    if @product.update(product_params)
+      redirect_to products_path, notice: "Product was updated"
+    else
+      # @product.errors
+      render :new
+    end
   end
 
   def destroy
+    authorize @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to products_path, notice: "Product was destroyed"
   end
 
   private
