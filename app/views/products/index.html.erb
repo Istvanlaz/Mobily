@@ -4,6 +4,7 @@
 
 <% @products.each do |product| %>
   <p>Name: <%= product.name %></p>
+  <%= link_to 'Show Product', product_path(product), method: :get%>
 <% end %>
+<p><%= link_to "New product", new_product_path %></p>
 
-<%= link_to "New product", new_product_path %>
