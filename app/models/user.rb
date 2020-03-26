@@ -4,5 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :socks
-  has_many :wishlist
+  has_one :wishlist
+  has_one :shoping_cart
 end
