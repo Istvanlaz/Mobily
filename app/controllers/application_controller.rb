@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   include Pundit
+  protect_from_forgery
 
   # Pundit: white-list approach.
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
@@ -28,10 +29,10 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    return root_path
+    return products_path
   end
 
   def after_sign_up_path_for(resource)
-    return root_path
+    return products_path
   end
 end
