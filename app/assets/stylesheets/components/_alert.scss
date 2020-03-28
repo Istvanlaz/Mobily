@@ -6,9 +6,19 @@
 // }
 
 .bg-red-500 {
+  // position: absolute;
+
   background-color: red;
+  width: 100%;
+
+  z-index: 100000;
 }
 
 .bg-green-500 {
+  // position: absolute;
+
   background-color: green;
+  width: 100%;
+
+  z-index: 100000;
 }

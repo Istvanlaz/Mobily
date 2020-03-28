@@ -4,6 +4,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
+  after_action :custom_message, only: [:create]
+
+  def custom_message
+    flash.notice = "Welcome #{current_user.first_name}. It's nice to have you with us! Have fun!" if flash.key?(:notice)
+  end
+
   # GET /resource/sign_up
   # def new
   #   super
@@ -58,9 +64,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  def auth_options
-    { :scope => resource_name, :recall => "Home#new" }
-  end
+  # def auth_options
+  #   { :scope => resource_name, :recall => "Home#new" }
+  # end
 
   # GET /resource/edit
   # def edit

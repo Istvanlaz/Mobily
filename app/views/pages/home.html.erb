@@ -21,7 +21,7 @@
     </div>
 
     <%= form_for(resource, as: resource, url: registration_path(resource)) do |f| %>
-      <%#= f.error_notification %>
+      <%= render "devise/shared/error_messages", target: resource %>
 
       <div class="form-styling">
         <div>
