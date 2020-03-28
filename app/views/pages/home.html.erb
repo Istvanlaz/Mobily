@@ -15,31 +15,73 @@
     <p class="bold-white"><strong>We will be happy only when you are!</strong></p>
   </div>
   <div class="signup">
-    <h2>Sign up</h2>
+    <div>
+      <h2>Create a new account</h2>
+      <p>It's quick and easy.</p>
+    </div>
 
     <%= form_for(resource, as: resource, url: registration_path(resource)) do |f| %>
       <%#= f.error_notification %>
 
-      <div class="form-inputs">
-        <%= f.email_field :email,
+      <div class="form-styling">
+        <div>
+          <%= f.text_field :first_name,
                           required: true,
                           autofocus: true,
+                          placeholder: "First Name",
                           label: false,
-                          input_html: { autocomplete: "email" }%>
-        <%= f.password_field :password,
-                            required: true,
-                            hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                            label: false,
-                            input_html: { autocomplete: "new-password" } %>
-        <%= f.password_field :password_confirmation,
-                            required: true,
-                            label: false,
-                            input_html: { autocomplete: "new-password" } %>
+                          autocomplete: "off" %>
+
+          <%= f.text_field :family_name,
+                          required: true,
+                          placeholder: "Family Name",
+                          label: false,
+                          autocomplete: "off" %>
+        </div>
+        <div>
+          <%= f.text_field :username,
+                          required: true,
+                          placeholder: "Username",
+                          label: false,
+                          autocomplete: "off" %>
+          <%= f.email_field :email,
+                           required: true,
+                           placeholder: "Email",
+                           label: false,
+                           autocomplete: "off" %>
+        </div>
+        <div>
+          <%= f.password_field :password,
+                              required: true,
+                              hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                              placeholder: "Password",
+                              label: false,
+                              autocomplete: "new-password" %>
+          <%= f.password_field :password_confirmation,
+                              required: true,
+                              placeholder: "Password Confirmation",
+                              label: false,
+                              autocomplete: "new-password" %>
+        </div>
+        <div>
+          <%= f.text_field :address,
+                          required: true,
+                          placeholder: "Neighbourhood",
+                          label: false,
+                          autocomplete: "off" %>
+        </div>
+        <div class="bottom-signup">
+          <div class="sign-up-btn">
+            <%= f.submit "Sign up" %>
+          </div>
+          <%- if devise_mapping.omniauthable? %>
+            <%- resource_class.omniauth_providers.each do |provider| %>
+              <%= link_to "Sign up with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %>
+            <% end %>
+          <% end %>
+        </div>
       </div>
 
-      <div class="form-actions">
-        <%= f.submit "Sign up" %>
-      </div>
     <% end %>
   </div>
 </div>
