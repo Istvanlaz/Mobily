@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    authorize @product = Product.new
+    authorize @product = Product.find(params[:id])
   end
 
   def update
@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
       redirect_to products_path, notice: "Product was updated"
     else
       # @product.errors
-      render :new
+      render :edit
     end
   end
 
@@ -50,6 +50,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :price, :description, :category, :user)
+    params.require(:product).permit(:name, :price, :description, :category, :user, :id)
   end
 end
