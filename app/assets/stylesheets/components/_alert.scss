@@ -1,6 +1,24 @@
-.alert {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 1000;
+// .alert {
+//   position: fixed;
+//   bottom: 16px;
+//   right: 16px;
+//   z-index: 1000;
+// }
+
+.bg-red-500 {
+  // position: absolute;
+
+  background-color: red;
+  width: 100%;
+
+  z-index: 100000;
+}
+
+.bg-green-500 {
+  // position: absolute;
+
+  background-color: green;
+  width: 100%;
+
+  z-index: 100000;
 }

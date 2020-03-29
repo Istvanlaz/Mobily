@@ -1,15 +1,19 @@
 # frozen_string_literal: true
 
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  config.warden do |manager|
+    manager.failure_app = CustomFailure
+  end
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '71cdf6b110f32c3607de2cee0c79d57d5bc6e287e3356a685ff4fc74ecea402feafdf003ea8473b6f710628339dc2433ff36e448b979adbcdcdb02632a8473b1'
-
+  config.omniauth :facebook, "APP_ID", "APP_SECRET", token_params: { parse: :json }
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -166,12 +170,13 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 6..128
+  config.password_length = 8..16
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
   # to give user feedback and not to assert the e-mail validity.
-  config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
+  # config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
+  config.email_regexp = /\A(\D)+(\w)*((\.(\w)+)?)+@(\D)+(\w)*((\.(\D)+(\w)*)+)?(\.)[a-z]{2,}\z/
 
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
