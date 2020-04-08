@@ -1,2 +1,38 @@
-<h1>SubCategory#show</h1>
-<p>Find me in app/views/sub_category/show.html.erb</p>
+<h1>SubCategories#show</h1>
+<p>Find me in app/views/sub_categories/show.html.erb</p>
+<!-- <div class="space-btn">
+  <div class="back-btn">
+    <%#= link_to "Back", category_sub_categories_path(@category.id)%>
+  </div>
+</div> -->
+<div class="space-bar">
+  <div class="back-btn">
+    <%= link_to "Back", categories_path %>
+  </div>
+  <h2>In <%= @category.name %></h2>
+</div>
+<div class="sub-c-banner">
+  <div class="back-btn">
+    <%= link_to "All", category_products_path(@category, @product) %>
+  </div>
+  <% @sub_categories.each do |sub_category| %>
+    <%= link_to "#{sub_category.name}", category_sub_category_path(@category, sub_category) %>
+    <%#= link_to 'Show products', category_sub_category_products_path(@category, sub_category.id), method: :get%>
+    <%#= link_to 'Show sub_category', sub_category_path(sub_category), method: :get%>
+  <% end %>
+  <div class="back-btn">
+    <%= link_to "Get Lucky!", '#' %>
+  </div>
+</div>
+
+<!-- <h3>All Products from <%#= @sub_category.name %></h3> -->
+<div class="products-grid">
+  <% @products.each do |product| %>
+    <div class="product-card">
+      <%= link_to "#{product.name}", category_product_path(@category, product), method: :get%>
+      <%= product.price %>€
+    </div>
+  <% end %>
+</div>
+<%#= link_to "New product", new_category_sub_category_product_path(@category, @sub_category) %>
+

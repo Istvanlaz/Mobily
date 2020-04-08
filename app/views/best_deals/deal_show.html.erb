@@ -1,8 +1,8 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<h1>You are seeing the BestDeals#DealShow of our Best Deals!!</h1>
+
 <div class="space-btn">
   <div class="back-btn">
-    <%= link_to "Back", category_products_path(@category)%>
+    <%= link_to "Back", best_deals_path %>
   </div>
 </div>
 <p>Name: <%= @product.name %></p>
@@ -13,3 +13,4 @@
 <% if policy(@product).destroy? %>
   <p class=“btn btn-primary”><%= link_to "Remove product", category_product_path(@category, @product), method: :delete %></p>
 <% end %>
+

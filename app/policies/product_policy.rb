@@ -13,6 +13,26 @@ class ProductPolicy < ApplicationPolicy
     true
   end
 
+  def deal_show?
+    true
+  end
+
+  def product_deal?
+    true
+  end
+
+  def newest_show?
+    true
+  end
+
+  def product_show?
+    true
+  end
+
+  def new?
+    true
+  end
+
   def create?
     true
   end

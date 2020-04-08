@@ -1,2 +1,16 @@
-<h1>Category#index</h1>
-<p>Find me in app/views/category/index.html.erb</p>
+
+<div class="categories-banner">
+  <div class="category-card">
+    <%= link_to "New", newest_products_path %>
+  </div>
+  <div class="category-card">
+    <%= link_to "Best Deals", best_deals_path %>
+  </div>
+  <% @categories.each do |category| %>
+    <div class="category-card">
+      <%= link_to "#{category.name}", category_products_path(category), method: :get%>
+    </div>
+  <% end %>
+  <%#= link_to "New category", new_category_path %>
+</div>
+

@@ -1,12 +1,4 @@
-<h1>Products#new</h1>
-<p>Find me in app/views/products/new.html.erb</p>
-
-<div class="signup">
-  <div>
-    <h2>To sell a Product</h2>
-    <p>It's quick and easy.</p>
-  </div>
-  <%= form_for(@product) do |f| %>
+<%= form_for [@category, @product] do |f| %>
   <div class="form-styling">
     <div>
       <%= f.label :name %>
@@ -31,4 +23,3 @@
     </div>
   </div>
 <% end %>
-</div>

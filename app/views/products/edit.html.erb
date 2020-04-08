@@ -1,23 +1,9 @@
 <h1>Products#edit</h1>
 <p>Find me in app/views/products/edit.html.erb</p>
-<%= form_for(@product) do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name, required: true, placeholder: "Enter product name" %>
-  </p>
-  <p>
-    <%= f.label :price %><br>
-    <%= f.number_field :price, required: true %>
-  </p>
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.label :category %><br>
-    <%= f.text_field :category %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<div class="signup">
+  <div>
+    <h2>To update your Product</h2>
+    <p>It's quick and easy.</p>
+  </div>
+  <%= render 'form', product: @product , category: @product.category %>
+</div>

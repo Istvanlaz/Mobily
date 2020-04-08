@@ -13,6 +13,14 @@ class CategoryPolicy < ApplicationPolicy
     true
   end
 
+  def product_deal?
+    true
+  end
+
+  def product_show?
+    true
+  end
+
   def create?
     true
   end
