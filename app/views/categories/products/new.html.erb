@@ -6,7 +6,7 @@
     <h2>To sell a Product</h2>
     <p>It's quick and easy.</p>
   </div>
-  <%= form_for @product, url: create_new_product_path do |f| %>
+  <%= form_for [@category, @product] do |f| %>
     <div class="form-styling">
       <div>
         <%= f.label :name %>

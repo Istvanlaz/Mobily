@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
   skip_after_action :verify_authorized, except: :index, unless: :skip_pundit?
   skip_after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
-  before_action :set_category, except: :new
-  before_action :set_sub_category, except: :new
+  before_action :set_category, except: [:new, :create]
+  before_action :set_sub_category, except: [:new, :create]
 
   def index
     # @products = Product.all
@@ -17,6 +17,7 @@ class ProductsController < ApplicationController
   end
 
   def new
+    # @categories = policy_scope(Category)
     authorize @product = Product.new
     @product.user = current_user
   end
@@ -25,7 +26,7 @@ class ProductsController < ApplicationController
     authorize @product = Product.new(product_params)
     @product.user = current_user
     if @product.save!
-      redirect_to category_product_path(@category, @product), notice: "Product has been successfully added to our database"
+      redirect_to newest_product_path(@product), notice: "Product has been successfully added to our database"
     else
       render :new
     end

@@ -1,0 +1,2 @@
+class ProductUpload < ApplicationRecord
+end

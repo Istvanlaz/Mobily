@@ -19,7 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def create
   #   build_resource(sign_up_params)
   #   if resource.save
-  #     redirect_to products_path
+  #     redirect_to categories_path
   #   else
   #     redirect_to root_path
   #   end
