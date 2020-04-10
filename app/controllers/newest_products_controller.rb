@@ -8,7 +8,7 @@ class NewestProductsController < ApplicationController
   end
 
   def show
-    authorize @category = Category.find(params[:category_id])
+    authorize @category = Category.find(params[:id])
 
     @categories = policy_scope(Category)
     @products = policy_scope(@category.products)
@@ -21,6 +21,14 @@ class NewestProductsController < ApplicationController
   def product_show
     authorize @product = Product.find(params[:id])
     authorize @category = Category.find(params[:category_id])
+  end
+
+  def destroy
+    authorize @product = Product.find(params[:id])
+    authorize @category = Category.find(params[:category_id])
+    binding.pry
+    @product.destroy
+    redirect_to category_products_path, notice: "#{@product.name} was successfully removed from the marketplace."
   end
 
   # def new

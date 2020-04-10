@@ -1,4 +1,4 @@
-<h1>You are seeing the BestDeals#ProductDeal of our Best Deals!!</h1>
+<h1>You are seeing the NewestProducts#ProductShow of our Newest Products!!</h1>
 
 <div class="space-btn">
   <div class="back-btn">
@@ -8,9 +8,9 @@
 <p>Name: <%= @product.name %></p>
 <p>Price: <%= @product.price %>€</p>
 <% if policy(@product).update? %>
-  <p class=“btn btn-primary”><%= link_to "Edit product", edit_category_product_path(@category, @product) %></p>
+  <p class=“btn btn-primary”><%= link_to "Edit product", edit_product_path(@product) %></p>
 <% end %>
 <% if policy(@product).destroy? %>
-  <p class=“btn btn-primary”><%= link_to "Remove product", category_product_path(@category, @product), method: :delete %></p>
+  <p class=“btn btn-primary”><%= link_to "Remove product", delete_product_path(@product), { method: :delete, data: { confirm: "Are you Sure about Deleting #{@product.name}?" } } %></p>
 <% end %>
 

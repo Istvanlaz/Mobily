@@ -1,2 +1,0 @@
-class ProductUpload < ApplicationRecord
-end
