@@ -1,4 +1,4 @@
-class ProductPolicy < ApplicationPolicy
+class CategoryPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -13,23 +13,11 @@ class ProductPolicy < ApplicationPolicy
     true
   end
 
-  def deal_show?
-    true
-  end
-
   def product_deal?
     true
   end
 
-  def newest_show?
-    true
-  end
-
   def product_show?
-    true
-  end
-
-  def new?
     true
   end
 
@@ -38,16 +26,16 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def update?
-    is_owner?
+    true
   end
 
   def destroy?
-    is_owner?
+    true
   end
 
-  private
+  # private
 
-  def is_owner?
-    user == record.user
-  end
+  # def is_owner?
+  #   user == record.user
+  # end
 end

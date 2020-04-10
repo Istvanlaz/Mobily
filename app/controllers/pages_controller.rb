@@ -25,4 +25,12 @@ class PagesController < ApplicationController
     User
   end
   helper_method :resource_class
+
+  def category_params
+    params.require(:category).permit(:name, :id)
+  end
+
+  def product_params
+    params.require(:product).permit(:name, :category_id, :id)
+  end
 end

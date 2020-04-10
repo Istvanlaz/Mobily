@@ -1,25 +1,34 @@
 <h1>Products#new</h1>
 <p>Find me in app/views/products/new.html.erb</p>
 
+<div class="signup">
+  <div>
+    <h2>To sell a Product</h2>
+    <p>It's quick and easy.</p>
+  </div>
+  <%= form_for @product, url: create_new_product_path do |f| %>
+    <div class="form-styling">
+      <div>
+        <%= f.label :name %>
+        <%= f.text_field :name, required: true, placeholder: "Enter product name" %>
 
-<%= form_for(@product) do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name, required: true, placeholder: "Enter product name" %>
-  </p>
-  <p>
-    <%= f.label :price %><br>
-    <%= f.number_field :price, required: true %>
-  </p>
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.label :category %><br>
-    <%= f.text_field :category %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+        <%= f.label :price %>
+        <%= f.number_field :price, required: true %>
+      </div>
+      <div>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+      </div>
+      <div>
+        <%= f.label :category %>
+        <%= f.collection_select :category_id, Category.order(:name), :id, :name, {prompt: 'Select a Category'}, required: true %>
+
+        <%= f.label :sub_category %>
+        <%= f.collection_select :sub_category_id, SubCategory.order(:name), :id, :name, {prompt: 'Select a Sub Category'}, required: true %>
+      </div>
+      <div class="bottom-signup">
+        <%= f.submit %>
+      </div>
+    </div>
+  <% end %>
+</div>

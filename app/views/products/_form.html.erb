@@ -1,0 +1,25 @@
+<%= form_for @product, url: edit_product_path do |f| %>
+  <div class="form-styling">
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name, required: true, placeholder: "Enter product name" %>
+
+      <%= f.label :price %>
+      <%= f.number_field :price, required: true %>
+    </div>
+    <div>
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+    <div>
+      <%= f.label :category %>
+      <%= f.collection_select :category_id, Category.order(:name), :id, :name, {prompt: 'Select a Category'}, required: true %>
+
+      <%= f.label :sub_category %>
+      <%= f.collection_select :sub_category_id, SubCategory.order(:name), :id, :name, {prompt: 'Select a Sub Category'}, required: true %>
+    </div>
+    <div class="bottom-signup">
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>

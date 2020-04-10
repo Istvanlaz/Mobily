@@ -1,0 +1,2 @@
+class NewestProduct < ApplicationRecord
+end

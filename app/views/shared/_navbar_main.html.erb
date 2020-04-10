@@ -2,7 +2,7 @@
   <div class="navbar-mobily">
       <ul class="navbar-links">
         <li class="navbar-logo">
-          <%= link_to "Mobily.", "#" %>
+          <%= link_to "Mobily.", categories_path %>
         </li>
         <li>
           <div class="navbar-search-btn">
@@ -56,8 +56,9 @@
             </div>
           </div>
           <div class="navbar-sell-btn">
-            <%= link_to "Sell", "#" %>
+            <%= link_to "Sell", new_product_path %>
           </div>
+          <%#= link_to "New product", new_category_sub_category_product_path(@category, @sub_category) %>
         </li>
       </ul>
   </div>

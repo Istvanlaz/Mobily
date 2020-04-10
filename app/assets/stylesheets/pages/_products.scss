@@ -1,0 +1,28 @@
+.sub-c-banner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  height: 10vh;
+  width: 100%;
+}
+
+.space-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 10vh;
+  width: 100%;
+  padding: 0 5vw;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 12px;
+
+  height: max-content;
+  width: 100%;
+  padding: 5vw;
+}
