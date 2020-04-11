@@ -1,12 +1,20 @@
 .categories-banner {
+  position: fixed;
+
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 
-  padding-left: 4vw;
+  padding-bottom: 2vh;
   height: 90vh;
   width: 25vw;
   background: $bright;
 
   box-shadow: 2px 0px 7px rgba(0, 0, 0, 0.15);
+}
+
+.separation_line {
+  height: 1.5px;
+  width: 100%;
+  background-color: $lightGrey;
 }

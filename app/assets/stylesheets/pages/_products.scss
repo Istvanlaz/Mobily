@@ -1,3 +1,18 @@
+.app-container {
+  position: absolute;
+  left: 25vw;
+
+  height: 90vh;
+  width: 75vw;
+  padding-top: 1vh;
+
+  overflow: scroll;
+}
+
+.show_container {
+  padding: 3vw;
+}
+
 .sub-c-banner {
   display: flex;
   justify-content: space-around;

@@ -6,16 +6,19 @@ class ProductsController < ApplicationController
   def index
     # @products = Product.all
     # @products = policy_scope(Product)
+    @categories = policy_scope(Category)
     @products = policy_scope(@category.products).order(created_at: :desc)
     @sub_categories = policy_scope(@category.sub_categories).order(created_at: :desc)
   end
 
   def show
+    @categories = policy_scope(Category)
     authorize @product = Product.find(params[:id])
     # authorize @product
   end
 
   def new
+    @categories = policy_scope(Category)
     authorize @product = Product.new
     @product.user = current_user
   end
@@ -31,6 +34,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @categories = policy_scope(Category)
     authorize @product = Product.find(params[:id])
   end
 
@@ -48,7 +52,7 @@ class ProductsController < ApplicationController
     authorize @product = Product.find(params[:id])
     # binding.pry
     @product.destroy
-    redirect_to categories_path, notice: "#{@product.name} was successfully removed from the marketplace."
+    redirect_to newest_products_path, notice: "#{@product.name} was successfully removed from the marketplace."
   end
 
   private
