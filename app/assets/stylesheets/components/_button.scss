@@ -170,15 +170,13 @@ input[class="search-text"]:focus {
   background: transparent;
   justify-content: center;
   align-items: center;
-  width: 120px;
+  width: 110px;
   height: 40px;
   border: 1px solid $black;
   border-radius: 25px;
-}
-
-.back-btn:hover {
-  color: $lightGrey;
-  border: 1px solid $lightGrey;
+  &:hover {
+    border: 1px solid $orange;
+  }
 }
 
 .back-btn a {
@@ -193,7 +191,7 @@ input[class="search-text"]:focus {
 }
 
 .back-btn:hover a {
-  color: $lightGrey;
+  color: $orange;
   text-decoration: none;
 }
 
