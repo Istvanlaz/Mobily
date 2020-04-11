@@ -15,10 +15,12 @@ class BestDealsController < ApplicationController
   end
 
   def deal_show
+    @categories = policy_scope(Category)
     authorize @product = Product.find(params[:id])
   end
 
   def product_deal
+    @categories = policy_scope(Category)
     authorize @product = Product.find(params[:id])
     authorize @category = Category.find(params[:category_id])
   end

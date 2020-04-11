@@ -8,7 +8,7 @@
   width: 100vw;
   height: 10vh;
   position: fixed;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin-bottom: 0;
   z-index: 20000;
   top: 0px;
@@ -46,17 +46,37 @@
   justify-content: space-between;
   align-items: center;
 
-  width: 15vw;
+  width: 21vw;
 }
 
 .nav-item {
   position: relative;
-  display: inline-block;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 10vw;
+  color: $black;
+
+  &:hover {
+    color: $orange;
+  }
+
+  &:hover img {
+    border: $orange 1px solid;
+  }
+}
+
+.nav-item img {
+  border: $black 1px solid;
 }
 
 .nav-content {
   position: absolute;
   top: 10vh;
+  right: 9vw;
+
   overflow: hidden;
   background-color: $bright;
   max-height: 0;

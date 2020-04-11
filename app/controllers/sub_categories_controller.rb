@@ -10,6 +10,7 @@ class SubCategoriesController < ApplicationController
   end
 
   def show
+    @categories = policy_scope(Category)
     authorize @sub_category = SubCategory.find(params[:id])
     @sub_categories = policy_scope(@category.sub_categories).order(created_at: :desc)
     @products = policy_scope(@sub_category.products).order(created_at: :desc)

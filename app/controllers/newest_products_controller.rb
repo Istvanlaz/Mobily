@@ -15,10 +15,12 @@ class NewestProductsController < ApplicationController
   end
 
   def newest_show
+    @categories = policy_scope(Category)
     authorize @product = Product.find(params[:id])
   end
 
   def product_show
+    @categories = policy_scope(Category)
     authorize @product = Product.find(params[:id])
     authorize @category = Category.find(params[:category_id])
   end

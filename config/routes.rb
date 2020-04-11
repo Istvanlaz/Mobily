@@ -5,8 +5,11 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-
-  root to: 'pages#home'
+  # if user_signed_in?
+  #   root to: 'newest_products#index'
+  # else
+    root to: 'pages#home'
+  # end
 
   # get 'products#index', as: :products
   # get 'newest_products', to: "pages#newest_products", as: 'newest_products'

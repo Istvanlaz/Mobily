@@ -1,9 +1,12 @@
-<h1>Products#edit</h1>
-<p>Find me in app/views/products/edit.html.erb</p>
-<div class="signup">
-  <div>
-    <h2>To update your Product</h2>
-    <p>It's quick and easy.</p>
+<%= render 'categories/banner' %>
+<div class="app-container">
+  <h1>Products#edit</h1>
+  <p>Find me in app/views/products/edit.html.erb</p>
+  <div class="signup">
+    <div>
+      <h2>To update your Product</h2>
+      <p>It's quick and easy.</p>
+    </div>
+    <%= render 'form', product: @product , category: @product.category %>
   </div>
-  <%= render 'form', product: @product , category: @product.category %>
 </div>

@@ -2,7 +2,7 @@
   <div class="navbar-mobily">
       <ul class="navbar-links">
         <li class="navbar-logo">
-          <%= link_to "Mobily.", categories_path %>
+          <%= link_to "Mobily.", newest_products_path %>
         </li>
         <li>
           <div class="navbar-search-btn">
@@ -26,13 +26,14 @@
         <li class="navbar-user">
           <div class="nav-main">
             <%= link_to "#", class: "nav-item" do %>
+              <%= current_user.first_name %>
               <%= image_tag "logo/octocat.png", class: "avatar" %>
             <% end %>
             <div class="nav-content">
               <div class="nav-sub">
                 <ul>
                   <li>
-                    <%= link_to "Invite a Friend", root_path, class: "dropdown-item" %>
+                    <%= link_to "Invite a Friend", '#', class: "dropdown-item" %>
                     <i class="fas fa-chevron-right"></i>
                   </li>
                   <li>
