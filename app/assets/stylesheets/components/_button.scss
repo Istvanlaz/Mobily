@@ -188,13 +188,58 @@ input[class="search-text"]:focus {
   height: 100%;
   width: 100%;
   text-decoration: none;
+  &:hover {
+    color: $orange;
+    text-decoration: none;
+  }
 }
 
-.back-btn:hover a {
+.details-btn {
+  // margin: 5px;
+  display: flex;
   color: $orange;
-  text-decoration: none;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 30px;
+  border: 1px solid $orange;
+  border-radius: 25px;
+  &:hover {
+    border: 1px solid $orange45;
+  }
 }
 
+.details-btn a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: $orange;
+  font-size: 12px;
+  font-weight: bold;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  &:hover {
+    color: $orange45;
+    text-decoration: none;
+  }
+}
+
+// .link_svg a {
+//   width: 70%;
+//   height: 30px;
+//   display: flex;
+//   align-items: center;
+//   padding-left: 54px;
+// }
+
+// #heart_wishlist a {
+//   font-size: 16px;
+//   font-family: 'Roboto', sans-serif;
+//   font-weight: normal;
+// }
 
 
 // FOR DEV PURPOSES ONLY -- TO ERASE LATER

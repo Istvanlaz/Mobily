@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
   validates :username, :first_name, :family_name, :address, presence: true
   validates :username, uniqueness: true
-  validates_length_of :username, :first_name, :family_name, in: 3..12, message: "must contain between 3 and 12 letters."
+  validates_length_of :username, :first_name, :family_name, in: 3..12, message: "must contain between 3 and 12 characters."
   # validates :username, format: { with: /\A[a-zA-Z0-9]+\Z/ }, message: "must contain only alphabetical and/or numerical characters."
   # validates :email, uniqueness: true
 
