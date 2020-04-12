@@ -1,9 +1,9 @@
 .app-container {
   position: absolute;
-  left: 25vw;
+  left: 23vw;
 
-  height: 90vh;
-  width: 75vw;
+  height: 91vh;
+  width: 77vw;
   padding-top: 1vh;
 
   overflow: scroll;
@@ -18,8 +18,18 @@
   justify-content: space-around;
   align-items: center;
 
-  height: 10vh;
+  height: 9vh;
   width: 100%;
+
+  text-transform: uppercase;
+}
+
+.sub-c-banner a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    color: $orange;
+  }
 }
 
 .space-bar {
@@ -34,10 +44,10 @@
 
 .products-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 12px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
 
   height: max-content;
   width: 100%;
-  padding: 5vw;
+  padding: 4vw;
 }

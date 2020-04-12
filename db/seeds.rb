@@ -96,322 +96,1706 @@ category_6.save!
 
 puts 'Creating awesome sub-categories...'
 
+## TO SIT
 
 sub_category_1 = SubCategory.new( {
-  name: "Chairs",
+  name: "Armchairs",
   category_id: category_1.id
 })
 sub_category_1.save!
 
 sub_category_2 = SubCategory.new( {
-  name: "Sofas",
+  name: "Benches",
   category_id: category_1.id
 })
 sub_category_2.save!
 
 sub_category_3 = SubCategory.new( {
-  name: "Big Lamps",
-  category_id: category_2.id
+  name: "Chairs",
+  category_id: category_1.id
 })
 sub_category_3.save!
 
 sub_category_4 = SubCategory.new( {
-  name: "Small Lamps",
-  category_id: category_2.id
+  name: "Desk Chairs",
+  category_id: category_1.id
 })
 sub_category_4.save!
 
 sub_category_5 = SubCategory.new( {
-  name: "Tables",
-  category_id: category_3.id
+  name: "Sofas",
+  category_id: category_1.id
 })
 sub_category_5.save!
 
 sub_category_6 = SubCategory.new( {
-  name: "Drawers",
-  category_id: category_3.id
+  name: "Others",
+  category_id: category_1.id
 })
 sub_category_6.save!
 
+## In: LIGHTS
+
 sub_category_7 = SubCategory.new( {
-  name: "Paintings",
-  category_id: category_4.id
+  name: "Chandelier",
+  category_id: category_2.id
 })
 sub_category_7.save!
 
 sub_category_8 = SubCategory.new( {
-  name: "Plants",
-  category_id: category_4.id
+  name: "Floor",
+  category_id: category_2.id
 })
 sub_category_8.save!
 
 sub_category_9 = SubCategory.new( {
-  name: "Thriller",
-  category_id: category_5.id
+  name: "Hanging",
+  category_id: category_2.id
 })
 sub_category_9.save!
 
 sub_category_10 = SubCategory.new( {
-  name: "Fiction",
-  category_id: category_5.id
+  name: "Lampshades",
+  category_id: category_2.id
 })
 sub_category_10.save!
 
 sub_category_11 = SubCategory.new( {
-  name: "Boys",
-  category_id: category_6.id
+  name: "Reading",
+  category_id: category_2.id
 })
 sub_category_11.save!
 
 sub_category_12 = SubCategory.new( {
-  name: "Girls",
-  category_id: category_6.id
+  name: "Others",
+  category_id: category_2.id
 })
 sub_category_12.save!
+
+## In: FURNITURE
+
+sub_category_13 = SubCategory.new( {
+  name: "Beds",
+  category_id: category_3.id
+})
+sub_category_13.save!
+
+sub_category_14 = SubCategory.new( {
+  name: "Desks",
+  category_id: category_3.id
+})
+sub_category_14.save!
+
+sub_category_15 = SubCategory.new( {
+  name: "Tables",
+  category_id: category_3.id
+})
+sub_category_15.save!
+
+sub_category_16 = SubCategory.new( {
+  name: "Shelves",
+  category_id: category_3.id
+})
+sub_category_16.save!
+
+sub_category_17 = SubCategory.new( {
+  name: "Storage",
+  category_id: category_3.id
+})
+sub_category_17.save!
+
+sub_category_18 = SubCategory.new( {
+  name: "Wardrobes",
+  category_id: category_3.id
+})
+sub_category_18.save!
+
+sub_category_19 = SubCategory.new( {
+  name: "Others",
+  category_id: category_3.id
+})
+sub_category_19.save!
+
+## In: ART & DECORATION
+
+sub_category_20 = SubCategory.new( {
+  name: "Carpets",
+  category_id: category_4.id
+})
+sub_category_20.save!
+
+sub_category_21 = SubCategory.new( {
+  name: "Accessories",
+  category_id: category_4.id
+})
+sub_category_21.save!
+
+sub_category_22 = SubCategory.new( {
+  name: "Mirrors",
+  category_id: category_4.id
+})
+sub_category_22.save!
+
+sub_category_23 = SubCategory.new( {
+  name: "Paintings",
+  category_id: category_4.id
+})
+sub_category_23.save!
+
+sub_category_24 = SubCategory.new( {
+  name: "Plants",
+  category_id: category_4.id
+})
+sub_category_24.save!
+
+sub_category_25 = SubCategory.new( {
+  name: "Others",
+  category_id: category_4.id
+})
+sub_category_25.save!
+
+## In: BOOKS & LEISURE
+
+sub_category_26 = SubCategory.new( {
+  name: "Board Games",
+  category_id: category_5.id
+})
+sub_category_26.save!
+
+sub_category_27 = SubCategory.new( {
+  name: "Books",
+  category_id: category_5.id
+})
+sub_category_27.save!
+
+sub_category_28 = SubCategory.new( {
+  name: "Comics",
+  category_id: category_5.id
+})
+sub_category_28.save!
+
+sub_category_29 = SubCategory.new( {
+  name: "Lounge",
+  category_id: category_5.id
+})
+sub_category_29.save!
+
+sub_category_30 = SubCategory.new( {
+  name: "Video Games",
+  category_id: category_5.id
+})
+sub_category_30.save!
+
+sub_category_31 = SubCategory.new( {
+  name: "Others",
+  category_id: category_5.id
+})
+sub_category_31.save!
+
+## In: KIDS
+
+sub_category_32 = SubCategory.new( {
+  name: "Kid Beds",
+  category_id: category_6.id
+})
+sub_category_32.save!
+
+sub_category_33 = SubCategory.new( {
+  name: "Kid Books",
+  category_id: category_6.id
+})
+sub_category_33.save!
+
+sub_category_34 = SubCategory.new( {
+  name: "Kid Chairs",
+  category_id: category_6.id
+})
+sub_category_34.save!
+
+sub_category_35 = SubCategory.new( {
+  name: "Kid Furniture",
+  category_id: category_6.id
+})
+sub_category_35.save!
+
+sub_category_36 = SubCategory.new( {
+  name: "Kid Toys",
+  category_id: category_6.id
+})
+sub_category_36.save!
+
+sub_category_37 = SubCategory.new( {
+  name: "Others",
+  category_id: category_6.id
+})
+sub_category_37.save!
 
 
 puts 'Creating awesome products...'
 
+#________________________________________________________
+
+## In: TO SIT
+
+
+
+### for: "Armchairs"   ID: 1
 
 product_1 = Product.new( {
-  name: "Rocking Chair",
-  price: 30,
+  name: "Stylish Armchair",
+  price: rand(1..60),
   sub_category_id: sub_category_1.id,
   category_id: category_1.id
-  # category: category_1
   # user_id: user_1.id
-})
+} )
 product_1.save!
 
 product_2 = Product.new( {
-  name: "Kitchen Stool",
-  price: 5,
+  name: "Napoleon Style",
+  price: rand(1..60),
   sub_category_id: sub_category_1.id,
   category_id: category_1.id
-  # category: category_1
-  # user_id: user_2.id
-})
+  # user_id: user_1.id
+} )
 product_2.save!
 
 product_3 = Product.new( {
-  name: "Sofa 2 places",
-  price: 5,
-  sub_category_id: sub_category_2.id,
+  name: "Big Fudge",
+  price: rand(1..60),
+  sub_category_id: sub_category_1.id,
   category_id: category_1.id
-  # category: category_1
-  # user_id: user_3.id
-})
+  # user_id: user_1.id
+} )
 product_3.save!
 
 product_4 = Product.new( {
-  name: "Sofa 3 places",
-  price: 50,
-  sub_category_id: sub_category_2.id,
+  name: "Rocking Chair",
+  price: rand(1..60),
+  sub_category_id: sub_category_1.id,
   category_id: category_1.id
-  # category: category_1
-  # user_id: user_4.id
-})
+  # user_id: user_1.id
+} )
 product_4.save!
 
+
+### for: "Benches"   ID: 2
+
 product_5 = Product.new( {
-  name: "Lampe Victorienne",
-  price: 20,
-  sub_category_id: sub_category_3.id,
-  category_id: category_2.id
-  # category: category_2
-  # user_id: user_3.id
-})
+  name: "Outdoor Bench",
+  price: rand(1..60),
+  sub_category_id: sub_category_2.id,
+  category_id: category_1.id
+  # user_id: user_1.id
+} )
 product_5.save!
 
 product_6 = Product.new( {
-  name: "Lampe Banale",
-  price: 1,
-  sub_category_id: sub_category_3.id,
-  category_id: category_2.id
-  # category: category_2
+  name: "Kitchen Bench",
+  price: rand(1..60),
+  sub_category_id: sub_category_2.id,
+  category_id: category_1.id
   # user_id: user_1.id
-})
+} )
 product_6.save!
 
 product_7 = Product.new( {
-  name: "Lampe de Bureau",
-  price: 3,
-  sub_category_id: sub_category_4.id,
-  category_id: category_2.id
-  # category: category_2
-  # user_id: user_2.id
-})
+  name: "Entry Bench",
+  price: rand(1..60),
+  sub_category_id: sub_category_2.id,
+  category_id: category_1.id
+  # user_id: user_1.id
+} )
 product_7.save!
 
 product_8 = Product.new( {
-  name: "Lampe de Chevet",
-  price: 5,
-  sub_category_id: sub_category_4.id,
-  category_id: category_2.id
-  # category: category_2
-  # user_id: user_3.id
-})
+  name: "Bench with Storage",
+  price: rand(1..60),
+  sub_category_id: sub_category_2.id,
+  category_id: category_1.id
+  # user_id: user_1.id
+} )
 product_8.save!
 
+
+### for: "Chairs"   ID: 3
+
 product_9 = Product.new( {
-  name: "Long Diner Table",
-  price: 50,
-  sub_category_id: sub_category_5.id,
-  category_id: category_3.id
-  # category: category_3
-  # user_id: user_4.id
-})
+  name: "Kitchen Chair",
+  price: rand(1..60),
+  sub_category_id: sub_category_3.id,
+  category_id: category_1.id
+  # user_id: user_1.id
+} )
 product_9.save!
 
 product_10 = Product.new( {
-  name: "Working Desk",
-  price: 20,
-  sub_category_id: sub_category_5.id,
-  category_id: category_3.id
-  # category: category_3
-  # user_id: user_5.id
-})
+  name: "Wooden Chair",
+  price: rand(1..60),
+  sub_category_id: sub_category_3.id,
+  category_id: category_1.id
+  # user_id: user_1.id
+} )
 product_10.save!
 
 product_11 = Product.new( {
-  name: "Big Drawer",
-  price: 1,
-  sub_category_id: sub_category_6.id,
-  category_id: category_3.id
-  # category: category_3
+  name: "Metal Chair",
+  price: rand(1..60),
+  sub_category_id: sub_category_3.id,
+  category_id: category_1.id
   # user_id: user_1.id
-})
+} )
 product_11.save!
 
 product_12 = Product.new( {
-  name: "Small Drawer",
-  price: 3,
-  sub_category_id: sub_category_6.id,
-  category_id: category_3.id
-  # category: category_3
-  # user_id: user_2.id
-})
+  name: "Plastic Chair",
+  price: rand(1..60),
+  sub_category_id: sub_category_3.id,
+  category_id: category_1.id
+  # user_id: user_1.id
+} )
 product_12.save!
 
+
+### for: "Desk Chairs"  ID: 4
+
 product_13 = Product.new( {
-  name: "Picasso",
-  price: 5,
-  sub_category_id: sub_category_7.id,
-  category_id: category_4.id
-  # category: category_4
-  # user_id: user_3.id
-})
+  name: "Black Desk Chair",
+  price: rand(1..60),
+  sub_category_id: sub_category_4.id,
+  category_id: category_1.id
+  # user_id: user_1.id
+} )
 product_13.save!
 
 product_14 = Product.new( {
-  name: "Turner",
-  price: 50,
-  sub_category_id: sub_category_7.id,
-  category_id: category_4.id
-  # category: category_4
-  # user_id: user_4.id
-})
+  name: "White Desk Chair",
+  price: rand(1..60),
+  sub_category_id: sub_category_4.id,
+  category_id: category_1.id
+  # user_id: user_1.id
+} )
 product_14.save!
 
 product_15 = Product.new( {
-  name: "Tulipe",
-  price: 20,
-  sub_category_id: sub_category_8.id,
-  category_id: category_4.id
-  # category: category_4
-  # user_id: user_8.id
-})
+  name: "Blue Desk Chair",
+  price: rand(1..60),
+  sub_category_id: sub_category_4.id,
+  category_id: category_1.id
+  # user_id: user_1.id
+} )
 product_15.save!
 
 product_16 = Product.new( {
-  name: "Eucaliptus",
-  price: 1,
-  sub_category_id: sub_category_8.id,
-  category_id: category_4.id
-  # category: category_4
+  name: "Classic Desk Chair",
+  price: rand(1..60),
+  sub_category_id: sub_category_4.id,
+  category_id: category_1.id
   # user_id: user_1.id
-})
+} )
 product_16.save!
 
+
+### for: "Sofas"  ID: 5
+
 product_17 = Product.new( {
-  name: "Nuit d'Été",
-  price: 5,
-  sub_category_id: sub_category_9.id,
-  category_id: category_5.id
-  # category: category_4
-  # user_id: user_3.id
-})
+  name: "Red Sofa",
+  price: rand(1..60),
+  sub_category_id: sub_category_5.id,
+  category_id: category_1.id
+  # user_id: user_1.id
+} )
 product_17.save!
 
 product_18 = Product.new( {
-  name: "Que ta Volonté Soit Faite",
-  price: 50,
-  sub_category_id: sub_category_9.id,
-  category_id: category_5.id
-  # category: category_4
-  # user_id: user_4.id
-})
+  name: "Sofa 2 Places",
+  price: rand(1..60),
+  sub_category_id: sub_category_5.id,
+  category_id: category_1.id
+  # user_id: user_1.id
+} )
 product_18.save!
 
 product_19 = Product.new( {
-  name: "Ravage",
-  price: 20,
-  sub_category_id: sub_category_10.id,
-  category_id: category_5.id
-  # category: category_4
-  # user_id: user_8.id
-})
+  name: "Sofa 3 Places",
+  price: rand(1..60),
+  sub_category_id: sub_category_5.id,
+  category_id: category_1.id
+  # user_id: user_1.id
+} )
 product_19.save!
 
 product_20 = Product.new( {
-  name: "Loup Blanc",
-  price: 1,
-  sub_category_id: sub_category_10.id,
-  category_id: category_5.id
-  # category: category_4
+  name: "Antique Sofa",
+  price: rand(1..60),
+  sub_category_id: sub_category_5.id,
+  category_id: category_1.id
   # user_id: user_1.id
-})
+} )
 product_20.save!
 
+
+### for: "Others"  ID: 6
+
 product_21 = Product.new( {
-  name: "Action Man",
-  price: 3,
-  sub_category_id: sub_category_11.id,
-  category_id: category_6.id
-  # category: category_6
-  # user_id: user_2.id
-})
+  name: "Kitchen Stools",
+  price: rand(1..60),
+  sub_category_id: sub_category_6.id,
+  category_id: category_1.id
+  # user_id: user_1.id
+} )
 product_21.save!
 
 product_22 = Product.new( {
-  name: "Play Mobile",
-  price: 5,
-  sub_category_id: sub_category_11.id,
-  category_id: category_6.id
-  # category: category_6
-  # user_id: user_3.id
-})
+  name: "Red Poof",
+  price: rand(1..60),
+  sub_category_id: sub_category_6.id,
+  category_id: category_1.id
+  # user_id: user_1.id
+} )
 product_22.save!
 
 product_23 = Product.new( {
-  name: "Barbie",
-  price: 50,
-  sub_category_id: sub_category_12.id,
-  category_id: category_6.id
-  # category: category_6
-  # user_id: user_4.id
-})
+  name: "3 Garden Transat",
+  price: rand(1..60),
+  sub_category_id: sub_category_6.id,
+  category_id: category_1.id
+  # user_id: user_1.id
+} )
 product_23.save!
 
 product_24 = Product.new( {
-  name: "Legos",
-  price: 20,
-  sub_category_id: sub_category_12.id,
-  category_id: category_6.id
-  # category: category_6
-  # user_id: user_5.id
-})
+  name: "Big Poof",
+  price: rand(1..60),
+  sub_category_id: sub_category_6.id,
+  category_id: category_1.id
+  # user_id: user_1.id
+} )
 product_24.save!
+#________________________________________________________
+
+## In: LIGHTS
+
+
+### for: "Chandelier"  ID: 7
+
+product_25 = Product.new( {
+  name: "Small Chandelier",
+  price: rand(1..60),
+  sub_category_id: sub_category_7.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_25.save!
+
+product_26 = Product.new( {
+  name: "Big Chandelier",
+  price: rand(1..60),
+  sub_category_id: sub_category_7.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_26.save!
+
+product_27 = Product.new( {
+  name: "Red Chandelier",
+  price: rand(1..60),
+  sub_category_id: sub_category_7.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_27.save!
+
+product_28 = Product.new( {
+  name: "Golden Chandelier",
+  price: rand(1..60),
+  sub_category_id: sub_category_7.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_28.save!
+
+
+### for: "Floor Lamps"  ID: 8
+
+product_29 = Product.new( {
+  name: "Black Lamp",
+  price: rand(1..60),
+  sub_category_id: sub_category_8.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_29.save!
+
+product_30 = Product.new( {
+  name: "Set of two Metallic Lamps",
+  price: rand(1..60),
+  sub_category_id: sub_category_8.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_30.save!
+
+product_31 = Product.new( {
+  name: "Red Lamp",
+  price: rand(1..60),
+  sub_category_id: sub_category_8.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_31.save!
+
+product_32 = Product.new( {
+  name: "Brown Lamp",
+  price: rand(1..60),
+  sub_category_id: sub_category_8.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_32.save!
+
+
+### for: "Hanging Lamps"  ID: 9
+
+product_33 = Product.new( {
+  name: "Red Hanging Lamp",
+  price: rand(1..60),
+  sub_category_id: sub_category_9.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_33.save!
+
+product_34 = Product.new( {
+  name: "Black Hanging Lamp",
+  price: rand(1..60),
+  sub_category_id: sub_category_9.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_34.save!
+
+product_34 = Product.new( {
+  name: "Green Hanging Lamp",
+  price: rand(1..60),
+  sub_category_id: sub_category_9.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_34.save!
+
+product_35 = Product.new( {
+  name: "Old Hanging Lamp",
+  price: rand(1..60),
+  sub_category_id: sub_category_9.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_35.save!
+
+
+### for: "Lampshades"  ID: 10
+
+product_36 = Product.new( {
+  name: "Yellow Lampshade",
+  price: rand(1..60),
+  sub_category_id: sub_category_10.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_36.save!
+
+product_37 = Product.new( {
+  name: "Old Lampshade",
+  price: rand(1..60),
+  sub_category_id: sub_category_10.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_37.save!
+
+product_38 = Product.new( {
+  name: "Modern Lampshade",
+  price: rand(1..60),
+  sub_category_id: sub_category_10.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_38.save!
+
+product_39 = Product.new( {
+  name: "Artistic Lampshade",
+  price: rand(1..60),
+  sub_category_id: sub_category_10.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_39.save!
+
+
+### for: "Reading Lamps"  ID: 11
+
+product_40 = Product.new( {
+  name: "Bedside Lamp",
+  price: rand(1..60),
+  sub_category_id: sub_category_11.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_40.save!
+
+product_41 = Product.new( {
+  name: "Table Lamp",
+  price: rand(1..60),
+  sub_category_id: sub_category_11.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_41.save!
+
+product_43 = Product.new( {
+  name: "Reading Lamp",
+  price: rand(1..60),
+  sub_category_id: sub_category_11.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_43.save!
+
+product_44 = Product.new( {
+  name: "Small Lamp",
+  price: rand(1..60),
+  sub_category_id: sub_category_11.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_44.save!
+
+
+### for: "Others"  ID: 12
+
+product_45 = Product.new( {
+  name: "Big Candles",
+  price: rand(1..60),
+  sub_category_id: sub_category_12.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_45.save!
+
+product_46 = Product.new( {
+  name: "Small Candles",
+  price: rand(1..60),
+  sub_category_id: sub_category_12.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_46.save!
+
+product_47 = Product.new( {
+  name: "Outdoor Lamps",
+  price: rand(1..60),
+  sub_category_id: sub_category_12.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_47.save!
+
+product_48 = Product.new( {
+  name: "Outdoor Green Lamp",
+  price: rand(1..60),
+  sub_category_id: sub_category_12.id,
+  category_id: category_2.id
+  # user_id: user_1.id
+} )
+product_48.save!
+#________________________________________________________
+
+## In: FURNITURE
+
+
+### for: "Beds"  ID: 13
+
+product_49 = Product.new( {
+  name: "Bed 2 places",
+  price: rand(1..60),
+  sub_category_id: sub_category_13.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_49.save!
+
+product_50 = Product.new( {
+  name: "Queen-size Bed",
+  price: rand(1..60),
+  sub_category_id: sub_category_13.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_50.save!
+
+product_51 = Product.new( {
+  name: "King-size Bed",
+  price: rand(1..60),
+  sub_category_id: sub_category_13.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_51.save!
+
+product_52 = Product.new( {
+  name: "Single Bed",
+  price: rand(1..60),
+  sub_category_id: sub_category_13.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_52.save!
+
+
+### for: "Desks"  ID: 14
+
+product_53 = Product.new( {
+  name: "Red Desk",
+  price: rand(1..60),
+  sub_category_id: sub_category_14.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_53.save!
+
+product_54 = Product.new( {
+  name: "Small Desk",
+  price: rand(1..60),
+  sub_category_id: sub_category_14.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_54.save!
+
+product_55 = Product.new( {
+  name: "Big Old Black Desk",
+  price: rand(1..60),
+  sub_category_id: sub_category_14.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_55.save!
+
+product_56 = Product.new( {
+  name: "Basic Desk",
+  price: rand(1..60),
+  sub_category_id: sub_category_14.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_56.save!
+
+
+### for: "Tables"  ID: 15
+
+product_57 = Product.new( {
+  name: "6 Places Table",
+  price: rand(1..60),
+  sub_category_id: sub_category_15.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_57.save!
+
+product_58 = Product.new( {
+  name: "12 Places Table",
+  price: rand(1..60),
+  sub_category_id: sub_category_15.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_58.save!
+
+product_59 = Product.new( {
+  name: "Wooden Table",
+  price: rand(1..60),
+  sub_category_id: sub_category_15.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_59.save!
+
+product_60 = Product.new( {
+  name: "Black Metallic Table",
+  price: rand(1..60),
+  sub_category_id: sub_category_15.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_60.save!
+
+
+### for: "Shelves"  ID: 16
+
+product_61 = Product.new( {
+  name: "Wooden Shelf",
+  price: rand(1..60),
+  sub_category_id: sub_category_16.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_61.save!
+
+product_62 = Product.new( {
+  name: "Metallic Shelf",
+  price: rand(1..60),
+  sub_category_id: sub_category_16.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_62.save!
+
+product_63 = Product.new( {
+  name: "Modern Shelf",
+  price: rand(1..60),
+  sub_category_id: sub_category_16.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_63.save!
+
+product_64 = Product.new( {
+  name: "Labyrinth Shelf",
+  price: rand(1..60),
+  sub_category_id: sub_category_16.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_64.save!
+
+
+### for: "Storage"  ID: 17
+
+product_65 = Product.new( {
+  name: "Big Wooden Library",
+  price: rand(1..60),
+  sub_category_id: sub_category_17.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_65.save!
+
+product_66 = Product.new( {
+  name: "Cupboard",
+  price: rand(1..60),
+  sub_category_id: sub_category_17.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_66.save!
+
+product_67 = Product.new( {
+  name: "Antique Cupboard",
+  price: rand(1..60),
+  sub_category_id: sub_category_17.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_67.save!
+
+product_68 = Product.new( {
+  name: "Library",
+  price: rand(1..60),
+  sub_category_id: sub_category_17.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_68.save!
+
+
+### for: "Wardrobes"  ID: 18
+
+product_69 = Product.new( {
+  name: "Bedroom Wardrobe",
+  price: rand(1..60),
+  sub_category_id: sub_category_18.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_69.save!
+
+product_70 = Product.new( {
+  name: "Big Wardrobe",
+  price: rand(1..60),
+  sub_category_id: sub_category_18.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_70.save!
+
+product_71 = Product.new( {
+  name: "Small Wardrobe",
+  price: rand(1..60),
+  sub_category_id: sub_category_18.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_71.save!
+
+product_72 = Product.new( {
+  name: "Old Dusty Wardrobe",
+  price: rand(1..60),
+  sub_category_id: sub_category_18.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_72.save!
+
+
+### for: "Others"  ID: 19
+
+product_73 = Product.new( {
+  name: "Wooden Box",
+  price: rand(1..60),
+  sub_category_id: sub_category_19.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_73.save!
+
+product_74 = Product.new( {
+  name: "Metallic Box",
+  price: rand(1..60),
+  sub_category_id: sub_category_19.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_74.save!
+
+product_75 = Product.new( {
+  name: "Garden Box",
+  price: rand(1..60),
+  sub_category_id: sub_category_19.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_75.save!
+
+product_76 = Product.new( {
+  name: "Outdoor Table",
+  price: rand(1..60),
+  sub_category_id: sub_category_19.id,
+  category_id: category_3.id
+  # user_id: user_1.id
+} )
+product_76.save!
+#________________________________________________________
+
+## In: ART & DECORATION
+
+
+### for: "Carpets"  ID: 20
+
+product_77 = Product.new( {
+  name: "Indian Carpet",
+  price: rand(1..60),
+  sub_category_id: sub_category_20.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_77.save!
+
+product_78 = Product.new( {
+  name: "Italian Carpet",
+  price: rand(1..60),
+  sub_category_id: sub_category_20.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_78.save!
+
+product_79 = Product.new( {
+  name: "Red and Green Carpet",
+  price: rand(1..60),
+  sub_category_id: sub_category_20.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_79.save!
+
+product_80 = Product.new( {
+  name: "Black and White Carpet",
+  price: rand(1..60),
+  sub_category_id: sub_category_20.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_80.save!
+
+
+### for: "Decorative Accessories"  ID: 21
+
+product_81 = Product.new( {
+  name: "Chandelier",
+  price: rand(1..60),
+  sub_category_id: sub_category_21.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_81.save!
+
+product_82 = Product.new( {
+  name: "Nice Small Box",
+  price: rand(1..60),
+  sub_category_id: sub_category_21.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_82.save!
+
+product_83 = Product.new( {
+  name: "Antique Plates",
+  price: rand(1..60),
+  sub_category_id: sub_category_21.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_83.save!
+
+product_84 = Product.new( {
+  name: "Presse Papier",
+  price: rand(1..60),
+  sub_category_id: sub_category_21.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_84.save!
+
+
+### for: "Mirrors"  ID: 22
+
+product_85 = Product.new( {
+  name: "Antique Mirror",
+  price: rand(1..60),
+  sub_category_id: sub_category_22.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_85.save!
+
+product_86 = Product.new( {
+  name: "Modern Mirror",
+  price: rand(1..60),
+  sub_category_id: sub_category_22.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_86.save!
+
+product_87 = Product.new( {
+  name: "Wooden Mirror",
+  price: rand(1..60),
+  sub_category_id: sub_category_22.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_87.save!
+
+product_88 = Product.new( {
+  name: "Plain Mirror",
+  price: rand(1..60),
+  sub_category_id: sub_category_22.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_88.save!
+
+
+### for: "Paintings"  ID: 23
+
+product_89 = Product.new( {
+  name: "Picasso",
+  price: rand(1..60),
+  sub_category_id: sub_category_23.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_89.save!
+
+product_90 = Product.new( {
+  name: "Francis Picabia",
+  price: rand(1..60),
+  sub_category_id: sub_category_23.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_90.save!
+
+product_91 = Product.new( {
+  name: "Turner",
+  price: rand(1..60),
+  sub_category_id: sub_category_23.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_91.save!
+
+product_92 = Product.new( {
+  name: "Kandinsky",
+  price: rand(1..60),
+  sub_category_id: sub_category_23.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_92.save!
+
+
+### for: "Plants"  ID: 24
+
+product_93 = Product.new( {
+  name: "Geranium",
+  price: rand(1..60),
+  sub_category_id: sub_category_24.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_93.save!
+
+product_94 = Product.new( {
+  name: "Aloe Vera",
+  price: rand(1..60),
+  sub_category_id: sub_category_24.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_94.save!
+
+product_95 = Product.new( {
+  name: "Joli Vase",
+  price: rand(1..60),
+  sub_category_id: sub_category_24.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_95.save!
+
+product_96 = Product.new( {
+  name: "Cactus",
+  price: rand(1..60),
+  sub_category_id: sub_category_24.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_96.save!
+
+
+### for: "Others"  ID: 25
+
+product_97 = Product.new( {
+  name: "Outdoor Decorations",
+  price: rand(1..60),
+  sub_category_id: sub_category_25.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_97.save!
+
+product_98 = Product.new( {
+  name: "Random Things",
+  price: rand(1..60),
+  sub_category_id: sub_category_25.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_98.save!
+
+product_99 = Product.new( {
+  name: "Other Random Things",
+  price: rand(1..60),
+  sub_category_id: sub_category_25.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_99.save!
+
+product_100 = Product.new( {
+  name: "Nice Frame",
+  price: rand(1..60),
+  sub_category_id: sub_category_25.id,
+  category_id: category_4.id
+  # user_id: user_1.id
+} )
+product_100.save!
+#________________________________________________________
+
+## In: BOOKS & LEISURE
+
+
+### for: "Board Games"  ID: 26
+
+product_101 = Product.new( {
+  name: "Monopoly",
+  price: rand(1..60),
+  sub_category_id: sub_category_26.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_101.save!
+
+product_102 = Product.new( {
+  name: "Hotels",
+  price: rand(1..60),
+  sub_category_id: sub_category_26.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_102.save!
+
+product_103 = Product.new( {
+  name: "Labyrinth",
+  price: rand(1..60),
+  sub_category_id: sub_category_26.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_103.save!
+
+product_104 = Product.new( {
+  name: "Cluedo",
+  price: rand(1..60),
+  sub_category_id: sub_category_26.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_104.save!
+
+
+### for: "Books"  ID: 27
+
+product_105 = Product.new( {
+  name: "Loup Blanc",
+  price: rand(1..60),
+  sub_category_id: sub_category_27.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_105.save!
+
+product_106 = Product.new( {
+  name: "Parmenion",
+  price: rand(1..60),
+  sub_category_id: sub_category_27.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_106.save!
+
+product_107 = Product.new( {
+  name: "Ravage",
+  price: rand(1..60),
+  sub_category_id: sub_category_27.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_107.save!
+
+product_108 = Product.new( {
+  name: "2O mille Lieues sous les Mers",
+  price: rand(1..60),
+  sub_category_id: sub_category_27.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_108.save!
+
+
+### for: "Comics"  ID: 28
+
+product_109 = Product.new( {
+  name: "Tintin",
+  price: rand(1..60),
+  sub_category_id: sub_category_28.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_109.save!
+
+product_110 = Product.new( {
+  name: "Asterix",
+  price: rand(1..60),
+  sub_category_id: sub_category_28.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_110.save!
+
+product_111 = Product.new( {
+  name: "Yoko Tsuno",
+  price: rand(1..60),
+  sub_category_id: sub_category_28.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_111.save!
+
+product_112 = Product.new( {
+  name: "Boule & Bil",
+  price: rand(1..60),
+  sub_category_id: sub_category_28.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_112.save!
+
+
+### for: "Lounge Games"  ID: 29
+
+product_113 = Product.new( {
+  name: "Darts",
+  price: rand(1..60),
+  sub_category_id: sub_category_29.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_113.save!
+
+product_114 = Product.new( {
+  name: "Small Pool Table",
+  price: rand(1..60),
+  sub_category_id: sub_category_29.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_114.save!
+
+product_115 = Product.new( {
+  name: "Chess",
+  price: rand(1..60),
+  sub_category_id: sub_category_29.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_115.save!
+
+product_116 = Product.new( {
+  name: "Random Games Box",
+  price: rand(1..60),
+  sub_category_id: sub_category_29.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_116.save!
+
+
+### for: "Video Games"  ID: 30
+
+product_117 = Product.new( {
+  name: "Fifa 21",
+  price: rand(1..60),
+  sub_category_id: sub_category_30.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_117.save!
+
+product_118 = Product.new( {
+  name: "Fortnite",
+  price: rand(1..60),
+  sub_category_id: sub_category_30.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_118.save!
+
+product_119 = Product.new( {
+  name: "Assassin's Creed",
+  price: rand(1..60),
+  sub_category_id: sub_category_30.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_119.save!
+
+product_120 = Product.new( {
+  name: "Fable III",
+  price: rand(1..60),
+  sub_category_id: sub_category_30.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_120.save!
+
+
+### for: "Others"  ID: 31
+
+product_121 = Product.new( {
+  name: "Some interesting stuffs",
+  price: rand(1..60),
+  sub_category_id: sub_category_31.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_121.save!
+
+product_122 = Product.new( {
+  name: "Card Games",
+  price: rand(1..60),
+  sub_category_id: sub_category_31.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_122.save!
+
+product_123 = Product.new( {
+  name: "Poker Games",
+  price: rand(1..60),
+  sub_category_id: sub_category_31.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_123.save!
+
+product_124 = Product.new( {
+  name: "Adult Costumes",
+  price: rand(1..60),
+  sub_category_id: sub_category_31.id,
+  category_id: category_5.id
+  # user_id: user_1.id
+} )
+product_124.save!
+#________________________________________________________
+
+## In: KIDS
+
+### for: "Kid Beds"  ID: 32
+
+product_125 = Product.new( {
+  name: "Wooden Kid Bed",
+  price: rand(1..60),
+  sub_category_id: sub_category_32.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_125.save!
+
+product_126 = Product.new( {
+  name: "Red Kid Bed",
+  price: rand(1..60),
+  sub_category_id: sub_category_32.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_126.save!
+
+product_127 = Product.new( {
+  name: "Blue Kid Bed",
+  price: rand(1..60),
+  sub_category_id: sub_category_32.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_127.save!
+
+product_128 = Product.new( {
+  name: "Green Kid Bed",
+  price: rand(1..60),
+  sub_category_id: sub_category_32.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_128.save!
+
+
+### for: "Kid Books"  ID: 33
+
+product_129 = Product.new( {
+  name: "Kid Book 1",
+  price: rand(1..60),
+  sub_category_id: sub_category_33.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_129.save!
+
+product_130 = Product.new( {
+  name: "Les Teletubbies",
+  price: rand(1..60),
+  sub_category_id: sub_category_33.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_130.save!
+
+product_131 = Product.new( {
+  name: "Oui-Oui",
+  price: rand(1..60),
+  sub_category_id: sub_category_33.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_131.save!
+
+product_132 = Product.new( {
+  name: "Snoopy",
+  price: rand(1..60),
+  sub_category_id: sub_category_33.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_132.save!
+
+
+### for: "Kid Chairs"  ID: 34
+
+product_133 = Product.new( {
+  name: "Blue Kid Chair",
+  price: rand(1..60),
+  sub_category_id: sub_category_34.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_133.save!
+
+product_134 = Product.new( {
+  name: "Rocking Kid Chair",
+  price: rand(1..60),
+  sub_category_id: sub_category_34.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_134.save!
+
+product_135 = Product.new( {
+  name: "Baby Chair",
+  price: rand(1..60),
+  sub_category_id: sub_category_34.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_135.save!
+
+product_136 = Product.new( {
+  name: "Red Kid Chair",
+  price: rand(1..60),
+  sub_category_id: sub_category_34.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_136.save!
+
+
+### for: "Kid Furniture"  ID: 35
+
+product_137 = Product.new( {
+  name: "Changing Table",
+  price: rand(1..60),
+  sub_category_id: sub_category_35.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_137.save!
+
+product_138 = Product.new( {
+  name: "Blue Changing Table",
+  price: rand(1..60),
+  sub_category_id: sub_category_35.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_138.save!
+
+product_139 = Product.new( {
+  name: "Small Desk",
+  price: rand(1..60),
+  sub_category_id: sub_category_35.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_139.save!
+
+product_140 = Product.new( {
+  name: "Red Kid Desk",
+  price: rand(1..60),
+  sub_category_id: sub_category_35.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_140.save!
+
+
+### for: "Kid Toys"  ID: 36
+
+product_141 = Product.new( {
+  name: "Action Man",
+  price: rand(1..60),
+  sub_category_id: sub_category_36.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_141.save!
+
+product_142 = Product.new( {
+  name: "Barbie",
+  price: rand(1..60),
+  sub_category_id: sub_category_36.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_142.save!
+
+product_143 = Product.new( {
+  name: "Legos",
+  price: rand(1..60),
+  sub_category_id: sub_category_36.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_143.save!
+
+product_144 = Product.new( {
+  name: "Playmobile",
+  price: rand(1..60),
+  sub_category_id: sub_category_36.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_144.save!
+
+
+### for: "Others"  ID: 37
+
+product_145 = Product.new( {
+  name: "Biberons",
+  price: rand(1..60),
+  sub_category_id: sub_category_37.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_145.save!
+
+product_146 = Product.new( {
+  name: "Peluches",
+  price: rand(1..60),
+  sub_category_id: sub_category_37.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_146.save!
+
+product_147 = Product.new( {
+  name: "Kid Clothes",
+  price: rand(1..60),
+  sub_category_id: sub_category_37.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_147.save!
+
+product_148 = Product.new( {
+  name: "Tetine",
+  price: rand(1..60),
+  sub_category_id: sub_category_37.id,
+  category_id: category_6.id
+  # user_id: user_1.id
+} )
+product_148.save!
+
+
 
 
 puts "DATABASE SUCCESSFULLY SEEDED."
@@ -427,25 +1811,6 @@ puts "Total number of products: #{Product.all.count}"
 # puts "Product3: #{product_3.name} price: #{product_3.price.round(2)}"
 # puts "Product4: #{product_4.name} price: #{product_4.price.round(2)}"
 # puts "Product5: #{product_5.name} price: #{product_5.price.round(2)}"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

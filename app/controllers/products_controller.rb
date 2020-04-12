@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
     # @products = policy_scope(Product)
     @categories = policy_scope(Category)
     @products = policy_scope(@category.products).order(created_at: :desc)
-    @sub_categories = policy_scope(@category.sub_categories).order(created_at: :desc)
+    @sub_categories = policy_scope(@category.sub_categories).order(created_at: :asc)
   end
 
   def show
