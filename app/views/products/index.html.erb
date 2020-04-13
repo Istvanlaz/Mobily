@@ -1,40 +1,54 @@
 <%= render 'categories/banner' %>
 <div class="app-container">
-  <!-- <h1>Products#index</h1>
-  <p>Find me in app/views/products/index.html.erb</p> -->
-  <!-- <div class="space-btn">
-    <div class="back-btn">
-      <%#= link_to "Back", category_sub_categories_path(@category.id)%>
-    </div>
-  </div> -->
-  <!-- <div class="space-bar">
-    <div class="back-btn">
-      <%#= link_to "Back", categories_path %>
-    </div>
-    <h2>In <#= @category.name %></h2>
-  </div> -->
+
   <div class="sub-c-banner">
     <div class="back-btn">
       <%= link_to "All", category_products_path(@category, @product) %>
     </div>
     <% @sub_categories.each do |sub_category| %>
       <%= link_to "#{sub_category.name}", category_sub_category_path(@category, sub_category) %>
-      <%#= link_to 'Show products', category_sub_category_products_path(@category, sub_category.id), method: :get%>
-      <%#= link_to 'Show sub_category', sub_category_path(sub_category), method: :get%>
     <% end %>
     <div class="back-btn">
       <%= link_to "Get Lucky!", '#' %>
     </div>
   </div>
 
-  <!-- <h3>All Products from <%#= @sub_category.name %></h3> -->
   <div class="products-grid">
     <% @products.each do |product| %>
-      <div class="product-card">
-        <%= link_to "#{product.name}", category_product_path(@category, product), method: :get%>
-        <%= product.price %>€
+      <div class="product_linker">
+        <div class="product_img">
+          <img src="https://www.fillmurray.com/200/300" alt="product_description">
+        </div>
+        <%= link_to category_product_path(@category, product) do %>
+          <div class="product_card">
+            <div class="hover_dark"></div>
+            <div class="info_card">
+              <div>
+                <%= product.name %>
+              </div>
+              <div>
+                <%= product.price %>€
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <div class="hover_links">
+          <div class="links_product">
+            <%= link_to '#' do %>
+              <div class="link_svg"><%= show_svg('icons/heart.svg') %></div>
+            <% end %>
+            <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+          </div>
+          <div class="links_product">
+            <%= link_to '#' do %>
+              <i class="link_svg"><%= show_svg('icons/supermarket.svg') %></i>
+            <% end %>
+            <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
-  <%#= link_to "New product", new_category_sub_category_product_path(@category, @sub_category) %>
+
 </div>
+
