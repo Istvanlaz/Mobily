@@ -1,0 +1,9 @@
+        <h2>Product Card</h2>
+        <p><em>This will appear on the layout of the product card and determine where it will be stored</em></p>
+        <div>
+          <%= f.label :name %>
+          <%= f.text_field :name, required: true, placeholder: "Enter product name" %>
+
+          <%= f.label :category %>
+          <%= f.collection_select :category_id, Category.order(:name), :id, :name, {prompt: 'Select a Category'}, required: true %>
+        </div>
