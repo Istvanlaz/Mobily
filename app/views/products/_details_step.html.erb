@@ -1,8 +1,13 @@
         <h2>Product Details</h2>
         <p><em>This is to better rank and categorise your product</em></p>
+
         <div>
+          <% cat_id = @product.category_id %>
+          <% selected_category = Category.find(cat_id) %>
+          <% sub_cat = selected_category.sub_categories %>
+
           <%= f.label :sub_category %>
-          <%= f.collection_select :sub_category_id, SubCategory.order(:name), :id, :name, {prompt: 'Select a Sub Category'} %>
+          <%= f.collection_select :sub_category_id, sub_cat.order(:name), :id, :name, {prompt: 'Select a Sub Category'} %>
         </div>
         <div>
           <%= f.label :description %>

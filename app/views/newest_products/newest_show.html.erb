@@ -9,6 +9,7 @@
       </div>
     </div>
     <p>Name: <%= @product.name %></p>
+    <p>Address: <%= @product.address %></p>
     <p>Price: <%= @product.price %>€</p>
     <% if policy(@product).update? %>
       <p class=“btn btn-primary”><%= link_to "Edit product", edit_product_path(@product) %></p>

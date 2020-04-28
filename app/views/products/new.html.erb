@@ -1,3 +1,25 @@
+<%#= render 'categories/banner' %>
+<!-- <div class="app-container">
+  <h1>Products#new</h1>
+  <p>Find me in app/views/products/new.html.erb</p>
+    <div>
+      <h2>To sell a Product</h2>
+      <p>It's quick and easy.</p>
+    </div>
+    <%#= form_for @product, url: create_new_product_path do |f| %>
+      <div class="form-styling">
+        <%#= render "#{@product.current_step}_step", :f => f  %>
+        <div class="bottom-signup">
+          <%#= f.submit "Continue" unless @product.last_step? %>
+          <%#= f.submit "Submit Product" if @product.last_step? input_html: { confirm: "Are you Sure about Creating #{@product.name}?" } %>
+          <%#= f.submit "Back", :name => "back_button" unless @product.first_step? %>
+        </div>
+      </div>
+    <%# end %>
+    <%#= link_to "Exit", newest_products_path %>
+    <%##= link_to "New Product", new_product_path(@product.session[:product_params]) %>
+</div> -->
+
 <%= render 'categories/banner' %>
 <div class="app-container">
   <h1>Products#new</h1>
@@ -7,14 +29,30 @@
       <p>It's quick and easy.</p>
     </div>
     <%= form_for @product, url: create_new_product_path do |f| %>
+      <% if @product.errors.any? %>
+        <% @product.errors.full_messages.each do |error_message| %>
+          <ul>
+            <li><%= error_message %></li>
+          </ul>
+        <% end %>
+      <% end %>
       <div class="form-styling">
         <%= render "#{@product.current_step}_step", :f => f  %>
         <div class="bottom-signup">
-          <%= f.submit "Continue" unless @product.last_step? %>
-          <%= f.submit "Submit Product" if @product.last_step? %>
-          <%= f.submit "Back", :name => "back_button" unless @product.first_step? %>
+          <% if @product.last_step? %>
+              <% category_id = @product.category_id %>
+              <% category = Category.find(category_id) %>
+              <% category.name %>
+            <%= f.submit "Submit Product", data: { confirm: "Are you sure that all the data you entered for: #{@product.name} stored in the category: #{category.name} is correct? Have a second look just in case 😉" } %>
+            <%= f.submit "Back", :name => "back_button" unless @product.first_step? %>
+          <% else %>
+            <%= f.submit "Continue" %>
+            <%= f.submit "Back", :name => "back_button" unless @product.first_step? %>
+          <% end %>
         </div>
       </div>
     <% end %>
     <%= link_to "Exit", newest_products_path %>
+    <%#= link_to "New Product", new_product_path(@product.session[:product_params]) %>
 </div>
+

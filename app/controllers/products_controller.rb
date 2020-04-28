@@ -36,18 +36,45 @@ class ProductsController < ApplicationController
     #   render :new
     # end
         # binding.pry
+
+
+    # session[:product_params].deep_merge!(params_product) if params_product
+    # authorize @product = Product.new(session[:product_params])
+    # @product.current_step = session[:product_step]
+    # if @product.valid?
+    #   if params[:back_button]
+    #     @product.previous_step
+    #   elsif @product.last_step?
+    #     @product.user = current_user
+    #     # binding.pry
+    #     if @product.all_valid?
+    #       @product.save!
+    #       flash[:notice] = 'Your product was created successfully'
+    #       redirect_to newest_products_path && return
+    #     end
+    #   else
+    #     @product.next_step
+    #   end
+    # end
+    # session[:product_step] = @product.current_step
+
+    # if @product.new_record?
+    #   return render :new
+    # else
+    #   session[:product_step] = session[:product_params] = nil
+    # end
+
     session[:product_params].deep_merge!(params_product) if params_product
     authorize @product = Product.new(session[:product_params])
     @product.current_step = session[:product_step]
-    @product.user = current_user
-    if @product.valid?
-      if params[:back_button]
-        @product.previous_step
-      elsif @product.last_step?
+    if params[:back_button]
+      @product.previous_step
+    elsif @product.valid?
+      if @product.last_step?
+        @product.user = current_user
+        # binding.pry
         if @product.all_valid?
           @product.save!
-          flash[:notice] = 'Your product was created successfully'
-          redirect_to newest_products_path && return
         end
       else
         @product.next_step
@@ -59,6 +86,8 @@ class ProductsController < ApplicationController
       return render :new
     else
       session[:product_step] = session[:product_params] = nil
+      flash[:notice] = "#{@product.name} was successfully added to the Marketplace"
+      redirect_to newest_products_path
     end
 
     # authorize @category = Category.find(params[:category_id])

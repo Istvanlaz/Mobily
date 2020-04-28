@@ -25,7 +25,8 @@ class Product < ApplicationRecord
   end
 
   def steps
-    %w[card details confirmation]
+    %w[card details]
+    # confirmation
   end
 
   def next_step
