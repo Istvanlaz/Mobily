@@ -87,7 +87,7 @@ class ProductsController < ApplicationController
     else
       session[:product_step] = session[:product_params] = nil
       flash[:notice] = "#{@product.name} was successfully added to the Marketplace"
-      redirect_to newest_products_path
+      redirect_to product_show_path(@product.category.id, @product)
     end
 
     # authorize @category = Category.find(params[:category_id])

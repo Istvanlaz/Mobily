@@ -219,13 +219,13 @@ sub_category_19.save!
 ## In: ART & DECORATION
 
 sub_category_20 = SubCategory.new( {
-  name: "Carpets",
+  name: "Accessories",
   category_id: category_4.id
 })
 sub_category_20.save!
 
 sub_category_21 = SubCategory.new( {
-  name: "Accessories",
+  name: "Carpets",
   category_id: category_4.id
 })
 sub_category_21.save!
@@ -1089,10 +1089,10 @@ product_76.save!
 ## In: ART & DECORATION
 
 
-### for: "Carpets"  ID: 20
+### for: "Accessories"  ID: 20
 
 product_77 = Product.new( {
-  name: "Indian Carpet",
+  name: "Chandelier",
   price: rand(1..60),
   sub_category_id: sub_category_20.id,
   category_id: category_4.id
@@ -1101,7 +1101,7 @@ product_77 = Product.new( {
 product_77.save!
 
 product_78 = Product.new( {
-  name: "Italian Carpet",
+  name: "Nice Small Box",
   price: rand(1..60),
   sub_category_id: sub_category_20.id,
   category_id: category_4.id
@@ -1110,7 +1110,7 @@ product_78 = Product.new( {
 product_78.save!
 
 product_79 = Product.new( {
-  name: "Red and Green Carpet",
+  name: "Antique Plates",
   price: rand(1..60),
   sub_category_id: sub_category_20.id,
   category_id: category_4.id
@@ -1119,7 +1119,7 @@ product_79 = Product.new( {
 product_79.save!
 
 product_80 = Product.new( {
-  name: "Black and White Carpet",
+  name: "Presse Papier",
   price: rand(1..60),
   sub_category_id: sub_category_20.id,
   category_id: category_4.id
@@ -1128,10 +1128,10 @@ product_80 = Product.new( {
 product_80.save!
 
 
-### for: "Decorative Accessories"  ID: 21
+### for: "Carpets"  ID: 21
 
 product_81 = Product.new( {
-  name: "Chandelier",
+  name: "Indian Carpet",
   price: rand(1..60),
   sub_category_id: sub_category_21.id,
   category_id: category_4.id
@@ -1140,7 +1140,7 @@ product_81 = Product.new( {
 product_81.save!
 
 product_82 = Product.new( {
-  name: "Nice Small Box",
+  name: "Italian Carpet",
   price: rand(1..60),
   sub_category_id: sub_category_21.id,
   category_id: category_4.id
@@ -1149,7 +1149,7 @@ product_82 = Product.new( {
 product_82.save!
 
 product_83 = Product.new( {
-  name: "Antique Plates",
+  name: "Red and Green Carpet",
   price: rand(1..60),
   sub_category_id: sub_category_21.id,
   category_id: category_4.id
@@ -1158,7 +1158,7 @@ product_83 = Product.new( {
 product_83.save!
 
 product_84 = Product.new( {
-  name: "Presse Papier",
+  name: "Black and White Carpet",
   price: rand(1..60),
   sub_category_id: sub_category_21.id,
   category_id: category_4.id

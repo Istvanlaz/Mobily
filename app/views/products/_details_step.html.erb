@@ -7,7 +7,7 @@
           <% sub_cat = selected_category.sub_categories %>
 
           <%= f.label :sub_category %>
-          <%= f.collection_select :sub_category_id, sub_cat.order(:name), :id, :name, {prompt: 'Select a Sub Category'} %>
+          <%= f.collection_select :sub_category_id, sub_cat.order(:created_at), :id, :name, {prompt: 'Select a Sub Category'} %>
         </div>
         <div>
           <%= f.label :description %>
