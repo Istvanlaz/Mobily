@@ -2,21 +2,33 @@
   background-color: $warning;
   width: 100%;
 
-  z-index: 100000;
+  z-index: 10000;
 }
 
 .bg-green-500 {
-  background-color: $success;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
   width: 100%;
+  color: white;
+  text-align: center;
+  background-color: $success;
+
 }
 
 .auto-hide {
-  position: relative;
-  z-index: 100000;
+  position: absolute;
+
+  display: block;
+
+  z-index: 10000;
+
   width: 100vw;
   top: 0;
   left: 0;
-  height: 0px;
+  height: 60px;
   overflow: show;
   -webkit-animation: disappear 0.3s forwards;
           animation: disappear 0.3s forwards;
@@ -37,7 +49,11 @@
   70% { opacity: 0.3; }
   80% { opacity: 0.2; }
   90% { opacity: 0.1; }
-  100% { opacity: 0; }
+  100% {
+    opacity: 0;
+    height: 0;
+    top: -30px;
+  }
 }
 
 @keyframes disappear {
@@ -51,5 +67,9 @@
   70% { opacity: 0.3; }
   80% { opacity: 0.2; }
   90% { opacity: 0.1; }
-  100% { opacity: 0; }
+  100% {
+    opacity: 0;
+    height: 0;
+    top: -30px;
+  }
 }
