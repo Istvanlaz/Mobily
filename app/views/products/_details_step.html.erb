@@ -1,19 +1,36 @@
-        <h2>Product Details</h2>
-        <p><em>This is to better rank and categorise your product</em></p>
-
-        <div>
-          <% cat_id = @product.category_id %>
-          <% selected_category = Category.find(cat_id) %>
-          <% sub_cat = selected_category.sub_categories %>
-
-          <%= f.label :sub_category %>
-          <%= f.collection_select :sub_category_id, sub_cat.order(:created_at), :id, :name, {prompt: 'Select a Sub Category'} %>
+        <div class="form_title">
+          <h3><br>STEP 2/3</h3>
         </div>
-        <div>
-          <%= f.label :description %>
-          <%= f.text_field :description %>
-        </div>
-        <div>
-          <%= f.label :price %>
-          <%= f.number_field :price %>
+
+        <div class="title_styling"></div>
+        <div class="orange_line_title"></div>
+        <div class="form_content">
+
+          <div class="form_data_step2">
+            <% cat_id = @product.category_id %>
+            <% selected_category = Category.find(cat_id) %>
+            <% sub_cat = selected_category.sub_categories %>
+
+            <%= f.label :sub_category %>
+            <%= f.collection_select :sub_category_id, sub_cat.order(:created_at), :id, :name, {prompt: 'Choose a Sub Category'} %>
+          </div>
+
+          <div class="form_description">
+            <%= f.label :description, 'Product Description*' %>
+            <%= f.text_area :description, placeholder: "Tell us everything you know about your item’s past life!
+<br>fWe need to know its default(s) as well!" %>
+          </div>
+
+          <div class="form_data_step2">
+            Product Location*
+            <div class="location_draft">
+              Only visible after trasaction, don't worry ;)
+            </div>
+          </div>
+
+          <div class="form_price">
+            <%= f.label :price, 'Price*' %>
+            <%= f.number_field :price %>
+          </div>
+
         </div>

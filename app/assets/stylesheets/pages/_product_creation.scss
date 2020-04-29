@@ -1,0 +1,228 @@
+.container_sale {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  height: 91vh;
+}
+
+.bg_dark_sale {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 91vh;
+  width: 100%;
+  background-color: rgba(0,0,0,0.15);
+  z-index: 2;
+}
+
+.step_show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: fit-content;
+  width: 33vw;
+  margin-top: 4%;
+  // background-color: green;
+
+  z-index: 3;
+}
+
+.step_card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 7vh;
+  width: 7vh;
+  color: $orange;
+  font-size: 24px;
+  border-radius: 5px;
+  background-color: $bright;
+}
+
+.sep_line {
+  height: 3px;
+  background-color: $bright;
+  width: 12%;
+}
+
+.sale_card {
+  position: relative;
+
+  width: 43vw;
+  height: 60vh;
+  background-color: $bright;
+  border-radius: 5px;
+  margin-bottom: 4%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  z-index: 3;
+}
+
+.sale_content {
+  height: 50vh;
+
+  // background-color: green;
+}
+
+.form_title {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+
+  height: 30%;
+  width: 100%;
+  text-align: center;
+  // text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  z-index: 3;
+  // background: red;
+}
+
+.form_title h3 {
+  font-weight: 300;
+  width: 100%;
+}
+
+.title_styling {
+  position: absolute;
+  top: 13%;
+  left: 30%;
+
+  height: 5%;
+  width: 40%;
+  background-color: $bright;
+
+  z-index: 2;
+}
+
+.orange_line_title {
+  position: absolute;
+  top: 15%;
+
+  height: 1px;
+  width: 100%;
+  background-color: $orange;
+
+  z-index: 1;
+}
+
+.form_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  height: 70%;
+}
+
+.form_data_step1 {
+  display: flex;
+  flex-direction: column;
+  height: 33%;
+  width: 90%;
+}
+
+.form_data_step2 {
+  display: flex;
+  flex-direction: column;
+  height: 25%;
+  width: 90%;
+
+  background-color: purple;
+}
+
+.form_description {
+  display: flex;
+  flex-direction: column;
+  height: 35%;
+  width: 90%;
+
+  background-color: green;
+}
+
+.form_price {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  height: 15%;
+  width: 90%;
+  background-color: yellow;
+}
+
+.new_pic_card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 80%;
+  width: 100%;
+  color: $lightGreen;
+  border-radius: 3px;
+  font-weight: lighter;
+  font-size: 39px;
+
+  background-color: $grey;
+}
+
+.location_draft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 45%;
+  width: 100%;
+  color: $lightGreen;
+  border-radius: 3px;
+  font-weight: lighter;
+
+  background-color: $grey;
+}
+
+.submit_sale {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 10vh;
+  padding: 0 10%;
+
+}
+
+.orange_line_bottom {
+  position: absolute;
+  bottom: 50%;
+  left: 2%;
+
+  height: 1px;
+  width: 96%;
+  background-color: #FF896B;
+
+  z-index: 1;
+}
+
+.sale_bottom_link {
+  background-color: $bright;
+  padding: 0 2%;
+
+  z-index: 2
+}
+
+.sale_bottom_link a {
+  color: $orange;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
