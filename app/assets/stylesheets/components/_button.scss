@@ -188,23 +188,6 @@ input[class="search-text"]:focus {
   }
 }
 
-.submit-btn-sale input[type="submit"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: $skin;
-  font-size: 14px;
-}
-.submit-btn-sale input[type="submit"]::-moz-placeholder { /* Firefox 19+ */
-  color: $skin;
-  font-size: 14px;
-}
-.submit-btn-sale input[type="submit"]:-ms-input-placeholder { /* IE 10+ */
-  color: $skin;
-  font-size: 14px;
-}
-.submit-btn-sale input[type="submit"]:-moz-placeholder { /* Firefox 18- */
-  color: $skin;
-  font-size: 14px;
-}
-
 .sale_back_btn {
   display: flex;
   justify-content: center;

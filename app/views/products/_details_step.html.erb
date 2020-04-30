@@ -1,36 +1,37 @@
-        <div class="form_title">
-          <h3><br>STEP 2/3</h3>
+        <div class="form_title" id="title_step2">
+          <h4><br>STEP 2/3</h4>
         </div>
 
-        <div class="title_styling"></div>
-        <div class="orange_line_title"></div>
-        <div class="form_content">
+        <div class="title_styling" id="title_styling_step2"></div>
+        <div class="orange_line_title" id="line_title_step2"></div>
+        <div class="form_content" id="content_step2">
 
           <div class="form_data_step2">
             <% cat_id = @product.category_id %>
             <% selected_category = Category.find(cat_id) %>
             <% sub_cat = selected_category.sub_categories %>
 
-            <%= f.label :sub_category %>
+            Sub Category*
             <%= f.collection_select :sub_category_id, sub_cat.order(:created_at), :id, :name, {prompt: 'Choose a Sub Category'} %>
           </div>
 
           <div class="form_description">
-            <%= f.label :description, 'Product Description*' %>
-            <%= f.text_area :description, placeholder: "Tell us everything you know about your item’s past life!
-<br>fWe need to know its default(s) as well!" %>
+            Product Description*
+            <%= f.text_area :description, placeholder: "Tell us everything you know about your item’s past life!\nWe need to know its default(s) as well!\n" %>
           </div>
 
           <div class="form_data_step2">
-            Product Location*
+            Product Location**
             <div class="location_draft">
-              Only visible after trasaction, don't worry ;)
+              Only visible after transaction, don't worry ;)
             </div>
           </div>
 
           <div class="form_price">
-            <%= f.label :price, 'Price*' %>
-            <%= f.number_field :price %>
+            <div class="price_label">
+              Price*
+            </div>
+            <%= f.number_field :price, placeholder: '€' %>€
           </div>
 
         </div>

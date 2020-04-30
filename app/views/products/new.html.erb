@@ -12,11 +12,19 @@
   </div>
 
   <div class="step_show">
-    <div class="step_card"><em>1</em></div>
-    <div class="sep_line"></div>
-    <div class="step_card"><em>2</em></div>
-    <div class="sep_line"></div>
-    <div class="step_card"><em>3</em></div>
+    <% if @product.last_step? %>
+      <div class="step_card"><em>1</em></div>
+      <div class="sep_line"></div>
+      <div class="step_card_focus"><em>2</em></div>
+      <div class="sep_line"></div>
+      <div class="step_card"><em>3</em></div>
+    <% else %>
+      <div class="step_card_focus"><em>1</em></div>
+      <div class="sep_line"></div>
+      <div class="step_card"><em>2</em></div>
+      <div class="sep_line"></div>
+      <div class="step_card"><em>3</em></div>
+    <% end %>
   </div>
   <div class="sale_card">
     <%= form_for @product, url: create_new_product_path do |f| %>
