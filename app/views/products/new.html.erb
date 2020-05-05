@@ -1,58 +1,69 @@
-<%#= render 'categories/banner' %>
-<!-- <div class="app-container">
-  <h1>Products#new</h1>
-  <p>Find me in app/views/products/new.html.erb</p>
-    <div>
-      <h2>To sell a Product</h2>
-      <p>It's quick and easy.</p>
-    </div>
-    <%#= form_for @product, url: create_new_product_path do |f| %>
-      <div class="form-styling">
-        <%#= render "#{@product.current_step}_step", :f => f  %>
-        <div class="bottom-signup">
-          <%#= f.submit "Continue" unless @product.last_step? %>
-          <%#= f.submit "Submit Product" if @product.last_step? input_html: { confirm: "Are you Sure about Creating #{@product.name}?" } %>
-          <%#= f.submit "Back", :name => "back_button" unless @product.first_step? %>
-        </div>
-      </div>
-    <%# end %>
-    <%#= link_to "Exit", newest_products_path %>
-    <%##= link_to "New Product", new_product_path(@product.session[:product_params]) %>
-</div> -->
 
-<%= render 'categories/banner' %>
-<div class="app-container">
-  <h1>Products#new</h1>
-  <p>Find me in app/views/products/new.html.erb</p>
-    <div>
-      <h2>To sell a Product</h2>
-      <p>It's quick and easy.</p>
-    </div>
+<div class="container_sale">
+  <div class="bg_landing">
+    <%= image_tag("login/LandingBG.jpg", alt: "alttext") %>
+    <div class="bg_dark_sale"></div>
+  </div>
+
+  <div class="exit_sales_btn">
+    <%= link_to newest_products_path do %>
+      <i class="far fa-times-circle"></i>
+    <% end %>
+  </div>
+
+  <div class="step_show">
+    <% if @product.last_step? %>
+      <div class="step_card"><em>1</em></div>
+      <div class="sep_line"></div>
+      <div class="step_card_focus"><em>2</em></div>
+      <div class="sep_line"></div>
+      <div class="step_card"><em>3</em></div>
+    <% else %>
+      <div class="step_card_focus"><em>1</em></div>
+      <div class="sep_line"></div>
+      <div class="step_card"><em>2</em></div>
+      <div class="sep_line"></div>
+      <div class="step_card"><em>3</em></div>
+    <% end %>
+  </div>
+  <div class="sale_card">
     <%= form_for @product, url: create_new_product_path do |f| %>
-      <% if @product.errors.any? %>
-        <% @product.errors.full_messages.each do |error_message| %>
-          <ul>
-            <li><%= error_message %></li>
-          </ul>
-        <% end %>
-      <% end %>
-      <div class="form-styling">
-        <%= render "#{@product.current_step}_step", :f => f  %>
-        <div class="bottom-signup">
+      <%# if @product.errors.any? %>
+        <%# @product.errors.full_messages.each do |error_message| %>
+          <!-- <ul>
+            <li><%#= error_message %></li>
+          </ul> -->
+        <%# end %>
+      <%# end %>
+      <div class="form-sale">
+        <div class="sale_content">
+          <%= render "#{@product.current_step}_step", :f => f  %>
+        </div>
+        <div class="submit_sale">
+          <div class="orange_line_bottom"></div>
           <% if @product.last_step? %>
+            <%= f.submit "Back", :name => "back_button", :class => 'sale_back_btn' %>
               <% category_id = @product.category_id %>
               <% category = Category.find(category_id) %>
               <% category.name %>
-            <%= f.submit "Submit Product", data: { confirm: "Are you sure that all the data you entered for: #{@product.name} stored in the category: #{category.name} is correct? Have a second look just in case 😉" } %>
-            <%= f.submit "Back", :name => "back_button" unless @product.first_step? %>
+            <div class="sale_bottom_link">
+              <div class="submit-btn-sale">
+                <%= f.submit "Submit Product", data: { confirm: "Are you sure that all the data you entered for: #{@product.name} stored in the category: #{category.name} is correct? Have a second look just in case 😉" } %>
+              </div>
+            </div>
           <% else %>
-            <%= f.submit "Continue" %>
-            <%= f.submit "Back", :name => "back_button" unless @product.first_step? %>
+            <div></div>
+            <%#= f.submit "Back", :name => "back_button", :class => 'sale_back_btn' unless @product.first_step? %>
+            <div class="sale_bottom_link">
+              <div class="submit-btn-sale">
+                <%= f.submit "Next Step" %>
+              </div>
+            </div>
           <% end %>
         </div>
       </div>
     <% end %>
-    <%= link_to "Exit", newest_products_path %>
     <%#= link_to "New Product", new_product_path(@product.session[:product_params]) %>
+  </div>
 </div>
 

@@ -11,10 +11,12 @@
   background: $bright;
 
   box-shadow: 2px 0px 7px rgba(0, 0, 0, 0.15);
+
+  z-index: 3000;
 }
 
 .separation_line {
-  height: 1.5px;
+  height: 1px;
   width: 100%;
   background-color: $lightGrey;
 }
