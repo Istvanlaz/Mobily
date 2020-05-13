@@ -13,6 +13,14 @@ class SubCategoryPolicy < ApplicationPolicy
     true
   end
 
+  def newest_sub_category?
+    true
+  end
+
+  def newest_sub_category_show?
+    true
+  end
+
   def create?
     true
   end

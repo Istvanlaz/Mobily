@@ -1,0 +1,20 @@
+<%= render 'categories/banner' %>
+<div class="app-container">
+  <div class="show_container">
+    <h1>You are seeing the NewestProducts#NewestSubCategoryShow of our Newest Products!!</h1>
+
+    <div class="space-btn">
+      <div class="back-btn">
+        <%= link_to "Back", newest_sub_category_path(@category.id, @sub_category.id)%>
+      </div>
+    </div>
+    <p>Name: <%= @product.name %></p>
+    <p>Price: <%= @product.price %>€</p>
+    <% if policy(@product).update? %>
+      <p class=“btn btn-primary”><%= link_to "Edit product", edit_product_path(@product) %></p>
+    <% end %>
+    <% if policy(@product).destroy? %>
+      <p class=“btn btn-primary”><%= link_to "Remove product", delete_product_path(@product), { method: :delete, data: { confirm: "Are you Sure about Deleting #{@product.name}?" } } %></p>
+    <% end %>
+  </div>
+</div>

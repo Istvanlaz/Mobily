@@ -287,6 +287,38 @@ input[class="search-text"]:focus {
   }
 }
 
+.back-btn-small {
+  margin: 5px;
+  display: flex;
+  color: $black;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: fit-content;
+  padding: 0 2%;
+  border: 1px solid $black;
+  border-radius: 25px;
+  &:hover {
+    border: 1px solid $orange;
+  }
+}
+
+.back-btn-small a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: $black;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  &:hover {
+    color: $orange;
+    text-decoration: none;
+  }
+}
+
 .details-btn {
   // margin: 5px;
   display: flex;
