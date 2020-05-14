@@ -31,6 +31,8 @@ Rails.application.routes.draw do
 
   get 'best_deals/products/:id', to: "best_deals#deal_show", as: 'deal_show'
   get 'best_deals/:category_id/products/:id', to: "best_deals#product_deal", as: 'product_deal'
+  get 'best_deals/:category_id/sub_categories/:id', to: "best_deals#deal_sub_category", as: 'deal_sub_category'
+  get 'best_deals/:category_id/sub_categories/:sub_category_id/products/:id', to: "best_deals#deal_sub_category_show", as: 'deal_sub_category_show'
   get 'newest_products/products/:id', to: "newest_products#newest_show", as: 'newest_show'
   get 'newest_products/:category_id/products/:id', to: "newest_products#product_show", as: 'product_show'
   get 'newest_products/:category_id/sub_categories/:id', to: "newest_products#newest_sub_category", as: 'newest_sub_category'

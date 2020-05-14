@@ -25,6 +25,22 @@ class BestDealsController < ApplicationController
     authorize @category = Category.find(params[:category_id])
   end
 
+  def deal_sub_category
+    @categories = policy_scope(Category)
+    @products = policy_scope(Product)
+    # @categories = policy_scope(Category)
+    authorize @product = Product.find(params[:id])
+    authorize @category = Category.find(params[:category_id])
+    authorize @sub_category = SubCategory.find(params[:id])
+  end
+
+  def deal_sub_category_show
+    @categories = policy_scope(Category)
+    authorize @product = Product.find(params[:id])
+    authorize @category = Category.find(params[:category_id])
+    authorize @sub_category = SubCategory.find(params[:sub_category_id])
+  end
+
   private
 
   def product_params

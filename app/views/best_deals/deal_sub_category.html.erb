@@ -1,6 +1,5 @@
 <%= render 'categories/banner' %>
 <div class="app-container">
-
   <div class="sub-c-banner">
     <div class="back-btn">
       <%= link_to "All", best_deals_path %>
@@ -18,9 +17,9 @@
       <%= link_to "#{@category.name}", best_deal_path(@category) %>
     </div>
     <!-- <%# cat_id = @product.category_id %> -->
-    <% selected_category = Category.find(@category.id) %>
-    <% sub_cat = selected_category.sub_categories %>
-    <% sub_cat.each do |sub_category| %>
+    <% @selected_category = Category.find(@category.id) %>
+    <% @sub_cat = @selected_category.sub_categories %>
+    <% @sub_cat.each do |sub_category| %>
       <%= link_to "#{sub_category.name}", deal_sub_category_path(@category, sub_category) %>
     <% end %>
     <div class="back-btn-small">
@@ -29,13 +28,14 @@
   </div>
 
   <div class="products-grid">
-    <% @sorted_products = @products.sort_by{|product| product.price } %>
+    <% @selected_sub_cat = @selected_category.sub_categories.find(@sub_category.id) %>
+    <% @sorted_products = @selected_sub_cat.products.sort_by{|product| product.price } %>
     <% @sorted_products.each do |product| %>
       <div class="product_linker">
         <div class="product_img">
           <img src="https://www.fillmurray.com/200/300" alt="product_description">
         </div>
-        <%= link_to product_deal_path(@category, product) do %>
+        <%= link_to deal_sub_category_show_path(@category, @sub_category, product) do %>
           <div class="product_card">
             <div class="hover_dark"></div>
             <div class="info_card">
@@ -65,5 +65,4 @@
       </div>
     <% end %>
   </div>
-
 </div>
