@@ -14,7 +14,7 @@
     <%= render 'shared/flashes' %>
     <% if user_signed_in? %>
       <%= render 'shared/navbar_main' %>
-      <%#= render 'shared/categories' %>
+      <%= render 'categories/banner' %>
       <%#= render partial: 'categories/index', locals: { sub_categories: category.sub_categories, delete_path: Proc.new{|product| category_sub_category_path(product) } } %>
     <% else %>
       <%= render 'shared/navbar_landing' %>

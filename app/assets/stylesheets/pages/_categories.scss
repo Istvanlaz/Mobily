@@ -15,6 +15,22 @@
   z-index: 3000;
 }
 
+.categories-banner ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  height: 100%;
+  margin: unset;
+  list-style: none;
+  padding-left: 0;
+}
+
+.cat-active {
+  color: $orange;
+  font-weight: 500;
+}
+
 .separation_line {
   height: 1px;
   width: 100%;

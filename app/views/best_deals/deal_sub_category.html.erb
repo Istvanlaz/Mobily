@@ -1,4 +1,4 @@
-<%= render 'categories/banner' %>
+<%#= render 'categories/banner' %>
 <div class="app-container">
   <div class="sub-c-banner">
     <div class="back-btn">
@@ -33,7 +33,7 @@
     <% @sorted_products.each do |product| %>
       <div class="product_linker">
         <div class="product_img">
-          <img src="https://www.fillmurray.com/200/300" alt="product_description">
+          <img src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80" alt="product_description">
         </div>
         <%= link_to deal_sub_category_show_path(@category, @sub_category, product) do %>
           <div class="product_card">
