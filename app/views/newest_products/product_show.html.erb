@@ -17,4 +17,5 @@
       <p class=“btn btn-primary”><%= link_to "Remove product", delete_product_path(@product), { method: :delete, data: { confirm: "Are you Sure about Deleting #{@product.name}?" } } %></p>
     <% end %>
   </div>
+  <%= render 'shared/footer' %>
 </div>

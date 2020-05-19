@@ -13,14 +13,16 @@
       <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </li>
     <div class="separation_line"></div>
-    <li class="category-card <%= active_banner(newest_products_path) %>">
+    <!-- <li class="category-card <%#= active_banner(newest_products_path) %> <%#= active_banner(newest_product_path(@category)) %>"> -->
+    <!-- <li class="category-card <%#= active_banner(newest_products_path) %>"> -->
+    <li class="category-card <%= active_banner(NewestProductsController) %>">
       <%= link_to "New", newest_products_path %>
     </li>
-    <li class="category-card <%= active_banner(best_deals_path) %>" id="best_deal_card">
+    <li class="category-card <%= active_banner(BestDealsController) %>" id="best_deal_card">
       <%= link_to "Best Deals", best_deals_path %>
     </li>
     <% @categories.each do |category| %>
-      <li class="category-card <%= active_banner(category_products_path(category)) %>">
+      <li class="category-card <%= active_category_search(category.id) %>">
         <%= link_to "#{category.name}", category_products_path(category), method: :get%>
       </li>
     <% end %>

@@ -296,7 +296,7 @@ input[class="search-text"]:focus {
   align-items: center;
   height: 30px;
   width: fit-content;
-  padding: 0 2%;
+  // padding: 0 2%;
   border: 1px solid $black;
   border-radius: 25px;
   &:hover {
@@ -312,6 +312,7 @@ input[class="search-text"]:focus {
   color: $black;
   height: 100%;
   width: 100%;
+  padding: 0px 12px;
   text-decoration: none;
   &:hover {
     color: $orange;

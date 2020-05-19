@@ -6,7 +6,9 @@
       <%= link_to "All", best_deals_path %>
     </div>
     <% @categories.each do |category| %>
-      <%= link_to "#{category.name}", best_deal_path(category) %>
+      <div class="<%= active_cat("best_deals", category.id) %>">
+        <%= link_to "#{category.name}", best_deal_path(category) %>
+      </div>
     <% end %>
     <div class="back-btn">
       <%= link_to "Get Lucky!", '#' %>
@@ -65,5 +67,5 @@
       </div>
     <% end %>
   </div>
-
+  <%= render 'shared/footer' %>
 </div>
