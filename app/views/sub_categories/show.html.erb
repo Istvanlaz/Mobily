@@ -1,4 +1,4 @@
-<%= render 'categories/banner' %>
+<%#= render 'categories/banner' %>
 <div class="app-container">
 
   <div class="sub-c-banner">
@@ -6,7 +6,9 @@
       <%= link_to "All", category_products_path(@category, @product) %>
     </div>
     <% @sub_categories.each do |sub_category| %>
-      <%= link_to "#{sub_category.name}", category_sub_category_path(@category, sub_category) %>
+      <div class="<%= active_sub_cat(category_sub_category_path(@category, sub_category)) %>">
+        <%= link_to "#{sub_category.name}", category_sub_category_path(@category, sub_category) %>
+      </div>
     <% end %>
     <div class="back-btn">
       <%= link_to "Get Lucky!", '#' %>
@@ -17,7 +19,7 @@
     <% @products.each do |product| %>
       <div class="product_linker">
         <div class="product_img">
-          <img src="https://www.fillmurray.com/200/300" alt="product_description">
+          <img src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80" alt="product_description">
         </div>
         <%= link_to category_product_path(@category, product) do %>
           <div class="product_card">
@@ -49,5 +51,5 @@
       </div>
     <% end %>
   </div>
-
+  <%= render 'shared/footer' %>
 </div>

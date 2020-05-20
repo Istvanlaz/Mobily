@@ -1,11 +1,11 @@
 <%#= render 'categories/banner' %>
 <div class="app-container">
   <div class="show_container">
-    <h1>Products#show</h1>
-    <p>Find me in app/views/products/show.html.erb</p>
+    <h1>You are seeing the BestDeals#DealSubCategoryShow of our Best Deals!!</h1>
+
     <div class="space-btn">
       <div class="back-btn">
-        <%= link_to "Back", category_products_path(@category)%>
+        <%= link_to "Back", deal_sub_category_path(@category.id, @sub_category.id)%>
       </div>
     </div>
     <p>Name: <%= @product.name %></p>

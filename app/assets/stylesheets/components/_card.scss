@@ -26,6 +26,13 @@
   }
 }
 
+.link-active {
+  color: $orange;
+  font-weight: 500;
+  background-color: rgba(0,0,0,0.03);
+  // box-shadow: 0 0 4px rgba(0,0,0,0.15);
+}
+
 .category-card img {
   border: $black 1px solid;
 }
@@ -69,6 +76,10 @@
 
 #username_card {
   padding-left: 3.7vw;
+}
+
+#username_card a {
+  padding-left: 57px;
 }
 
 #best_deal_card a {
@@ -125,7 +136,7 @@
   object-fit: cover;
   height: 100%;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 6px;
 
   z-index: 1;
 }
