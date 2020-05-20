@@ -22,7 +22,7 @@
       <%= link_to "Best Deals", best_deals_path %>
     </li>
     <% @categories.each do |category| %>
-      <li class="category-card <%= active_category_search(category.id) %>">
+      <li class="category-card <%= active_category_banner(category.id) %>">
         <%= link_to "#{category.name}", category_products_path(category), method: :get%>
       </li>
     <% end %>

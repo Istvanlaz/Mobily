@@ -6,7 +6,7 @@
       <%= link_to "All", newest_products_path %>
     </div>
     <% @categories.each do |category| %>
-      <div class="<%= active_cat("newest_products", category.id) %>">
+      <div class="<%= active_on_page_category("newest_products", category.id) %>">
         <%= link_to "#{category.name}", newest_product_path(category) %>
       </div>
     <% end %>

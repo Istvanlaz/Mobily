@@ -5,7 +5,7 @@
       <%= link_to "All", newest_products_path %>
     </div>
     <% @categories.each do |category| %>
-      <div class="<%= active_cat("newest_products", category.id) %>">
+      <div class="<%= active_on_page_category("newest_products", category.id) %>">
         <%= link_to "#{category.name}", newest_product_path(category) %>
       </div>
     <% end %>
@@ -16,9 +16,7 @@
 
   <div class="sub-c-banner-small">
     <div class="back-btn-small">
-      <div class="<%= active_sub_cat(newest_product_path(@category)) %>">
-        <%= link_to "#{@category.name}", newest_product_path(@category) %>
-      </div>
+      <%= link_to "#{@category.name}", newest_product_path(@category) %>
     </div>
     <!-- <%# cat_id = @product.category_id %> -->
     <% @selected_category = Category.find(@category.id) %>
