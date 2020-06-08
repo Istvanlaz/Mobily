@@ -85,6 +85,18 @@
   z-index: 3;
 }
 
+.edit_card {
+  position: relative;
+
+  width: 35vw;
+  height: 75vh;
+  background-color: $bright;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  z-index: 3;
+}
+
 .sale_content {
   height: 50vh;
 
@@ -111,6 +123,10 @@
   height: 20%
 }
 
+#title_edit {
+  height: 20%;
+}
+
 .form_title h4 {
   font-weight: 300;
   width: 100%;
@@ -132,6 +148,33 @@
   top: 9%
 }
 
+.edit_title_styling {
+  position: absolute;
+  top: 6%;
+  left: 20%;
+
+  height: 10%;
+  width: 60%;
+  background-color: $bright;
+
+  z-index: 2;
+}
+
+.form_concat_edit {
+  display: flex;
+  justify-content: space-between;
+
+  width: 90%;
+}
+
+.form_data_edit {
+  display: flex;
+  flex-direction: column;
+
+  // height: 33%;
+  width: 47%;
+}
+
 .orange_line_title {
   position: absolute;
   top: 13%;
@@ -147,6 +190,10 @@
   top: 11%;
 }
 
+#line_title_edit {
+  top: 12%;
+}
+
 .form_content {
   display: flex;
   flex-direction: column;
@@ -154,6 +201,10 @@
   justify-content: space-evenly;
 
   height: 75%;
+}
+
+#edit_form_content {
+  height: 100%;
 }
 
 #content_step2 {

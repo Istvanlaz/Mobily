@@ -45,7 +45,6 @@ class NewestProductsController < ApplicationController
   def destroy
     authorize @product = Product.find(params[:id])
     authorize @category = Category.find(params[:category_id])
-    # binding.pry
     @product.destroy
     redirect_to category_products_path, notice: "#{@product.name} was successfully removed from the marketplace."
   end

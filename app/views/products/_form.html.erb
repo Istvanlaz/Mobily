@@ -1,25 +1,69 @@
 <%= form_for @product, url: edit_product_path do |f| %>
-  <div class="form-styling">
-    <div>
-      <%= f.label :name %>
-      <%= f.text_field :name, required: true, placeholder: "Enter product name" %>
 
-      <%= f.label :price %>
-      <%= f.number_field :price, required: true %>
-    </div>
-    <div>
-      <%= f.label :description %>
-      <%= f.text_field :description %>
-    </div>
-    <div>
-      <%= f.label :category %>
-      <%= f.collection_select :category_id, Category.order(:name), :id, :name, {prompt: 'Select a Category'}, required: true %>
+  <div class="form-sale">
 
-      <%= f.label :sub_category %>
-      <%= f.collection_select :sub_category_id, SubCategory.order(:name), :id, :name, {prompt: 'Select a Sub Category'}, required: true %>
+    <div class="sale_content">
+
+      <div class="form_content" id="edit_form_content">
+
+        <div class="form_concat_edit">
+          <div class="form_data_edit">
+            <%= f.label :name, 'Name of the product*' %>
+            <%= f.text_field :name, required: true, placeholder: "Name" %>
+          </div>
+          <div class="form_data_edit">
+            <%= f.label :price, 'Price*' %>
+            <%= f.number_field :price, placeholder: '€' %>
+          </div>
+        </div>
+
+        <div class="form_description">
+          Product Description*
+          <%= f.text_area :description, placeholder: "Tell us everything you know about your item’s past life!\nWe need to know its default(s) as well!\n" %>
+        </div>
+
+        <div class="form_data_step2">
+          Product Location**
+          <div class="location_draft">
+            Only visible after transaction, don't worry ;)
+          </div>
+        </div>
+
+        <div class="form_concat_edit">
+          <div class="form_data_edit">
+            <%= f.label :category, 'Category*' %>
+                <%= f.collection_select :category_id, Category.order(:name), :id, :name, {prompt: 'Choose a Category'}, required: true %>
+          </div>
+          <div class="form_data_edit">
+            <% cat_id = @product.category_id %>
+              <% selected_category = Category.find(cat_id) %>
+              <% sub_cat = selected_category.sub_categories %>
+
+              Sub Category*
+              <%= f.collection_select :sub_category_id, sub_cat.order(:created_at), :id, :name, {prompt: 'Choose a Sub Category'} %>
+          </div>
+        </div>
+
+        <div class="form_data_step1">
+          Add a Picture**
+          <div class="new_pic_card">
+            +
+          </div>
+        </div>
+
+      </div>
+
     </div>
-    <div class="bottom-signup">
-      <%= f.submit %>
+
+    <div class="submit_sale">
+      <div class="orange_line_bottom"></div>
+      <div class="sale_bottom_link">
+        <div class="submit-btn-sale">
+          <%= f.submit %>
+        </div>
+      </div>
     </div>
+
   </div>
+
 <% end %>

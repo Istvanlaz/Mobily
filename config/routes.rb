@@ -20,9 +20,9 @@ Rails.application.routes.draw do
   get 'products/edit/:id', to: 'products#edit', as: 'edit_product'
   get 'products/new', to: 'products#new', as: 'new_product'
   post 'products', to: 'products#create', as: 'create_new_product'
+  # post 'products', to: 'products#update', as: 'update_product'
   patch 'products/edit/:id', to: 'products#update', as: 'update_product'
   delete 'products/destroy/:id', to: 'products#destroy', as: 'delete_product'
-  # resources :product_uploads, only: :new
 
   resources :categories, only: [:index, :show, :new, :edit, :destroy] do
     resources :sub_categories, only: [:index, :show, :new, :edit, :destroy]
@@ -37,15 +37,12 @@ Rails.application.routes.draw do
   get 'newest_products/:category_id/products/:id', to: "newest_products#product_show", as: 'product_show'
   get 'newest_products/:category_id/sub_categories/:id', to: "newest_products#newest_sub_category", as: 'newest_sub_category'
   get 'newest_products/:category_id/sub_categories/:sub_category_id/products/:id', to: "newest_products#newest_sub_category_show", as: 'newest_sub_category_show'
-  # get 'newest_products/:category_id/products/:id', to: "newest_products#product_show", as: 'product_show'
 
-  # get 'newest_products/new', to: "newest_products#new", as: 'sell_product'
   resources :best_deals, only: [:index, :show, :destroy]
   resources :newest_products, only: [:index, :show, :destroy]
 
   resources :shopingcarts, only: [:index, :show, :new, :edit, :destroy]
   resources :wishlists, only: [:index, :show, :new, :edit, :destroy]
-  # resources :products, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
