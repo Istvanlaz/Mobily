@@ -7,7 +7,12 @@
         <div class="form_content" id="content_step2">
 
           <div class="form_data_step2">
-            <% cat_id = @product.category_id %>
+            <%# cat_id = @product.category_id %>
+            <%# selected_category = Category.find(cat_id) %>
+            <%# sub_cat = selected_category.sub_categories %>
+
+            <% hash = session[:product_params] %>
+            <% cat_id = hash["category_id"] %>
             <% selected_category = Category.find(cat_id) %>
             <% sub_cat = selected_category.sub_categories %>
 

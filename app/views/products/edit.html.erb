@@ -39,12 +39,17 @@
           <div class="orange_line_bottom"></div>
           <% if @product.last_step? %>
             <%= f.submit "Back", :name => "back_button", :class => 'sale_back_btn' %>
-              <% category_id = @product.category_id %>
-              <% category = Category.find(category_id) %>
-              <% category.name %>
+              <%# category_id = @product.category_id %>
+              <%# category = Category.find(category_id) %>
+              <%# category.name %>
+              <% hash_stored = session[:product_params] %>
+              <% targeted_cat = hash_stored["category_id"] %>
+              <% product_name = hash_stored["name"] %>
+              <% selected_category = Category.find(targeted_cat) %>
+              <% cat_name = selected_category.name %>
             <div class="sale_bottom_link">
               <div class="submit-btn-sale">
-                <%= f.submit "Submit Product", data: { confirm: "Are you sure that all the data you entered for: #{@product.name} stored in the category: #{category.name} is correct? Have a second look just in case 😉" } %>
+                <%= f.submit "Submit Product", data: { confirm: "Are you sure that all the data you entered for: #{product_name} stored in the category: #{cat_name} is correct? Have a second look just in case 😉" } %>
               </div>
             </div>
           <% else %>

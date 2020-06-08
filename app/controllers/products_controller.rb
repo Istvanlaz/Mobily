@@ -4,8 +4,6 @@ class ProductsController < ApplicationController
   before_action :set_category, only: [:index, :show]
 
   def index
-    # @products = Product.all
-    # @products = policy_scope(Product)
     @categories = policy_scope(Category)
     @products = policy_scope(@category.products).order(created_at: :desc)
     @sub_categories = policy_scope(@category.sub_categories).order(created_at: :asc)
@@ -14,7 +12,6 @@ class ProductsController < ApplicationController
   def show
     @categories = policy_scope(Category)
     authorize @product = Product.find(params[:id])
-    # authorize @product
   end
 
   def new
@@ -36,7 +33,6 @@ class ProductsController < ApplicationController
     elsif @product.valid?
       if @product.last_step?
         @product.user = current_user
-        # binding.pry
         if @product.all_valid?
           @product.save!
         end
@@ -53,13 +49,9 @@ class ProductsController < ApplicationController
       flash[:notice] = "#{@product.name} was successfully added to the Marketplace"
       redirect_to product_show_path(@product.category.id, @product)
     end
-
-    # authorize @category = Category.find(params[:category_id])
   end
 
   def edit
-    # @categories = policy_scope(Category)
-    # authorize @product = Product.find(params[:id])
     @categories = policy_scope(Category)
     session[:product_params] ||= {}
     authorize @product = Product.find(params[:id])
@@ -68,15 +60,6 @@ class ProductsController < ApplicationController
   end
 
   def update
-    # authorize @product = Product.find(params[:id])
-    # if @product.update(params_product)
-    #   redirect_to newest_show_path(@product), notice: "Product has been successfully updated"
-    # else
-    #   # @product.errors
-    #   render :edit
-    # end
-    # @categories = policy_scope(Category)
-
     @categories = policy_scope(Category)
 
     authorize @product = Product.find(params[:id])
@@ -89,38 +72,22 @@ class ProductsController < ApplicationController
     elsif @product.valid?
       if @product.last_step?
         # @product.user = current_user
-        # binding.pry
         if @product.update(session[:product_params])
           # @product.save!
           flash[:notice] = "#{@product.name} was successfully updated within our Database"
+          session[:step_product] = session[:product_params] = nil
           redirect_to product_show_path(@product.category.id, @product)
         end
       else
-
         @product.next_step
+        session[:step_product] = @product.current_step
         redirect_to update_product_path(@product)
       end
     end
-      session[:step_product] = @product.current_step
-
-    if @product.new_record?
-      return render :edit
-    else
-      session[:step_product] = session[:product_params] = nil
-    end
-    # if @product.new_record?
-    #   return render :edit
-    # else
-    #   session[:step_product] = session[:product_params] = nil
-    #   flash[:notice] = "#{@product.name} was successfully added to the Marketplace"
-    #   redirect_to product_show_path(@product.category.id, @product)
-    # end
-
   end
 
   def destroy
     authorize @product = Product.find(params[:id])
-    # binding.pry
     @product.destroy
     redirect_to newest_products_path, notice: "#{@product.name} was successfully removed from the marketplace."
   end
