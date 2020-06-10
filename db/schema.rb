@@ -10,12 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_10_150414) do
+ActiveRecord::Schema.define(version: 2020_06_10_123704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "best_deals", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,7 +31,25 @@ ActiveRecord::Schema.define(version: 2020_04_10_150414) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "line_items", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "cart_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "quantity", default: 1
+    t.integer "order_id"
+  end
+
   create_table "newest_products", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "name"
+    t.text "address"
+    t.string "email"
+    t.string "pay_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -45,13 +68,6 @@ ActiveRecord::Schema.define(version: 2020_04_10_150414) do
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["sub_category_id"], name: "index_products_on_sub_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
-  end
-
-  create_table "shoping_carts", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "sub_categories", force: :cascade do |t|
