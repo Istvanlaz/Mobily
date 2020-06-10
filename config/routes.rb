@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :orders
+  resources :line_items
+  resources :carts
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
