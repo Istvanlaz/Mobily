@@ -20,7 +20,8 @@
     <% @sorted_products.each do |product| %>
       <div class="product_linker">
         <div class="product_img">
-          <%= cl_image_tag("xt7scyr9qqoefeporkf7") %>
+          <%= cl_image_tag product.image.key %>
+          <%#= cl_image_tag("xt7scyr9qqoefeporkf7") %>
         </div>
         <%= link_to deal_show_path(product) do %>
           <div class="product_card">

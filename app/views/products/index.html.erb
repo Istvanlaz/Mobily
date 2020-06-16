@@ -17,7 +17,7 @@
     <% @products.each do |product| %>
       <div class="product_linker">
         <div class="product_img">
-          <%= cl_image_tag("xt7scyr9qqoefeporkf7") %>
+          <%= cl_image_tag product.image.key %>
         </div>
         <%= link_to category_product_path(@category, product) do %>
           <div class="product_card">

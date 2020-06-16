@@ -30,9 +30,9 @@ class NewestProductsController < ApplicationController
     @categories = policy_scope(Category)
     @products = policy_scope(Product)
     # @categories = policy_scope(Category)
-    authorize @product = Product.find(params[:id])
     authorize @category = Category.find(params[:category_id])
-    authorize @sub_category = SubCategory.find(params[:id])
+    authorize @sub_category = SubCategory.find(params[:sub_category_id])
+    authorize @product = Product.find(params[:id])
   end
 
   def newest_sub_category_show
