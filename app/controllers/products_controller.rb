@@ -113,7 +113,7 @@ class ProductsController < ApplicationController
 
   def edit
     @categories = policy_scope(Category)
-    session[:product_params] ||= {}
+    session[:params_product] ||= {}
     authorize @product = Product.find(params[:id])
     @product.current_step = session[:step_product]
     @product.user = current_user
@@ -123,22 +123,69 @@ class ProductsController < ApplicationController
     @categories = policy_scope(Category)
 
     authorize @product = Product.find(params[:id])
-    session[:product_params].deep_merge!(product_params) if product_params
+    session[:params_product].deep_merge!(product_params) if product_params
     @product.current_step = session[:step_product]
-    # @product.update(session[:product_params])
+    # @product.update(session[:params_product])
     if params[:back_button]
       @product.previous_step
       redirect_to update_product_path(@product)
     elsif @product.valid?
       if @product.last_step?
-        # @product.user = current_user
-        if @product.update(session[:product_params])
-          # @product.save!
-          flash[:notice] = "#{@product.name} was successfully updated within our Database"
-          session[:step_product] = session[:product_params] = nil
-          redirect_to product_show_path(@product.category.id, @product)
+        # unless session[:url_image].nil?
+        #   edit_file = URI.open(session[:url_image])
+        #   edit_content = session[:content_image]
+        #   edit_file_name = session[:info_image]
+        #   @product.image.attach(io: edit_file, filename: edit_file_name, content_type: edit_content, options = {overwrite: true} )
+        # end
+        # if @product.all_valid?
+        # # if @product.update(session[:params_product])
+        #   @product.update(session[:params_product])
+        #   flash[:notice] = "#{@product.name} was successfully updated within our Database"
+        #   session[:step_product] = session[:params_product] = session[:url_image] = session[:info_image] = session[:content_image] = nil
+        #   redirect_to product_show_path(@product.category.id, @product)
+        # end
+        if session[:url_image].nil?
+          if @product.all_valid?
+          # if @product.update(session[:params_product])
+            @product.update(session[:params_product])
+            session[:step_product] = session[:params_product] = session[:url_image] = session[:info_image] = session[:content_image] = nil
+            flash[:notice] = "#{@product.name} was successfully updated within our Database"
+            redirect_to product_show_path(@product.category.id, @product)
+          end
+        else
+          binding.pry
+            edit_file = URI.open(session[:url_image])
+            edit_content = session[:content_image]
+            edit_file_name = session[:info_image]
+            session[:params_product].deep_merge!(product_params) if product_params
+            @product.image.attach(io: edit_file, filename: edit_file_name, content_type: edit_content)
+          if @product.all_valid?
+            @product.update(product_params)
+            session[:step_product] = session[:params_product] = session[:url_image] = session[:info_image] = session[:content_image] = nil
+            flash[:notice] = "#{@product.name} was successfully updated within our Database"
+            redirect_to product_show_path(@product.category.id, @product)
+          end
         end
+        # if @product.all_valid?
+        # # if @product.update(session[:params_product])
+        #   @product.update(session[:params_product])
+        #   flash[:notice] = "#{@product.name} was successfully updated within our Database"
+        #   session[:step_product] = session[:params_product] = session[:url_image] = session[:info_image] = session[:content_image] = nil
+        #   redirect_to product_show_path(@product.category.id, @product)
+        # end
       else
+        data_hash = session[:params_product]
+        @url_image = data_hash["image"]
+        unless data_hash["image"].nil?
+          edit_file = URI.open(@url_image)
+
+          @product.image.attach(io: edit_file, filename: @url_image.original_filename, content_type: @url_image.content_type)
+          session[:url_image] = Cloudinary::Utils.cloudinary_url @product.image.key
+          session[:info_image] = @url_image.original_filename
+          session[:content_image] = @url_image.content_type
+          session[:params_product]["image"] = nil
+        end
+
         @product.next_step
         session[:step_product] = @product.current_step
         redirect_to update_product_path(@product)

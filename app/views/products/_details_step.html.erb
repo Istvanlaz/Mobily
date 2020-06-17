@@ -11,6 +11,15 @@
             <%# selected_category = Category.find(cat_id) %>
             <%# sub_cat = selected_category.sub_categories %>
 
+          <% if session[:product_params].nil? %>
+            <% edit_hash = session[:params_product] %>
+            <% edit_cat_id = edit_hash["category_id"] %>
+            <% edit_selected_category = Category.find(edit_cat_id) %>
+            <% edit_sub_cat = edit_selected_category.sub_categories %>
+
+            Sub Category*
+            <%= f.collection_select :sub_category_id, edit_sub_cat.order(:created_at), :id, :name, {prompt: 'Choose a Sub Category'} %>
+          <% else %>
             <% hash = session[:product_params] %>
             <% cat_id = hash["category_id"] %>
             <% selected_category = Category.find(cat_id) %>
@@ -18,6 +27,8 @@
 
             Sub Category*
             <%= f.collection_select :sub_category_id, sub_cat.order(:created_at), :id, :name, {prompt: 'Choose a Sub Category'} %>
+          <% end %>
+
           </div>
 
           <div class="form_description">

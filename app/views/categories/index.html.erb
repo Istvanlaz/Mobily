@@ -1,25 +1,25 @@
 
 <div class="categories-banner">
-  <div class="category-card" id="username_card">
+  <div class="category_card" id="username_card">
     <i class="category_img"><%= image_tag "logo/octocat.png", class: "avatar" %><%= link_to "#{current_user.username}", '#' %></i>
   </div>
-  <div class="category-card" id="heart_wishlist">
+  <div class="category_card" id="heart_wishlist">
     <i class="category_svg"><%= show_svg('icons/heart.svg') %><%= link_to "Wishlist", '#' %></i>
     <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
   </div>
-  <div class="category-card" id="shopping_cart">
+  <div class="category_card" id="shopping_cart">
     <i class="category_svg"><%= show_svg('icons/supermarket.svg') %><%= link_to "Cart", '#' %></i>
     <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
   </div>
   <div class="separation_line"></div>
-  <div class="category-card">
+  <div class="category_card">
     <%= link_to "New", newest_products_path %>
   </div>
-  <div class="category-card" id="best_deal_card">
+  <div class="category_card" id="best_deal_card">
     <%= link_to "Best Deals", best_deals_path %>
   </div>
   <% @categories.each do |category| %>
-    <div class="category-card">
+    <div class="category_card">
       <%= link_to "#{category.name}", category_products_path(category), method: :get%>
     </div>
   <% end %>
