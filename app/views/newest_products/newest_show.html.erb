@@ -7,6 +7,9 @@
       <div class="back-btn">
         <%= link_to "Back", newest_products_path %>
       </div>
+      <div class="back-btn">
+        <%= button_to 'Add to Cart', line_items_path(line_item: {product_id: @product}) %>
+      </div>
     </div>
     <div class="product_show_img_card">
       <%= cl_image_tag @product.image.key %>
