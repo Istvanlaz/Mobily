@@ -5,12 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
 puts 'Cleaning database...'
 
-Product.destroy_all
 Category.destroy_all
 SubCategory.destroy_all
+Product.destroy_all
 # User.destroy_all
+
+puts 'Database cleaned.'
 
 # puts "Creating some useful users..."
 
@@ -348,6 +352,8 @@ product_1 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+armchairs_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716841/qpb4hdq2k5vrlz4fbv83.jpg')
+product_1.image.attach(io: armchairs_pic_1, filename: 'armchairs_pic_1.jpg', content_type: 'image/jpg')
 product_1.save!
 
 product_2 = Product.new( {
@@ -357,6 +363,8 @@ product_2 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+armchairs_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716841/qpb4hdq2k5vrlz4fbv83.jpg')
+product_2.image.attach(io: armchairs_pic_2, filename: 'armchairs_pic_2.jpg', content_type: 'image/jpg')
 product_2.save!
 
 product_3 = Product.new( {
@@ -366,6 +374,8 @@ product_3 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+armchairs_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716841/qpb4hdq2k5vrlz4fbv83.jpg')
+product_3.image.attach(io: armchairs_pic_3, filename: 'armchairs_pic_3.jpg', content_type: 'image/jpg')
 product_3.save!
 
 product_4 = Product.new( {
@@ -375,10 +385,12 @@ product_4 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+armchairs_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716841/qpb4hdq2k5vrlz4fbv83.jpg')
+product_4.image.attach(io: armchairs_pic_4, filename: 'armchairs_pic_4.jpg', content_type: 'image/jpg')
 product_4.save!
 
 
-### for: "Benches"   ID: 2
+# ### for: "Benches"   ID: 2
 
 product_5 = Product.new( {
   name: "Outdoor Bench",
@@ -387,6 +399,8 @@ product_5 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+benches_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716850/dvtugrmos0mksygs69xv.jpg')
+product_5.image.attach(io: benches_pic_1, filename: 'benches_pic_1.jpg', content_type: 'image/jpg')
 product_5.save!
 
 product_6 = Product.new( {
@@ -396,6 +410,8 @@ product_6 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+benches_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716850/dvtugrmos0mksygs69xv.jpg')
+product_6.image.attach(io: benches_pic_2, filename: 'benches_pic_2.jpg', content_type: 'image/jpg')
 product_6.save!
 
 product_7 = Product.new( {
@@ -405,6 +421,8 @@ product_7 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+benches_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716850/dvtugrmos0mksygs69xv.jpg')
+product_7.image.attach(io: benches_pic_3, filename: 'benches_pic_3.jpg', content_type: 'image/jpg')
 product_7.save!
 
 product_8 = Product.new( {
@@ -414,10 +432,12 @@ product_8 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+benches_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716850/dvtugrmos0mksygs69xv.jpg')
+product_8.image.attach(io: benches_pic_4, filename: 'benches_pic_4.jpg', content_type: 'image/jpg')
 product_8.save!
 
 
-### for: "Chairs"   ID: 3
+# ### for: "Chairs"   ID: 3
 
 product_9 = Product.new( {
   name: "Kitchen Chair",
@@ -426,6 +446,8 @@ product_9 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+chairs_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716862/uianpylbscgbokscv8h4.jpg')
+product_9.image.attach(io: chairs_pic_1, filename: 'chairs_pic_1.jpg', content_type: 'image/jpg')
 product_9.save!
 
 product_10 = Product.new( {
@@ -435,6 +457,8 @@ product_10 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+chairs_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716862/uianpylbscgbokscv8h4.jpg')
+product_10.image.attach(io: chairs_pic_2, filename: 'chairs_pic_2.jpg', content_type: 'image/jpg')
 product_10.save!
 
 product_11 = Product.new( {
@@ -444,6 +468,8 @@ product_11 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+chairs_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716862/uianpylbscgbokscv8h4.jpg')
+product_11.image.attach(io: chairs_pic_3, filename: 'chairs_pic_3.jpg', content_type: 'image/jpg')
 product_11.save!
 
 product_12 = Product.new( {
@@ -453,10 +479,12 @@ product_12 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+chairs_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716862/uianpylbscgbokscv8h4.jpg')
+product_12.image.attach(io: chairs_pic_4, filename: 'chairs_pic_4.jpg', content_type: 'image/jpg')
 product_12.save!
 
 
-### for: "Desk Chairs"  ID: 4
+# ### for: "Desk Chairs"  ID: 4
 
 product_13 = Product.new( {
   name: "Black Desk Chair",
@@ -465,6 +493,8 @@ product_13 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+desk_chairs_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716876/j9ljaues28mbd9edmtuh.jpg')
+product_13.image.attach(io: desk_chairs_pic_1, filename: 'desk_chairs_pic_1.jpg', content_type: 'image/jpg')
 product_13.save!
 
 product_14 = Product.new( {
@@ -474,6 +504,8 @@ product_14 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+desk_chairs_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716876/j9ljaues28mbd9edmtuh.jpg')
+product_14.image.attach(io: desk_chairs_pic_2, filename: 'desk_chairs_pic_2.jpg', content_type: 'image/jpg')
 product_14.save!
 
 product_15 = Product.new( {
@@ -483,6 +515,8 @@ product_15 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+desk_chairs_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716876/j9ljaues28mbd9edmtuh.jpg')
+product_15.image.attach(io: desk_chairs_pic_3, filename: 'desk_chairs_pic_3.jpg', content_type: 'image/jpg')
 product_15.save!
 
 product_16 = Product.new( {
@@ -492,10 +526,12 @@ product_16 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+desk_chairs_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716876/j9ljaues28mbd9edmtuh.jpg')
+product_16.image.attach(io: desk_chairs_pic_4, filename: 'desk_chairs_pic_4.jpg', content_type: 'image/jpg')
 product_16.save!
 
 
-### for: "Sofas"  ID: 5
+# ### for: "Sofas"  ID: 5
 
 product_17 = Product.new( {
   name: "Red Sofa",
@@ -504,6 +540,8 @@ product_17 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+sofas_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716816/ww1hlznsqxsgbml0ktsj.jpg')
+product_17.image.attach(io: sofas_pic_1, filename: 'sofas_pic_1.jpg', content_type: 'image/jpg')
 product_17.save!
 
 product_18 = Product.new( {
@@ -513,6 +551,8 @@ product_18 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+sofas_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716816/ww1hlznsqxsgbml0ktsj.jpg')
+product_18.image.attach(io: sofas_pic_2, filename: 'sofas_pic_2.jpg', content_type: 'image/jpg')
 product_18.save!
 
 product_19 = Product.new( {
@@ -522,6 +562,8 @@ product_19 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+sofas_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716816/ww1hlznsqxsgbml0ktsj.jpg')
+product_19.image.attach(io: sofas_pic_3, filename: 'sofas_pic_3.jpg', content_type: 'image/jpg')
 product_19.save!
 
 product_20 = Product.new( {
@@ -531,10 +573,12 @@ product_20 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+sofas_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716816/ww1hlznsqxsgbml0ktsj.jpg')
+product_20.image.attach(io: sofas_pic_4, filename: 'sofas_pic_4.jpg', content_type: 'image/jpg')
 product_20.save!
 
 
-### for: "Others"  ID: 6
+# ### for: "Others"  ID: 6
 
 product_21 = Product.new( {
   name: "Kitchen Stools",
@@ -543,6 +587,8 @@ product_21 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+other_chairs_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716888/ws5fv9crwuj74hcxp0wo.jpg')
+product_21.image.attach(io: other_chairs_pic_1, filename: 'other_chairs_pic_1.jpg', content_type: 'image/jpg')
 product_21.save!
 
 product_22 = Product.new( {
@@ -552,6 +598,8 @@ product_22 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+other_chairs_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716888/ws5fv9crwuj74hcxp0wo.jpg')
+product_22.image.attach(io: other_chairs_pic_2, filename: 'other_chairs_pic_2.jpg', content_type: 'image/jpg')
 product_22.save!
 
 product_23 = Product.new( {
@@ -561,6 +609,8 @@ product_23 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+other_chairs_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716888/ws5fv9crwuj74hcxp0wo.jpg')
+product_23.image.attach(io: other_chairs_pic_3, filename: 'other_chairs_pic_3.jpg', content_type: 'image/jpg')
 product_23.save!
 
 product_24 = Product.new( {
@@ -570,10 +620,13 @@ product_24 = Product.new( {
   category_id: category_1.id
   # user_id: user_1.id
 } )
+other_chairs_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716888/ws5fv9crwuj74hcxp0wo.jpg')
+product_24.image.attach(io: other_chairs_pic_4, filename: 'other_chairs_pic_4.jpg', content_type: 'image/jpg')
 product_24.save!
-#________________________________________________________
 
-## In: LIGHTS
+# #________________________________________________________
+
+# ## In: LIGHTS
 
 
 ### for: "Chandelier"  ID: 7
@@ -585,6 +638,8 @@ product_25 = Product.new( {
   category_id: category_2.id
   # user_id: user_1.id
 } )
+chandeliers_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716901/skhujrdzxcgibdfppxod.jpg')
+product_25.image.attach(io: chandeliers_pic_1, filename: 'chandeliers_pic_1.jpg', content_type: 'image/jpg')
 product_25.save!
 
 product_26 = Product.new( {
@@ -594,6 +649,8 @@ product_26 = Product.new( {
   category_id: category_2.id
   # user_id: user_1.id
 } )
+chandeliers_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716901/skhujrdzxcgibdfppxod.jpg')
+product_26.image.attach(io: chandeliers_pic_2, filename: 'chandeliers_pic_2.jpg', content_type: 'image/jpg')
 product_26.save!
 
 product_27 = Product.new( {
@@ -603,6 +660,8 @@ product_27 = Product.new( {
   category_id: category_2.id
   # user_id: user_1.id
 } )
+chandeliers_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716901/skhujrdzxcgibdfppxod.jpg')
+product_27.image.attach(io: chandeliers_pic_3, filename: 'chandeliers_pic_3.jpg', content_type: 'image/jpg')
 product_27.save!
 
 product_28 = Product.new( {
@@ -612,10 +671,12 @@ product_28 = Product.new( {
   category_id: category_2.id
   # user_id: user_1.id
 } )
+chandeliers_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716901/skhujrdzxcgibdfppxod.jpg')
+product_28.image.attach(io: chandeliers_pic_4, filename: 'chandeliers_pic_4.jpg', content_type: 'image/jpg')
 product_28.save!
 
 
-### for: "Floor Lamps"  ID: 8
+# ### for: "Floor Lamps"  ID: 8
 
 product_29 = Product.new( {
   name: "Black Lamp",
@@ -624,6 +685,8 @@ product_29 = Product.new( {
   category_id: category_2.id
   # user_id: user_1.id
 } )
+floor_lamps_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716915/mznq7fb70il9bvg8qyxs.jpg')
+product_29.image.attach(io: floor_lamps_pic_1, filename: 'floor_lamps_pic_1.jpg', content_type: 'image/jpg')
 product_29.save!
 
 product_30 = Product.new( {
@@ -633,6 +696,8 @@ product_30 = Product.new( {
   category_id: category_2.id
   # user_id: user_1.id
 } )
+floor_lamps_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716915/mznq7fb70il9bvg8qyxs.jpg')
+product_30.image.attach(io: floor_lamps_pic_2, filename: 'floor_lamps_pic_2.jpg', content_type: 'image/jpg')
 product_30.save!
 
 product_31 = Product.new( {
@@ -642,6 +707,8 @@ product_31 = Product.new( {
   category_id: category_2.id
   # user_id: user_1.id
 } )
+floor_lamps_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716915/mznq7fb70il9bvg8qyxs.jpg')
+product_31.image.attach(io: floor_lamps_pic_3, filename: 'floor_lamps_pic_3.jpg', content_type: 'image/jpg')
 product_31.save!
 
 product_32 = Product.new( {
@@ -651,10 +718,12 @@ product_32 = Product.new( {
   category_id: category_2.id
   # user_id: user_1.id
 } )
+floor_lamps_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716915/mznq7fb70il9bvg8qyxs.jpg')
+product_32.image.attach(io: floor_lamps_pic_4, filename: 'floor_lamps_pic_4.jpg', content_type: 'image/jpg')
 product_32.save!
 
 
-### for: "Hanging Lamps"  ID: 9
+# ### for: "Hanging Lamps"  ID: 9
 
 product_33 = Product.new( {
   name: "Red Hanging Lamp",
@@ -663,6 +732,8 @@ product_33 = Product.new( {
   category_id: category_2.id
   # user_id: user_1.id
 } )
+hangin_lamps_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716931/ofehcvrgafds15lbphgs.jpg')
+product_33.image.attach(io: hangin_lamps_pic_1, filename: 'hangin_lamps_pic_1.jpg', content_type: 'image/jpg')
 product_33.save!
 
 product_34 = Product.new( {
@@ -672,85 +743,106 @@ product_34 = Product.new( {
   category_id: category_2.id
   # user_id: user_1.id
 } )
+hangin_lamps_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716931/ofehcvrgafds15lbphgs.jpg')
+product_34.image.attach(io: hangin_lamps_pic_2, filename: 'hangin_lamps_pic_2.jpg', content_type: 'image/jpg')
 product_34.save!
 
-product_34 = Product.new( {
+product_35 = Product.new( {
   name: "Green Hanging Lamp",
   price: rand(1..60),
   sub_category_id: sub_category_9.id,
   category_id: category_2.id
   # user_id: user_1.id
 } )
-product_34.save!
+hangin_lamps_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716931/ofehcvrgafds15lbphgs.jpg')
+product_35.image.attach(io: hangin_lamps_pic_3, filename: 'hangin_lamps_pic_3.jpg', content_type: 'image/jpg')
+product_35.save!
 
-product_35 = Product.new( {
+product_36 = Product.new( {
   name: "Old Hanging Lamp",
   price: rand(1..60),
   sub_category_id: sub_category_9.id,
   category_id: category_2.id
   # user_id: user_1.id
 } )
-product_35.save!
+hangin_lamps_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716931/ofehcvrgafds15lbphgs.jpg')
+product_36.image.attach(io: hangin_lamps_pic_4, filename: 'hangin_lamps_pic_4.jpg', content_type: 'image/jpg')
+product_36.save!
 
 
-### for: "Lampshades"  ID: 10
+puts "... 1/4 of the products have been created ..."
 
-product_36 = Product.new( {
+
+# ### for: "Lampshades"  ID: 10
+
+product_37 = Product.new( {
   name: "Yellow Lampshade",
   price: rand(1..60),
   sub_category_id: sub_category_10.id,
   category_id: category_2.id
   # user_id: user_1.id
 } )
-product_36.save!
+lampshades_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716948/wkbexe5vsz5ipmb6izyv.jpg')
+product_37.image.attach(io: lampshades_pic_1, filename: 'lampshades_pic_1.jpg', content_type: 'image/jpg')
+product_37.save!
 
-product_37 = Product.new( {
+product_38 = Product.new( {
   name: "Old Lampshade",
   price: rand(1..60),
   sub_category_id: sub_category_10.id,
   category_id: category_2.id
   # user_id: user_1.id
 } )
-product_37.save!
+lampshades_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716948/wkbexe5vsz5ipmb6izyv.jpg')
+product_38.image.attach(io: lampshades_pic_2, filename: 'lampshades_pic_2.jpg', content_type: 'image/jpg')
+product_38.save!
 
-product_38 = Product.new( {
+product_39 = Product.new( {
   name: "Modern Lampshade",
   price: rand(1..60),
   sub_category_id: sub_category_10.id,
   category_id: category_2.id
   # user_id: user_1.id
 } )
-product_38.save!
+lampshades_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716948/wkbexe5vsz5ipmb6izyv.jpg')
+product_39.image.attach(io: lampshades_pic_3, filename: 'lampshades_pic_3.jpg', content_type: 'image/jpg')
+product_39.save!
 
-product_39 = Product.new( {
+product_40 = Product.new( {
   name: "Artistic Lampshade",
   price: rand(1..60),
   sub_category_id: sub_category_10.id,
   category_id: category_2.id
   # user_id: user_1.id
 } )
-product_39.save!
+lampshades_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716948/wkbexe5vsz5ipmb6izyv.jpg')
+product_40.image.attach(io: lampshades_pic_4, filename: 'lampshades_pic_4.jpg', content_type: 'image/jpg')
+product_40.save!
 
 
-### for: "Reading Lamps"  ID: 11
+# ### for: "Reading Lamps"  ID: 11
 
-product_40 = Product.new( {
+product_41 = Product.new( {
   name: "Bedside Lamp",
   price: rand(1..60),
   sub_category_id: sub_category_11.id,
   category_id: category_2.id
   # user_id: user_1.id
 } )
-product_40.save!
+reading_lamps_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716961/ln3ttklwhdk7ykeyv8gk.jpg')
+product_41.image.attach(io: reading_lamps_pic_1, filename: 'reading_lamps_pic_1.jpg', content_type: 'image/jpg')
+product_41.save!
 
-product_41 = Product.new( {
+product_42 = Product.new( {
   name: "Table Lamp",
   price: rand(1..60),
   sub_category_id: sub_category_11.id,
   category_id: category_2.id
   # user_id: user_1.id
 } )
-product_41.save!
+reading_lamps_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716961/ln3ttklwhdk7ykeyv8gk.jpg')
+product_42.image.attach(io: reading_lamps_pic_2, filename: 'reading_lamps_pic_2.jpg', content_type: 'image/jpg')
+product_42.save!
 
 product_43 = Product.new( {
   name: "Reading Lamp",
@@ -759,6 +851,8 @@ product_43 = Product.new( {
   category_id: category_2.id
   # user_id: user_1.id
 } )
+reading_lamps_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716961/ln3ttklwhdk7ykeyv8gk.jpg')
+product_43.image.attach(io: reading_lamps_pic_3, filename: 'reading_lamps_pic_3.jpg', content_type: 'image/jpg')
 product_43.save!
 
 product_44 = Product.new( {
@@ -768,10 +862,12 @@ product_44 = Product.new( {
   category_id: category_2.id
   # user_id: user_1.id
 } )
+reading_lamps_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716961/ln3ttklwhdk7ykeyv8gk.jpg')
+product_44.image.attach(io: reading_lamps_pic_4, filename: 'reading_lamps_pic_4.jpg', content_type: 'image/jpg')
 product_44.save!
 
 
-### for: "Others"  ID: 12
+# ### for: "Others"  ID: 12
 
 product_45 = Product.new( {
   name: "Big Candles",
@@ -780,6 +876,8 @@ product_45 = Product.new( {
   category_id: category_2.id
   # user_id: user_1.id
 } )
+candles_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716970/tubbklpvbdcg1lrund4z.jpg')
+product_45.image.attach(io: candles_pic_1, filename: 'candles_pic_1.jpg', content_type: 'image/jpg')
 product_45.save!
 
 product_46 = Product.new( {
@@ -789,6 +887,8 @@ product_46 = Product.new( {
   category_id: category_2.id
   # user_id: user_1.id
 } )
+candles_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716970/tubbklpvbdcg1lrund4z.jpg')
+product_46.image.attach(io: candles_pic_2, filename: 'candles_pic_2.jpg', content_type: 'image/jpg')
 product_46.save!
 
 product_47 = Product.new( {
@@ -798,6 +898,8 @@ product_47 = Product.new( {
   category_id: category_2.id
   # user_id: user_1.id
 } )
+candles_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716970/tubbklpvbdcg1lrund4z.jpg')
+product_47.image.attach(io: candles_pic_3, filename: 'candles_pic_3.jpg', content_type: 'image/jpg')
 product_47.save!
 
 product_48 = Product.new( {
@@ -807,13 +909,16 @@ product_48 = Product.new( {
   category_id: category_2.id
   # user_id: user_1.id
 } )
+candles_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716970/tubbklpvbdcg1lrund4z.jpg')
+product_48.image.attach(io: candles_pic_4, filename: 'candles_pic_4.jpg', content_type: 'image/jpg')
 product_48.save!
-#________________________________________________________
 
-## In: FURNITURE
+# #________________________________________________________
+
+# ## In: FURNITURE
 
 
-### for: "Beds"  ID: 13
+# ### for: "Beds"  ID: 13
 
 product_49 = Product.new( {
   name: "Bed 2 places",
@@ -822,6 +927,8 @@ product_49 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+beds_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716977/a9igahbm1b5rr5gfxj4n.jpg')
+product_49.image.attach(io: beds_pic_1, filename: 'beds_pic_1.jpg', content_type: 'image/jpg')
 product_49.save!
 
 product_50 = Product.new( {
@@ -831,6 +938,8 @@ product_50 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+beds_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716977/a9igahbm1b5rr5gfxj4n.jpg')
+product_50.image.attach(io: beds_pic_2, filename: 'beds_pic_2.jpg', content_type: 'image/jpg')
 product_50.save!
 
 product_51 = Product.new( {
@@ -840,6 +949,8 @@ product_51 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+beds_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716977/a9igahbm1b5rr5gfxj4n.jpg')
+product_51.image.attach(io: beds_pic_3, filename: 'beds_pic_3.jpg', content_type: 'image/jpg')
 product_51.save!
 
 product_52 = Product.new( {
@@ -849,10 +960,12 @@ product_52 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+beds_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591716977/a9igahbm1b5rr5gfxj4n.jpg')
+product_52.image.attach(io: beds_pic_4, filename: 'beds_pic_4.jpg', content_type: 'image/jpg')
 product_52.save!
 
 
-### for: "Desks"  ID: 14
+# ### for: "Desks"  ID: 14
 
 product_53 = Product.new( {
   name: "Red Desk",
@@ -861,6 +974,8 @@ product_53 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+desks_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591700558/xt7scyr9qqoefeporkf7.jpg')
+product_53.image.attach(io: desks_pic_1, filename: 'desks_pic_1.jpg', content_type: 'image/jpg')
 product_53.save!
 
 product_54 = Product.new( {
@@ -870,6 +985,8 @@ product_54 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+desks_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591700558/xt7scyr9qqoefeporkf7.jpg')
+product_54.image.attach(io: desks_pic_2, filename: 'desks_pic_2.jpg', content_type: 'image/jpg')
 product_54.save!
 
 product_55 = Product.new( {
@@ -879,6 +996,8 @@ product_55 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+desks_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591700558/xt7scyr9qqoefeporkf7.jpg')
+product_55.image.attach(io: desks_pic_3, filename: 'desks_pic_3.jpg', content_type: 'image/jpg')
 product_55.save!
 
 product_56 = Product.new( {
@@ -888,10 +1007,12 @@ product_56 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+desks_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591700558/xt7scyr9qqoefeporkf7.jpg')
+product_56.image.attach(io: desks_pic_4, filename: 'desks_pic_4.jpg', content_type: 'image/jpg')
 product_56.save!
 
 
-### for: "Tables"  ID: 15
+# ### for: "Tables"  ID: 15
 
 product_57 = Product.new( {
   name: "6 Places Table",
@@ -900,6 +1021,8 @@ product_57 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+tables_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717003/klbsxpxyhbxnqspr9hoc.jpg')
+product_57.image.attach(io: tables_pic_1, filename: 'tables_pic_1.jpg', content_type: 'image/jpg')
 product_57.save!
 
 product_58 = Product.new( {
@@ -909,6 +1032,8 @@ product_58 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+tables_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717003/klbsxpxyhbxnqspr9hoc.jpg')
+product_58.image.attach(io: tables_pic_2, filename: 'tables_pic_2.jpg', content_type: 'image/jpg')
 product_58.save!
 
 product_59 = Product.new( {
@@ -918,6 +1043,8 @@ product_59 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+tables_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717003/klbsxpxyhbxnqspr9hoc.jpg')
+product_59.image.attach(io: tables_pic_3, filename: 'tables_pic_3.jpg', content_type: 'image/jpg')
 product_59.save!
 
 product_60 = Product.new( {
@@ -927,10 +1054,12 @@ product_60 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+tables_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717003/klbsxpxyhbxnqspr9hoc.jpg')
+product_60.image.attach(io: tables_pic_4, filename: 'tables_pic_4.jpg', content_type: 'image/jpg')
 product_60.save!
 
 
-### for: "Shelves"  ID: 16
+# ### for: "Shelves"  ID: 16
 
 product_61 = Product.new( {
   name: "Wooden Shelf",
@@ -939,6 +1068,8 @@ product_61 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+shelves_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717013/asfszgxmd7mnbjwggicl.jpg')
+product_61.image.attach(io: shelves_pic_1, filename: 'shelves_pic_1.jpg', content_type: 'image/jpg')
 product_61.save!
 
 product_62 = Product.new( {
@@ -948,6 +1079,8 @@ product_62 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+shelves_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717013/asfszgxmd7mnbjwggicl.jpg')
+product_62.image.attach(io: shelves_pic_2, filename: 'shelves_pic_2.jpg', content_type: 'image/jpg')
 product_62.save!
 
 product_63 = Product.new( {
@@ -957,6 +1090,8 @@ product_63 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+shelves_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717013/asfszgxmd7mnbjwggicl.jpg')
+product_63.image.attach(io: shelves_pic_3, filename: 'shelves_pic_3.jpg', content_type: 'image/jpg')
 product_63.save!
 
 product_64 = Product.new( {
@@ -966,10 +1101,12 @@ product_64 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+shelves_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717013/asfszgxmd7mnbjwggicl.jpg')
+product_64.image.attach(io: shelves_pic_4, filename: 'shelves_pic_4.jpg', content_type: 'image/jpg')
 product_64.save!
 
 
-### for: "Storage"  ID: 17
+# ### for: "Storage"  ID: 17
 
 product_65 = Product.new( {
   name: "Big Wooden Library",
@@ -978,6 +1115,8 @@ product_65 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+storages_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717025/wdrwqisauqvde1ciir8c.jpg')
+product_65.image.attach(io: storages_pic_1, filename: 'storages_pic_1.jpg', content_type: 'image/jpg')
 product_65.save!
 
 product_66 = Product.new( {
@@ -987,6 +1126,8 @@ product_66 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+storages_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717025/wdrwqisauqvde1ciir8c.jpg')
+product_66.image.attach(io: storages_pic_2, filename: 'storages_pic_2.jpg', content_type: 'image/jpg')
 product_66.save!
 
 product_67 = Product.new( {
@@ -996,6 +1137,8 @@ product_67 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+storages_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717025/wdrwqisauqvde1ciir8c.jpg')
+product_67.image.attach(io: storages_pic_3, filename: 'storages_pic_3.jpg', content_type: 'image/jpg')
 product_67.save!
 
 product_68 = Product.new( {
@@ -1005,10 +1148,12 @@ product_68 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+storages_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717025/wdrwqisauqvde1ciir8c.jpg')
+product_68.image.attach(io: storages_pic_4, filename: 'storages_pic_4.jpg', content_type: 'image/jpg')
 product_68.save!
 
 
-### for: "Wardrobes"  ID: 18
+# ### for: "Wardrobes"  ID: 18
 
 product_69 = Product.new( {
   name: "Bedroom Wardrobe",
@@ -1017,6 +1162,8 @@ product_69 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+wardrobes_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717038/qrn9rybbxlammaqpcscc.jpg')
+product_69.image.attach(io: wardrobes_pic_1, filename: 'wardrobes_pic_1.jpg', content_type: 'image/jpg')
 product_69.save!
 
 product_70 = Product.new( {
@@ -1026,6 +1173,8 @@ product_70 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+wardrobes_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717038/qrn9rybbxlammaqpcscc.jpg')
+product_70.image.attach(io: wardrobes_pic_2, filename: 'wardrobes_pic_2.jpg', content_type: 'image/jpg')
 product_70.save!
 
 product_71 = Product.new( {
@@ -1035,6 +1184,8 @@ product_71 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+wardrobes_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717038/qrn9rybbxlammaqpcscc.jpg')
+product_71.image.attach(io: wardrobes_pic_3, filename: 'wardrobes_pic_3.jpg', content_type: 'image/jpg')
 product_71.save!
 
 product_72 = Product.new( {
@@ -1044,10 +1195,12 @@ product_72 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+wardrobes_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717038/qrn9rybbxlammaqpcscc.jpg')
+product_72.image.attach(io: wardrobes_pic_4, filename: 'wardrobes_pic_4.jpg', content_type: 'image/jpg')
 product_72.save!
 
 
-### for: "Others"  ID: 19
+# ### for: "Others"  ID: 19
 
 product_73 = Product.new( {
   name: "Wooden Box",
@@ -1056,6 +1209,8 @@ product_73 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+storage_boxes_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717056/shwv4fc9jmnt2y9xcoji.jpg')
+product_73.image.attach(io: storage_boxes_pic_1, filename: 'storage_boxes_pic_1.jpg', content_type: 'image/jpg')
 product_73.save!
 
 product_74 = Product.new( {
@@ -1065,6 +1220,8 @@ product_74 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+storage_boxes_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717056/shwv4fc9jmnt2y9xcoji.jpg')
+product_74.image.attach(io: storage_boxes_pic_2, filename: 'storage_boxes_pic_2.jpg', content_type: 'image/jpg')
 product_74.save!
 
 product_75 = Product.new( {
@@ -1074,6 +1231,8 @@ product_75 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+storage_boxes_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717056/shwv4fc9jmnt2y9xcoji.jpg')
+product_75.image.attach(io: storage_boxes_pic_3, filename: 'storage_boxes_pic_3.jpg', content_type: 'image/jpg')
 product_75.save!
 
 product_76 = Product.new( {
@@ -1083,13 +1242,18 @@ product_76 = Product.new( {
   category_id: category_3.id
   # user_id: user_1.id
 } )
+storage_boxes_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717056/shwv4fc9jmnt2y9xcoji.jpg')
+product_76.image.attach(io: storage_boxes_pic_4, filename: 'storage_boxes_pic_4.jpg', content_type: 'image/jpg')
 product_76.save!
-#________________________________________________________
 
-## In: ART & DECORATION
+puts "... 1/2 of the products have been created ..."
+
+# #________________________________________________________
+
+# ## In: ART & DECORATION
 
 
-### for: "Accessories"  ID: 20
+# ### for: "Accessories"  ID: 20
 
 product_77 = Product.new( {
   name: "Chandelier",
@@ -1098,6 +1262,8 @@ product_77 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+accessories_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717067/uncarmcdu24utwyjglju.jpg')
+product_77.image.attach(io: accessories_pic_1, filename: 'accessories_pic_1.jpg', content_type: 'image/jpg')
 product_77.save!
 
 product_78 = Product.new( {
@@ -1107,6 +1273,8 @@ product_78 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+accessories_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717067/uncarmcdu24utwyjglju.jpg')
+product_78.image.attach(io: accessories_pic_2, filename: 'accessories_pic_2.jpg', content_type: 'image/jpg')
 product_78.save!
 
 product_79 = Product.new( {
@@ -1116,6 +1284,8 @@ product_79 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+accessories_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717067/uncarmcdu24utwyjglju.jpg')
+product_79.image.attach(io: accessories_pic_3, filename: 'accessories_pic_3.jpg', content_type: 'image/jpg')
 product_79.save!
 
 product_80 = Product.new( {
@@ -1125,10 +1295,12 @@ product_80 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+accessories_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717067/uncarmcdu24utwyjglju.jpg')
+product_80.image.attach(io: accessories_pic_4, filename: 'accessories_pic_4.jpg', content_type: 'image/jpg')
 product_80.save!
 
 
-### for: "Carpets"  ID: 21
+# ### for: "Carpets"  ID: 21
 
 product_81 = Product.new( {
   name: "Indian Carpet",
@@ -1137,6 +1309,8 @@ product_81 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+carpets_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717080/htcjk9ww1b6nkmkv61f0.jpg')
+product_81.image.attach(io: carpets_pic_1, filename: 'carpets_pic_1.jpg', content_type: 'image/jpg')
 product_81.save!
 
 product_82 = Product.new( {
@@ -1146,6 +1320,8 @@ product_82 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+carpets_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717080/htcjk9ww1b6nkmkv61f0.jpg')
+product_82.image.attach(io: carpets_pic_2, filename: 'carpets_pic_2.jpg', content_type: 'image/jpg')
 product_82.save!
 
 product_83 = Product.new( {
@@ -1155,6 +1331,8 @@ product_83 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+carpets_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717080/htcjk9ww1b6nkmkv61f0.jpg')
+product_83.image.attach(io: carpets_pic_3, filename: 'carpets_pic_3.jpg', content_type: 'image/jpg')
 product_83.save!
 
 product_84 = Product.new( {
@@ -1164,10 +1342,12 @@ product_84 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+carpets_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717080/htcjk9ww1b6nkmkv61f0.jpg')
+product_84.image.attach(io: carpets_pic_4, filename: 'carpets_pic_4.jpg', content_type: 'image/jpg')
 product_84.save!
 
 
-### for: "Mirrors"  ID: 22
+# ### for: "Mirrors"  ID: 22
 
 product_85 = Product.new( {
   name: "Antique Mirror",
@@ -1176,6 +1356,8 @@ product_85 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+mirrors_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717088/zzv7xignyr3euhwn1g5u.jpg')
+product_85.image.attach(io: mirrors_pic_1, filename: 'mirrors_pic_1.jpg', content_type: 'image/jpg')
 product_85.save!
 
 product_86 = Product.new( {
@@ -1185,6 +1367,8 @@ product_86 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+mirrors_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717088/zzv7xignyr3euhwn1g5u.jpg')
+product_86.image.attach(io: mirrors_pic_2, filename: 'mirrors_pic_2.jpg', content_type: 'image/jpg')
 product_86.save!
 
 product_87 = Product.new( {
@@ -1194,6 +1378,8 @@ product_87 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+mirrors_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717088/zzv7xignyr3euhwn1g5u.jpg')
+product_87.image.attach(io: mirrors_pic_3, filename: 'mirrors_pic_3.jpg', content_type: 'image/jpg')
 product_87.save!
 
 product_88 = Product.new( {
@@ -1203,10 +1389,12 @@ product_88 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+mirrors_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717088/zzv7xignyr3euhwn1g5u.jpg')
+product_88.image.attach(io: mirrors_pic_4, filename: 'mirrors_pic_4.jpg', content_type: 'image/jpg')
 product_88.save!
 
 
-### for: "Paintings"  ID: 23
+# ### for: "Paintings"  ID: 23
 
 product_89 = Product.new( {
   name: "Picasso",
@@ -1215,6 +1403,8 @@ product_89 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+paintings_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717097/isji2p96ohmhgcv2ldbc.jpg')
+product_89.image.attach(io: paintings_pic_1, filename: 'paintings_pic_1.jpg', content_type: 'image/jpg')
 product_89.save!
 
 product_90 = Product.new( {
@@ -1224,6 +1414,8 @@ product_90 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+paintings_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717097/isji2p96ohmhgcv2ldbc.jpg')
+product_90.image.attach(io: paintings_pic_2, filename: 'paintings_pic_2.jpg', content_type: 'image/jpg')
 product_90.save!
 
 product_91 = Product.new( {
@@ -1233,6 +1425,8 @@ product_91 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+paintings_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717097/isji2p96ohmhgcv2ldbc.jpg')
+product_91.image.attach(io: paintings_pic_3, filename: 'paintings_pic_3.jpg', content_type: 'image/jpg')
 product_91.save!
 
 product_92 = Product.new( {
@@ -1242,10 +1436,12 @@ product_92 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+paintings_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717097/isji2p96ohmhgcv2ldbc.jpg')
+product_92.image.attach(io: paintings_pic_4, filename: 'paintings_pic_4.jpg', content_type: 'image/jpg')
 product_92.save!
 
 
-### for: "Plants"  ID: 24
+# ### for: "Plants"  ID: 24
 
 product_93 = Product.new( {
   name: "Geranium",
@@ -1254,6 +1450,8 @@ product_93 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+plants_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717106/clcbj9lcuk9blirv87qu.jpg')
+product_93.image.attach(io: plants_pic_1, filename: 'plants_pic_1.jpg', content_type: 'image/jpg')
 product_93.save!
 
 product_94 = Product.new( {
@@ -1263,6 +1461,8 @@ product_94 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+plants_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717106/clcbj9lcuk9blirv87qu.jpg')
+product_94.image.attach(io: plants_pic_2, filename: 'plants_pic_2.jpg', content_type: 'image/jpg')
 product_94.save!
 
 product_95 = Product.new( {
@@ -1272,6 +1472,8 @@ product_95 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+plants_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717106/clcbj9lcuk9blirv87qu.jpg')
+product_95.image.attach(io: plants_pic_3, filename: 'plants_pic_3.jpg', content_type: 'image/jpg')
 product_95.save!
 
 product_96 = Product.new( {
@@ -1281,10 +1483,12 @@ product_96 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+plants_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717106/clcbj9lcuk9blirv87qu.jpg')
+product_96.image.attach(io: plants_pic_4, filename: 'plants_pic_4.jpg', content_type: 'image/jpg')
 product_96.save!
 
 
-### for: "Others"  ID: 25
+# ### for: "Others"  ID: 25
 
 product_97 = Product.new( {
   name: "Outdoor Decorations",
@@ -1293,6 +1497,8 @@ product_97 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+statues_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717114/iink07gm1etwg9lpyfqo.jpg')
+product_97.image.attach(io: statues_pic_1, filename: 'statues_pic_1.jpg', content_type: 'image/jpg')
 product_97.save!
 
 product_98 = Product.new( {
@@ -1302,6 +1508,8 @@ product_98 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+statues_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717114/iink07gm1etwg9lpyfqo.jpg')
+product_98.image.attach(io: statues_pic_2, filename: 'statues_pic_2.jpg', content_type: 'image/jpg')
 product_98.save!
 
 product_99 = Product.new( {
@@ -1311,6 +1519,8 @@ product_99 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+statues_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717114/iink07gm1etwg9lpyfqo.jpg')
+product_99.image.attach(io: statues_pic_3, filename: 'statues_pic_3.jpg', content_type: 'image/jpg')
 product_99.save!
 
 product_100 = Product.new( {
@@ -1320,13 +1530,16 @@ product_100 = Product.new( {
   category_id: category_4.id
   # user_id: user_1.id
 } )
+statues_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717114/iink07gm1etwg9lpyfqo.jpg')
+product_100.image.attach(io: statues_pic_4, filename: 'statues_pic_4.jpg', content_type: 'image/jpg')
 product_100.save!
-#________________________________________________________
 
-## In: BOOKS & LEISURE
+# #________________________________________________________
+
+# ## In: BOOKS & LEISURE
 
 
-### for: "Board Games"  ID: 26
+# ### for: "Board Games"  ID: 26
 
 product_101 = Product.new( {
   name: "Monopoly",
@@ -1335,6 +1548,8 @@ product_101 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+board_games_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717126/jsz9brm2uvb0yv6trucl.jpg')
+product_101.image.attach(io: board_games_pic_1, filename: 'board_games_pic_1.jpg', content_type: 'image/jpg')
 product_101.save!
 
 product_102 = Product.new( {
@@ -1344,6 +1559,8 @@ product_102 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+board_games_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717126/jsz9brm2uvb0yv6trucl.jpg')
+product_102.image.attach(io: board_games_pic_2, filename: 'board_games_pic_2.jpg', content_type: 'image/jpg')
 product_102.save!
 
 product_103 = Product.new( {
@@ -1353,6 +1570,8 @@ product_103 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+board_games_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717126/jsz9brm2uvb0yv6trucl.jpg')
+product_103.image.attach(io: board_games_pic_3, filename: 'board_games_pic_3.jpg', content_type: 'image/jpg')
 product_103.save!
 
 product_104 = Product.new( {
@@ -1362,10 +1581,12 @@ product_104 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+board_games_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717126/jsz9brm2uvb0yv6trucl.jpg')
+product_104.image.attach(io: board_games_pic_4, filename: 'board_games_pic_4.jpg', content_type: 'image/jpg')
 product_104.save!
 
 
-### for: "Books"  ID: 27
+# ### for: "Books"  ID: 27
 
 product_105 = Product.new( {
   name: "Loup Blanc",
@@ -1374,6 +1595,8 @@ product_105 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+books_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717138/sxfsqtyhrxuqqbn4zxzx.jpg')
+product_105.image.attach(io: books_pic_1, filename: 'books_pic_1.jpg', content_type: 'image/jpg')
 product_105.save!
 
 product_106 = Product.new( {
@@ -1383,6 +1606,8 @@ product_106 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+books_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717138/sxfsqtyhrxuqqbn4zxzx.jpg')
+product_106.image.attach(io: books_pic_2, filename: 'books_pic_2.jpg', content_type: 'image/jpg')
 product_106.save!
 
 product_107 = Product.new( {
@@ -1392,6 +1617,8 @@ product_107 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+books_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717138/sxfsqtyhrxuqqbn4zxzx.jpg')
+product_107.image.attach(io: books_pic_3, filename: 'books_pic_3.jpg', content_type: 'image/jpg')
 product_107.save!
 
 product_108 = Product.new( {
@@ -1401,10 +1628,12 @@ product_108 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+books_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717138/sxfsqtyhrxuqqbn4zxzx.jpg')
+product_108.image.attach(io: books_pic_4, filename: 'books_pic_4.jpg', content_type: 'image/jpg')
 product_108.save!
 
 
-### for: "Comics"  ID: 28
+# ### for: "Comics"  ID: 28
 
 product_109 = Product.new( {
   name: "Tintin",
@@ -1413,6 +1642,8 @@ product_109 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+comics_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717147/inibtxpm3uv2uqdcjjdx.jpg')
+product_109.image.attach(io: comics_pic_1, filename: 'comics_pic_1.jpg', content_type: 'image/jpg')
 product_109.save!
 
 product_110 = Product.new( {
@@ -1422,6 +1653,8 @@ product_110 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+comics_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717147/inibtxpm3uv2uqdcjjdx.jpg')
+product_110.image.attach(io: comics_pic_2, filename: 'comics_pic_2.jpg', content_type: 'image/jpg')
 product_110.save!
 
 product_111 = Product.new( {
@@ -1431,6 +1664,8 @@ product_111 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+comics_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717147/inibtxpm3uv2uqdcjjdx.jpg')
+product_111.image.attach(io: comics_pic_3, filename: 'comics_pic_3.jpg', content_type: 'image/jpg')
 product_111.save!
 
 product_112 = Product.new( {
@@ -1440,10 +1675,15 @@ product_112 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+comics_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717147/inibtxpm3uv2uqdcjjdx.jpg')
+product_112.image.attach(io: comics_pic_4, filename: 'comics_pic_4.jpg', content_type: 'image/jpg')
 product_112.save!
 
 
-### for: "Lounge Games"  ID: 29
+puts "... 3/4 of the products have been created ..."
+
+
+# ### for: "Lounge Games"  ID: 29
 
 product_113 = Product.new( {
   name: "Darts",
@@ -1452,6 +1692,8 @@ product_113 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+lounge_games_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717157/mgsujkpfsbbafff1c7dp.jpg')
+product_113.image.attach(io: lounge_games_pic_1, filename: 'lounge_games_pic_1.jpg', content_type: 'image/jpg')
 product_113.save!
 
 product_114 = Product.new( {
@@ -1461,6 +1703,8 @@ product_114 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+lounge_games_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717157/mgsujkpfsbbafff1c7dp.jpg')
+product_114.image.attach(io: lounge_games_pic_2, filename: 'lounge_games_pic_2.jpg', content_type: 'image/jpg')
 product_114.save!
 
 product_115 = Product.new( {
@@ -1470,6 +1714,8 @@ product_115 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+lounge_games_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717157/mgsujkpfsbbafff1c7dp.jpg')
+product_115.image.attach(io: lounge_games_pic_3, filename: 'lounge_games_pic_3.jpg', content_type: 'image/jpg')
 product_115.save!
 
 product_116 = Product.new( {
@@ -1479,10 +1725,12 @@ product_116 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+lounge_games_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717157/mgsujkpfsbbafff1c7dp.jpg')
+product_116.image.attach(io: lounge_games_pic_4, filename: 'lounge_games_pic_4.jpg', content_type: 'image/jpg')
 product_116.save!
 
 
-### for: "Video Games"  ID: 30
+# ### for: "Video Games"  ID: 30
 
 product_117 = Product.new( {
   name: "Fifa 21",
@@ -1491,6 +1739,8 @@ product_117 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+video_games_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717167/aaaflkb5iqgwpp3kgouc.jpg')
+product_117.image.attach(io: video_games_pic_1, filename: 'video_games_pic_1.jpg', content_type: 'image/jpg')
 product_117.save!
 
 product_118 = Product.new( {
@@ -1500,6 +1750,8 @@ product_118 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+video_games_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717167/aaaflkb5iqgwpp3kgouc.jpg')
+product_118.image.attach(io: video_games_pic_2, filename: 'video_games_pic_2.jpg', content_type: 'image/jpg')
 product_118.save!
 
 product_119 = Product.new( {
@@ -1509,6 +1761,8 @@ product_119 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+video_games_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717167/aaaflkb5iqgwpp3kgouc.jpg')
+product_119.image.attach(io: video_games_pic_3, filename: 'video_games_pic_3.jpg', content_type: 'image/jpg')
 product_119.save!
 
 product_120 = Product.new( {
@@ -1518,10 +1772,12 @@ product_120 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+video_games_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717167/aaaflkb5iqgwpp3kgouc.jpg')
+product_120.image.attach(io: video_games_pic_4, filename: 'video_games_pic_4.jpg', content_type: 'image/jpg')
 product_120.save!
 
 
-### for: "Others"  ID: 31
+# ### for: "Others"  ID: 31
 
 product_121 = Product.new( {
   name: "Some interesting stuffs",
@@ -1530,6 +1786,8 @@ product_121 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+football_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717174/jub1hubz7eweajfnvdlc.jpg')
+product_121.image.attach(io: football_pic_1, filename: 'football_pic_1.jpg', content_type: 'image/jpg')
 product_121.save!
 
 product_122 = Product.new( {
@@ -1539,6 +1797,8 @@ product_122 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+football_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717174/jub1hubz7eweajfnvdlc.jpg')
+product_122.image.attach(io: football_pic_2, filename: 'football_pic_2.jpg', content_type: 'image/jpg')
 product_122.save!
 
 product_123 = Product.new( {
@@ -1548,6 +1808,8 @@ product_123 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+football_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717174/jub1hubz7eweajfnvdlc.jpg')
+product_123.image.attach(io: football_pic_3, filename: 'football_pic_3.jpg', content_type: 'image/jpg')
 product_123.save!
 
 product_124 = Product.new( {
@@ -1557,12 +1819,15 @@ product_124 = Product.new( {
   category_id: category_5.id
   # user_id: user_1.id
 } )
+football_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717174/jub1hubz7eweajfnvdlc.jpg')
+product_124.image.attach(io: football_pic_4, filename: 'football_pic_4.jpg', content_type: 'image/jpg')
 product_124.save!
-#________________________________________________________
 
-## In: KIDS
+# #________________________________________________________
 
-### for: "Kid Beds"  ID: 32
+# ## In: KIDS
+
+# ### for: "Kid Beds"  ID: 32
 
 product_125 = Product.new( {
   name: "Wooden Kid Bed",
@@ -1571,6 +1836,8 @@ product_125 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_beds_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717183/hggueesbumgaqeytgo5a.jpg')
+product_125.image.attach(io: kid_beds_pic_1, filename: 'kid_beds_pic_1.jpg', content_type: 'image/jpg')
 product_125.save!
 
 product_126 = Product.new( {
@@ -1580,6 +1847,8 @@ product_126 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_beds_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717183/hggueesbumgaqeytgo5a.jpg')
+product_126.image.attach(io: kid_beds_pic_2, filename: 'kid_beds_pic_2.jpg', content_type: 'image/jpg')
 product_126.save!
 
 product_127 = Product.new( {
@@ -1589,6 +1858,8 @@ product_127 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_beds_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717183/hggueesbumgaqeytgo5a.jpg')
+product_127.image.attach(io: kid_beds_pic_3, filename: 'kid_beds_pic_3.jpg', content_type: 'image/jpg')
 product_127.save!
 
 product_128 = Product.new( {
@@ -1598,10 +1869,12 @@ product_128 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_beds_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717183/hggueesbumgaqeytgo5a.jpg')
+product_128.image.attach(io: kid_beds_pic_4, filename: 'kid_beds_pic_4.jpg', content_type: 'image/jpg')
 product_128.save!
 
 
-### for: "Kid Books"  ID: 33
+# ### for: "Kid Books"  ID: 33
 
 product_129 = Product.new( {
   name: "Kid Book 1",
@@ -1610,6 +1883,8 @@ product_129 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_books_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717193/hhsmxt6orxpr1glhv2kf.jpg')
+product_129.image.attach(io: kid_books_pic_1, filename: 'kid_books_pic_1.jpg', content_type: 'image/jpg')
 product_129.save!
 
 product_130 = Product.new( {
@@ -1619,6 +1894,8 @@ product_130 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_books_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717193/hhsmxt6orxpr1glhv2kf.jpg')
+product_130.image.attach(io: kid_books_pic_2, filename: 'kid_books_pic_2.jpg', content_type: 'image/jpg')
 product_130.save!
 
 product_131 = Product.new( {
@@ -1628,6 +1905,8 @@ product_131 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_books_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717193/hhsmxt6orxpr1glhv2kf.jpg')
+product_131.image.attach(io: kid_books_pic_3, filename: 'kid_books_pic_3.jpg', content_type: 'image/jpg')
 product_131.save!
 
 product_132 = Product.new( {
@@ -1637,10 +1916,12 @@ product_132 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_books_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717193/hhsmxt6orxpr1glhv2kf.jpg')
+product_132.image.attach(io: kid_books_pic_4, filename: 'kid_books_pic_4.jpg', content_type: 'image/jpg')
 product_132.save!
 
 
-### for: "Kid Chairs"  ID: 34
+# ### for: "Kid Chairs"  ID: 34
 
 product_133 = Product.new( {
   name: "Blue Kid Chair",
@@ -1649,6 +1930,8 @@ product_133 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_chairs_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717209/jjomj0d1biyysvbxdnpa.jpg')
+product_133.image.attach(io: kid_chairs_pic_1, filename: 'kid_chairs_pic_1.jpg', content_type: 'image/jpg')
 product_133.save!
 
 product_134 = Product.new( {
@@ -1658,6 +1941,8 @@ product_134 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_chairs_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717209/jjomj0d1biyysvbxdnpa.jpg')
+product_134.image.attach(io: kid_chairs_pic_2, filename: 'kid_chairs_pic_2.jpg', content_type: 'image/jpg')
 product_134.save!
 
 product_135 = Product.new( {
@@ -1667,6 +1952,8 @@ product_135 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_chairs_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717209/jjomj0d1biyysvbxdnpa.jpg')
+product_135.image.attach(io: kid_chairs_pic_3, filename: 'kid_chairs_pic_3.jpg', content_type: 'image/jpg')
 product_135.save!
 
 product_136 = Product.new( {
@@ -1676,10 +1963,12 @@ product_136 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_chairs_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717209/jjomj0d1biyysvbxdnpa.jpg')
+product_136.image.attach(io: kid_chairs_pic_4, filename: 'kid_chairs_pic_4.jpg', content_type: 'image/jpg')
 product_136.save!
 
 
-### for: "Kid Furniture"  ID: 35
+# ### for: "Kid Furniture"  ID: 35
 
 product_137 = Product.new( {
   name: "Changing Table",
@@ -1688,6 +1977,8 @@ product_137 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_furnitures_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717222/ehba35hbampwxmrj2b3u.jpg')
+product_137.image.attach(io: kid_furnitures_pic_1, filename: 'kid_furnitures_pic_1.jpg', content_type: 'image/jpg')
 product_137.save!
 
 product_138 = Product.new( {
@@ -1697,6 +1988,8 @@ product_138 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_furnitures_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717222/ehba35hbampwxmrj2b3u.jpg')
+product_138.image.attach(io: kid_furnitures_pic_2, filename: 'kid_furnitures_pic_2.jpg', content_type: 'image/jpg')
 product_138.save!
 
 product_139 = Product.new( {
@@ -1706,6 +1999,8 @@ product_139 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_furnitures_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717222/ehba35hbampwxmrj2b3u.jpg')
+product_139.image.attach(io: kid_furnitures_pic_3, filename: 'kid_furnitures_pic_3.jpg', content_type: 'image/jpg')
 product_139.save!
 
 product_140 = Product.new( {
@@ -1715,10 +2010,12 @@ product_140 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_furnitures_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717222/ehba35hbampwxmrj2b3u.jpg')
+product_140.image.attach(io: kid_furnitures_pic_4, filename: 'kid_furnitures_pic_4.jpg', content_type: 'image/jpg')
 product_140.save!
 
 
-### for: "Kid Toys"  ID: 36
+# ### for: "Kid Toys"  ID: 36
 
 product_141 = Product.new( {
   name: "Action Man",
@@ -1727,6 +2024,8 @@ product_141 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_toys_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717235/bsrb98ujmjxkpesrpwcz.jpg')
+product_141.image.attach(io: kid_toys_pic_1, filename: 'kid_toys_pic_1.jpg', content_type: 'image/jpg')
 product_141.save!
 
 product_142 = Product.new( {
@@ -1736,6 +2035,8 @@ product_142 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_toys_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717235/bsrb98ujmjxkpesrpwcz.jpg')
+product_142.image.attach(io: kid_toys_pic_2, filename: 'kid_toys_pic_2.jpg', content_type: 'image/jpg')
 product_142.save!
 
 product_143 = Product.new( {
@@ -1745,6 +2046,8 @@ product_143 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_toys_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717235/bsrb98ujmjxkpesrpwcz.jpg')
+product_143.image.attach(io: kid_toys_pic_3, filename: 'kid_toys_pic_3.jpg', content_type: 'image/jpg')
 product_143.save!
 
 product_144 = Product.new( {
@@ -1754,10 +2057,12 @@ product_144 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+kid_toys_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717235/bsrb98ujmjxkpesrpwcz.jpg')
+product_144.image.attach(io: kid_toys_pic_4, filename: 'kid_toys_pic_4.jpg', content_type: 'image/jpg')
 product_144.save!
 
 
-### for: "Others"  ID: 37
+# ### for: "Others"  ID: 37
 
 product_145 = Product.new( {
   name: "Biberons",
@@ -1766,6 +2071,8 @@ product_145 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+teddy_bears_pic_1 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717249/kj5p19by75kfx24qbhew.jpg')
+product_145.image.attach(io: teddy_bears_pic_1, filename: 'teddy_bears_pic_1.jpg', content_type: 'image/jpg')
 product_145.save!
 
 product_146 = Product.new( {
@@ -1775,6 +2082,8 @@ product_146 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+teddy_bears_pic_2 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717249/kj5p19by75kfx24qbhew.jpg')
+product_146.image.attach(io: teddy_bears_pic_2, filename: 'teddy_bears_pic_2.jpg', content_type: 'image/jpg')
 product_146.save!
 
 product_147 = Product.new( {
@@ -1784,6 +2093,8 @@ product_147 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+teddy_bears_pic_3 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717249/kj5p19by75kfx24qbhew.jpg')
+product_147.image.attach(io: teddy_bears_pic_3, filename: 'teddy_bears_pic_3.jpg', content_type: 'image/jpg')
 product_147.save!
 
 product_148 = Product.new( {
@@ -1793,17 +2104,39 @@ product_148 = Product.new( {
   category_id: category_6.id
   # user_id: user_1.id
 } )
+teddy_bears_pic_4 = URI.open('https://res.cloudinary.com/mobily/image/upload/v1591717249/kj5p19by75kfx24qbhew.jpg')
+product_148.image.attach(io: teddy_bears_pic_4, filename: 'teddy_bears_pic_4.jpg', content_type: 'image/jpg')
 product_148.save!
 
 
-
+puts " "
 
 puts "DATABASE SUCCESSFULLY SEEDED."
 
+puts " "
 
 puts "Total number of categories: #{Category.all.count}"
 puts "Total number of sub-categories: #{SubCategory.all.count}"
 puts "Total number of products: #{Product.all.count}"
+
+puts " "
+
+puts "┐(・。・┐) ♪ "
+
+puts " "
+
+puts "( ͡ ͜ ʖ ͡ )"
+
+puts " "
+
+puts "( ͡• ͜ʖ ͡• )"
+
+puts " "
+
+puts "┏(＾0＾)┛┗(＾0＾)┓"
+
+puts " "
+
 
 # puts "Product names: #{Product.all.pluck("name")}"
 # puts "Product1: #{product_1.name} price: #{product_1.price.round(2)}"

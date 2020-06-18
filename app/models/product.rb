@@ -1,4 +1,7 @@
 class Product < ApplicationRecord
+
+  ## TODO: Disponible a partir de: !!!! A voir Timing + horloge: a disparaitre avant telle date
+
   attr_writer :current_step
 
   belongs_to :user, optional: true
@@ -13,6 +16,11 @@ class Product < ApplicationRecord
 
   validates_presence_of :name, :category_id, if: lambda { |e| e.current_step == "card" }
   validates_presence_of :sub_category_id, :description, :price, if: lambda { |e| e.current_step == "details" }
+
+  has_one_attached :image
+
+  # mount_uploader :image, ImageUploader
+
   # validates :category_id, :sub_category_id, presence: true
   # has_and_belongs_to_many :shoping_cart
 
