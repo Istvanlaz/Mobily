@@ -1,4 +1,7 @@
 class Product < ApplicationRecord
+
+  ## TODO: Disponible a partir de: !!!! A voir Timing + horloge: a disparaitre avant telle date
+
   attr_writer :current_step
 
   belongs_to :user, optional: true

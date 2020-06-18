@@ -11,7 +11,7 @@
             <%# selected_category = Category.find(cat_id) %>
             <%# sub_cat = selected_category.sub_categories %>
 
-          <% if session[:product_params].nil? %>
+          <% if session[:product_params].nil? || session[:product_params]["category_id"].nil? %>
             <% edit_hash = session[:params_product] %>
             <% edit_cat_id = edit_hash["category_id"] %>
             <% edit_selected_category = Category.find(edit_cat_id) %>
