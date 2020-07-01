@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
+    @categories = policy_scope(Category)
     @orders = Order.all
   end
 
@@ -39,6 +40,7 @@ class OrdersController < ApplicationController
   def create
     @categories = policy_scope(Category)
     authorize @order = Order.new(order_params)
+    @order.add_line_items_from_cart(current_cart)
 
     respond_to do |format|
       if @order.save
