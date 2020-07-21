@@ -5,9 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable
 
-  has_many :products, dependent: :destroy
   has_one :wishlist
   has_one :shoping_cart
+  has_many :products, dependent: :destroy
+  has_many :savings, through: :wishlist
 
   validate :password_complexity
   validate :username_complexity

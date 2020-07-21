@@ -2,26 +2,26 @@
 <%= render 'shared/banner' %>
 <div class="app-container">
 
-  <h1>Wishlists#index</h1>
-  <p>Find me in app/views/wishlists/index.html.erb</p>
+  <!-- <h1>Wishlists#index</h1>
+  <p>Find me in app/views/wishlists/index.html.erb</p> -->
 
-  <!-- <div class="sub-c-banner">
-    <div class="back-btn">
-      <%#= link_to "All", wishlists_path %>
-    </div>
-    <%# @categories.each do |category| %>
-      <div class="<%#= active_on_page_category("best_deals", category.id) %>">
-        <%#= link_to "#{category.name}", best_deal_path(category) %>
-      </div>
-    <%# end %>
-    <div class="back-btn">
-      <%#= link_to "Get Lucky!", '#' %>
-    </div>
-  </div> -->
+  <div class="page_title">
+    <h1>Welcome to your Wishlist!</h1>
+    <p><em>Happy window shopping</em></p>
+  </div>
 
   <div class="products-grid">
-    <% @sorting_products = @products.sort_by{|product| product.created_at }.reverse! %>
-    <% @sorting_products.each do |product| %>
+    <% product_array = [] %>
+
+    <% sorted_savings = current_user.savings.sort_by{|saving| saving.created_at }.reverse! %>
+
+    <% sorted_savings.each do |item| %>
+      <% product_array << item.product_id %>
+    <% end %>
+
+    <% @sorted_wishlist = current_user.wishlist.products.sort_by{ |product| product_array.index(product.id) || Float::INFINITY } %>
+
+    <% @sorted_wishlist.each do |product| %>
       <div class="product_linker">
         <div class="product_img">
           <%= cl_image_tag product.image.key %>
@@ -41,8 +41,8 @@
         <% end %>
         <div class="hover_links">
           <div class="links_product">
-            <%= link_to delete_saving_path(@wishlist, product), { method: :delete, data: { confirm: "Are you Sure about Deleting #{product.name} from your Wishlist?" } } do %>
-              <div class="link_svg"><%= show_svg('icons/heart.svg') %></div>
+            <%= link_to delete_saving_path(@wishlist, product), { method: :delete, data: { confirm: "Are you sure about deleting #{product.name} from your Wishlist?" } } do %>
+              <div class="link_svg"><%= show_svg('icons/heart_full.svg') %></div>
             <% end %>
             <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
           </div>
