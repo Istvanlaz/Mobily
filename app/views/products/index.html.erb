@@ -2,15 +2,35 @@
 <div class="app-container">
 
   <div class="sub-c-banner">
-    <div class="back-btn">
-      <%= link_to "All", category_products_path(@category, @product) %>
-    </div>
-    <% @sub_categories.each do |sub_category| %>
-      <%= link_to "#{sub_category.name}", category_sub_category_path(@category, sub_category) %>
+
+    <% if params[:query].present? %>
+
+      <div class="back-btn">
+        <%= link_to "All", newest_products_path %>
+      </div>
+      <% @categories.each do |category| %>
+        <div class="<%= active_on_page_category("newest_products", category.id) %>">
+          <%= link_to "#{category.name}", category_products_path(category) %>
+        </div>
+      <% end %>
+      <div class="back-btn">
+        <%= link_to "Get Lucky!", '#' %>
+      </div>
+
+    <% else %>
+
+      <div class="back-btn">
+        <%= link_to "All", category_products_path(@category, @product) %>
+      </div>
+      <% @sub_categories.each do |sub_category| %>
+        <%= link_to "#{sub_category.name}", category_sub_category_path(@category, sub_category) %>
+      <% end %>
+      <div class="back-btn">
+        <%= link_to "Get Lucky!", '#' %>
+      </div>
+
     <% end %>
-    <div class="back-btn">
-      <%= link_to "Get Lucky!", '#' %>
-    </div>
+
   </div>
 
   <div class="products-grid">

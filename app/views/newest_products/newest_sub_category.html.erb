@@ -14,60 +14,106 @@
     </div>
   </div>
 
-  <div class="sub-c-banner-small">
-    <div class="back-btn-small">
-      <%= link_to "#{@category.name}", newest_product_path(@category) %>
-    </div>
-    <!-- <%# cat_id = @product.category_id %> -->
-    <% @selected_category = Category.find(@category.id) %>
-    <% @sub_cat = @selected_category.sub_categories %>
-    <% @sub_cat.each do |sub_category| %>
-      <div class="<%= active_sub_cat(newest_sub_category_path(@category, sub_category)) %>">
-        <%= link_to "#{sub_category.name}", newest_sub_category_path(@category, sub_category) %>
+  <% unless params[:query].present? %>
+    <div class="sub-c-banner-small">
+      <div class="back-btn-small">
+        <%= link_to "#{@category.name}", newest_product_path(@category) %>
       </div>
-    <% end %>
-    <div class="back-btn-small">
-      <%= link_to "Get Lucky!", '#' %>
+      <!-- <%# cat_id = @product.category_id %> -->
+      <% @selected_category = Category.find(@category.id) %>
+      <% @sub_cat = @selected_category.sub_categories %>
+      <% @sub_cat.each do |sub_category| %>
+        <div class="<%= active_sub_cat(newest_sub_category_path(@category, sub_category)) %>">
+          <%= link_to "#{sub_category.name}", newest_sub_category_path(@category, sub_category) %>
+        </div>
+      <% end %>
+      <div class="back-btn-small">
+        <%= link_to "Get Lucky!", '#' %>
+      </div>
     </div>
-  </div>
+  <% end %>
 
   <div class="products-grid">
-    <% @selected_sub_cat = @selected_category.sub_categories.find(@sub_category.id) %>
-    <% @sorted_products = @selected_sub_cat.products.sort_by{|product| product.created_at }.reverse! %>
-    <% @sorted_products.each do |product| %>
-      <div class="product_linker">
-        <div class="product_img">
-          <%= cl_image_tag product.image.key %>
-        </div>
-        <%= link_to newest_sub_category_show_path(@category, @sub_category, product) do %>
-          <div class="product_card">
-            <div class="hover_dark"></div>
-            <div class="info_card">
-              <div>
-                <%= product.name %>
-              </div>
-              <div>
-                <%= product.price %>€
+    <% if params[:query].present? %>
+
+      <%# @selected_sub_cat = @selected_category.sub_categories.find(@sub_category.id) %>
+      <% @sorted_products = @products.sort_by{|product| product.created_at }.reverse! %>
+      <% @sorted_products.each do |product| %>
+        <div class="product_linker">
+          <div class="product_img">
+            <%= cl_image_tag product.image.key %>
+          </div>
+          <%= link_to newest_show_path(product) do %>
+            <div class="product_card">
+              <div class="hover_dark"></div>
+              <div class="info_card">
+                <div>
+                  <%= product.name %>
+                </div>
+                <div>
+                  <%= product.price %>€
+                </div>
               </div>
             </div>
-          </div>
-        <% end %>
-        <div class="hover_links">
-          <div class="links_product">
-            <%= link_to '#' do %>
-              <div class="link_svg"><%= show_svg('icons/heart.svg') %></div>
-            <% end %>
-            <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-          </div>
-          <div class="links_product">
-            <%= link_to '#' do %>
-              <i class="link_svg"><%= show_svg('icons/supermarket.svg') %></i>
-            <% end %>
-            <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+          <% end %>
+          <div class="hover_links">
+            <div class="links_product">
+              <%= link_to '#' do %>
+                <div class="link_svg"><%= show_svg('icons/heart.svg') %></div>
+              <% end %>
+              <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            </div>
+            <div class="links_product">
+              <%= link_to '#' do %>
+                <i class="link_svg"><%= show_svg('icons/supermarket.svg') %></i>
+              <% end %>
+              <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
+
+    <% else %>
+
+      <% @selected_sub_cat = @selected_category.sub_categories.find(@sub_category.id) %>
+      <% @sorted_products = @selected_sub_cat.products.sort_by{|product| product.created_at }.reverse! %>
+      <% @sorted_products.each do |product| %>
+        <div class="product_linker">
+          <div class="product_img">
+            <%= cl_image_tag product.image.key %>
+          </div>
+          <%= link_to newest_sub_category_show_path(@category, @sub_category, product) do %>
+            <div class="product_card">
+              <div class="hover_dark"></div>
+              <div class="info_card">
+                <div>
+                  <%= product.name %>
+                </div>
+                <div>
+                  <%= product.price %>€
+                </div>
+              </div>
+            </div>
+          <% end %>
+          <div class="hover_links">
+            <div class="links_product">
+              <%= link_to '#' do %>
+                <div class="link_svg"><%= show_svg('icons/heart.svg') %></div>
+              <% end %>
+              <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            </div>
+            <div class="links_product">
+              <%= link_to '#' do %>
+                <i class="link_svg"><%= show_svg('icons/supermarket.svg') %></i>
+              <% end %>
+              <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
     <% end %>
+
   </div>
   <%= render 'shared/footer' %>
 </div>
