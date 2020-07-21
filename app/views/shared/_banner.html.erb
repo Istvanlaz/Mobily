@@ -5,7 +5,7 @@
       <i class="category_img"><%= image_tag "logo/octocat.png", class: "avatar" %><%= link_to "#{current_user.username}", '#' %></i>
     </li>
     <li class="category_card" id="heart_wishlist">
-      <i class="category_svg"><%= show_svg('icons/heart.svg') %><%= link_to "Wishlist", '#' %></i>
+      <i class="category_svg"><%= show_svg('icons/heart.svg') %><%= link_to "Wishlist", wishlists_path %></i>
       <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </li>
     <li class="category_card" id="shopping_cart">
