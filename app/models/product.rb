@@ -7,7 +7,11 @@ class Product < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :sub_category, optional: true
   belongs_to :category, inverse_of: :products
+
   has_many :line_items
+  has_many :savings, dependent: :destroy
+  has_many :wishlists, through: :savings
+
   before_destroy :ensure_not_referenced_by_any_line_item
 
   validates :category, presence: true

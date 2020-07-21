@@ -8,24 +8,17 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  # if user_signed_in?
-  #   root to: 'newest_products#index'
-  # else
-    root to: 'pages#home'
-  # end
-
-  # get 'products#index', as: :products
-  # get 'newest_products', to: "pages#newest_products", as: 'newest_products'
-  # get 'best_deals', to: "pages#best_deals", as: 'best_deals'
-  # get 'newest_products/:id', to: "pages#new_show", as: 'product_new'
-  # get 'best_deals/:id', to: "pages#deal_show", as: 'product_deal'
+  root to: 'pages#home'
 
   get 'products/edit/:id', to: 'products#edit', as: 'edit_product'
   get 'products/new', to: 'products#new', as: 'new_product'
   post 'products', to: 'products#create', as: 'create_new_product'
-  # post 'products', to: 'products#update', as: 'update_product'
   patch 'products/edit/:id', to: 'products#update', as: 'update_product'
   delete 'products/destroy/:id', to: 'products#destroy', as: 'delete_product'
+
+  post 'products/:id/savings', to: 'savings#create', as: 'create_new_saving'
+  delete 'wishlists/:wishlist_id/savings/destroy/:id', to: 'savings#destroy', as: 'delete_saving'
+
 
   resources :categories, only: [:index, :show, :new, :edit, :destroy] do
     resources :sub_categories, only: [:index, :show, :new, :edit, :destroy]
@@ -46,7 +39,7 @@ Rails.application.routes.draw do
   resources :newest_products, only: [:index, :show, :destroy]
 
   resources :shopingcarts, only: [:index, :show, :new, :edit, :destroy]
-  # resources :wishlists, only: [:index, :show, :new, :edit, :destroy]
+  resources :wishlists, only: [:index, :show, :new, :create, :destroy]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

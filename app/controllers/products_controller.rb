@@ -156,4 +156,8 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :price, :description, :image, :category, :category_id,
                                     :sub_category, :sub_category_id, :user, :user_id, :id)
   end
+
+  def add_to_wishlist
+    @product.wishlist = true
+  end
 end
