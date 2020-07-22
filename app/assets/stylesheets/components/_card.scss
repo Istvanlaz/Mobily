@@ -203,3 +203,14 @@
     fill: $orange45;
   }
 }
+
+.link_svg_full {
+  fill: $orange !important;
+  // display: flex;
+  // align-items: center;
+  // height: 30px;
+  // z-index: 3;
+  &:hover {
+    fill: $orange45 !important;
+  }
+}

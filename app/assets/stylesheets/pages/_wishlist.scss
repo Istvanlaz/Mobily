@@ -1,0 +1,13 @@
+.page_title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 11vh;
+  color: $orange;
+}
+
+.page_title h1 {
+  margin-bottom: 0;
+}

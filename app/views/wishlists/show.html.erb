@@ -1,2 +1,28 @@
-<h1>Wishlists#show</h1>
-<p>Find me in app/views/wishlists/show.html.erb</p>
+<%= render 'shared/banner' %>
+<div class="app-container">
+  <div class="show_container">
+
+    <h1>You are seeing the Wishlists#show of our Wishlist!!</h1>
+
+    <div class="space-btn">
+      <div class="back-btn">
+        <%= link_to "Back", wishlists_path%>
+      </div>
+    </div>
+    <div class="product_show_img_card">
+      <%= cl_image_tag @product.image.key %>
+    </div>
+    <p>Name: <%= @product.name %></p>
+    <p>Price: <%= @product.price %>€</p>
+    <p>Address: <%= @product.address %></p>
+    <p>Description: <%= @product.description %></p>
+    <% if policy(@product).update? %>
+      <p class=“btn btn-primary”><%= link_to "Edit product", edit_product_path(@product) %></p>
+    <% end %>
+    <% if policy(@product).destroy? %>
+      <p class=“btn btn-primary”><%= link_to "Remove product", delete_product_path(@product), { method: :delete, data: { confirm: "Are you Sure about Deleting #{@product.name}?" } } %></p>
+    <% end %>
+  </div>
+  <%= render 'shared/footer' %>
+</div>
+
