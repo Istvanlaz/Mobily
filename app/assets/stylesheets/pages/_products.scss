@@ -74,15 +74,10 @@
   padding: 2vw 4vw;
 }
 
-.product_linker a {
-  color: inherit;
-  text-decoration: none;
-}
-
 .product_linker {
   position: relative;
   height: 35vh;
-  width: 16vw;
+  width: 100%;
   // background-color: red;
 
   border-radius: 5px;
@@ -92,14 +87,6 @@
     border-radius: 5px 5px 0px 0px;
     height: 84%;
   }
-
-  // &:hover .product_img img {
-  //   border-radius: 5px 5px 0px 0px;
-  // }
-
-  // &:hover .product_img {
-  //   display: none;
-  // }
 
   &:hover .hover_dark {
     position: absolute;
@@ -133,3 +120,9 @@
     transition: display 0.2s ease-in-out;
   }
 }
+
+.product_linker a {
+  color: inherit;
+  text-decoration: none;
+}
+
