@@ -1,0 +1,267 @@
+<div class="retarget_slider">
+
+  <button class="slider_arrow prevBtn is_hidden">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+
+  <div class="slider_items_cont">
+
+    <ul class="slider_items">
+
+      <li class="slider_show current_slide">
+        <div class="finding_products">
+          <% finding_products = Product.all.sample(3) %>
+        </div>
+        <div class="retarget_products_grid">
+          <% finding_products.each_with_index do |product, index| %>
+            <div class="product_linker wishlist_product_<%=index%>">
+              <div class="product_img">
+                <%= cl_image_tag product.image.key %>
+              </div>
+              <%= link_to newest_show_path(product) do %>
+                <div class="product_card">
+                  <div class="hover_dark"></div>
+                  <div class="info_card">
+                    <div>
+                      <%= product.name %>
+                    </div>
+                    <div>
+                      <%= product.price %>€
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <div class="hover_links">
+                <div class="links_product">
+                  <% if product.wishlist_ids.include?(current_user.id) %>
+                    <%= link_to delete_saving_path(current_user.wishlist.id, product), { method: :delete, data: { confirm: "Are you sure about deleting #{product.name} from your Wishlist?" } } do %>
+                      <div class="link_svg_full"><%= show_svg('icons/heart_full.svg') %></div>
+                    <% end %>
+                  <% else %>
+                    <%= link_to create_new_saving_path(product), method: :post do %>
+                      <div class="link_svg"><%= show_svg('icons/heart.svg') %></div>
+                    <% end %>
+                  <% end %>
+                  <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                </div>
+                <div class="links_product">
+                  <%= link_to '#' do %>
+                    <i class="link_svg"><%= show_svg('icons/supermarket.svg') %></i>
+                  <% end %>
+                  <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </li>
+
+      <li class="slider_show">
+        <div class="finding_products">
+          <% finding_products = Product.all.sample(3) %>
+        </div>
+        <div class="retarget_products_grid">
+          <% finding_products.each_with_index do |product, index| %>
+            <div class="product_linker wishlist_product_<%=index%>">
+              <div class="product_img">
+                <%= cl_image_tag product.image.key %>
+              </div>
+              <%= link_to newest_show_path(product) do %>
+                <div class="product_card">
+                  <div class="hover_dark"></div>
+                  <div class="info_card">
+                    <div>
+                      <%= product.name %>
+                    </div>
+                    <div>
+                      <%= product.price %>€
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <div class="hover_links">
+                <div class="links_product">
+                  <% if product.wishlist_ids.include?(current_user.id) %>
+                    <%= link_to delete_saving_path(current_user.wishlist.id, product), { method: :delete, data: { confirm: "Are you sure about deleting #{product.name} from your Wishlist?" } } do %>
+                      <div class="link_svg_full"><%= show_svg('icons/heart_full.svg') %></div>
+                    <% end %>
+                  <% else %>
+                    <%= link_to create_new_saving_path(product), method: :post do %>
+                      <div class="link_svg"><%= show_svg('icons/heart.svg') %></div>
+                    <% end %>
+                  <% end %>
+                  <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                </div>
+                <div class="links_product">
+                  <%= link_to '#' do %>
+                    <i class="link_svg"><%= show_svg('icons/supermarket.svg') %></i>
+                  <% end %>
+                  <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </li>
+
+      <li class="slider_show">
+        <div class="finding_products">
+          <% finding_products = Product.all.sample(3) %>
+        </div>
+        <div class="retarget_products_grid">
+          <% finding_products.each_with_index do |product, index| %>
+            <div class="product_linker wishlist_product_<%=index%>">
+              <div class="product_img">
+                <%= cl_image_tag product.image.key %>
+              </div>
+              <%= link_to newest_show_path(product) do %>
+                <div class="product_card">
+                  <div class="hover_dark"></div>
+                  <div class="info_card">
+                    <div>
+                      <%= product.name %>
+                    </div>
+                    <div>
+                      <%= product.price %>€
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <div class="hover_links">
+                <div class="links_product">
+                  <% if product.wishlist_ids.include?(current_user.id) %>
+                    <%= link_to delete_saving_path(current_user.wishlist.id, product), { method: :delete, data: { confirm: "Are you sure about deleting #{product.name} from your Wishlist?" } } do %>
+                      <div class="link_svg_full"><%= show_svg('icons/heart_full.svg') %></div>
+                    <% end %>
+                  <% else %>
+                    <%= link_to create_new_saving_path(product), method: :post do %>
+                      <div class="link_svg"><%= show_svg('icons/heart.svg') %></div>
+                    <% end %>
+                  <% end %>
+                  <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                </div>
+                <div class="links_product">
+                  <%= link_to '#' do %>
+                    <i class="link_svg"><%= show_svg('icons/supermarket.svg') %></i>
+                  <% end %>
+                  <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </li>
+
+      <li class="slider_show current_slide">
+        <div class="finding_products">
+          <% finding_products = Product.all.sample(3) %>
+        </div>
+        <div class="retarget_products_grid">
+          <% finding_products.each_with_index do |product, index| %>
+            <div class="product_linker wishlist_product_<%=index%>">
+              <div class="product_img">
+                <%= cl_image_tag product.image.key %>
+              </div>
+              <%= link_to newest_show_path(product) do %>
+                <div class="product_card">
+                  <div class="hover_dark"></div>
+                  <div class="info_card">
+                    <div>
+                      <%= product.name %>
+                    </div>
+                    <div>
+                      <%= product.price %>€
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <div class="hover_links">
+                <div class="links_product">
+                  <% if product.wishlist_ids.include?(current_user.id) %>
+                    <%= link_to delete_saving_path(current_user.wishlist.id, product), { method: :delete, data: { confirm: "Are you sure about deleting #{product.name} from your Wishlist?" } } do %>
+                      <div class="link_svg_full"><%= show_svg('icons/heart_full.svg') %></div>
+                    <% end %>
+                  <% else %>
+                    <%= link_to create_new_saving_path(product), method: :post do %>
+                      <div class="link_svg"><%= show_svg('icons/heart.svg') %></div>
+                    <% end %>
+                  <% end %>
+                  <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                </div>
+                <div class="links_product">
+                  <%= link_to '#' do %>
+                    <i class="link_svg"><%= show_svg('icons/supermarket.svg') %></i>
+                  <% end %>
+                  <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </li>
+
+      <li class="slider_show current_slide">
+        <div class="finding_products">
+          <% finding_products = Product.all.sample(3) %>
+        </div>
+        <div class="retarget_products_grid">
+          <% finding_products.each_with_index do |product, index| %>
+            <div class="product_linker wishlist_product_<%=index%>">
+              <div class="product_img">
+                <%= cl_image_tag product.image.key %>
+              </div>
+              <%= link_to newest_show_path(product) do %>
+                <div class="product_card">
+                  <div class="hover_dark"></div>
+                  <div class="info_card">
+                    <div>
+                      <%= product.name %>
+                    </div>
+                    <div>
+                      <%= product.price %>€
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <div class="hover_links">
+                <div class="links_product">
+                  <% if product.wishlist_ids.include?(current_user.id) %>
+                    <%= link_to delete_saving_path(current_user.wishlist.id, product), { method: :delete, data: { confirm: "Are you sure about deleting #{product.name} from your Wishlist?" } } do %>
+                      <div class="link_svg_full"><%= show_svg('icons/heart_full.svg') %></div>
+                    <% end %>
+                  <% else %>
+                    <%= link_to create_new_saving_path(product), method: :post do %>
+                      <div class="link_svg"><%= show_svg('icons/heart.svg') %></div>
+                    <% end %>
+                  <% end %>
+                  <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                </div>
+                <div class="links_product">
+                  <%= link_to '#' do %>
+                    <i class="link_svg"><%= show_svg('icons/supermarket.svg') %></i>
+                  <% end %>
+                  <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </li>
+
+    </ul>
+
+  </div>
+
+  <button class="slider_arrow nextBtn">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+
+</div>
+
+<div class="slider_position_cont">
+  <button class="slider_gommette current_slide"></button>
+  <button class="slider_gommette"></button>
+  <button class="slider_gommette"></button>
+  <button class="slider_gommette"></button>
+  <button class="slider_gommette"></button>
+</div>
