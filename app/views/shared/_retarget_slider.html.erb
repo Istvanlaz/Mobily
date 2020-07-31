@@ -1,21 +1,34 @@
   <div class="retarget_cont">
-    <% if current_user.wishlist.savings.empty? %>
+    <% if current_user.wishlist.nil? %>
 
-      <div class="subtitle_w_line">
+        <div class="subtitle_w_line">
 
-        <div class="orange_line_styling"></div>
-        <h3>You may <em>like</em></h3>
+          <div class="orange_line_styling"></div>
+          <h3>You may <em>like</em></h3>
 
-      </div>
+        </div>
 
     <% else %>
 
-      <div class="subtitle_w_line">
+      <% if current_user.wishlist.savings.empty? %>
 
-        <div class="orange_line_styling"></div>
-        <h3>You may also <em>like</em></h3>
+        <div class="subtitle_w_line">
 
-      </div>
+          <div class="orange_line_styling"></div>
+          <h3>You may <em>like</em></h3>
+
+        </div>
+
+      <% else %>
+
+        <div class="subtitle_w_line">
+
+          <div class="orange_line_styling"></div>
+          <h3>You may also <em>like</em></h3>
+
+        </div>
+
+      <% end %>
 
     <% end %>
 
