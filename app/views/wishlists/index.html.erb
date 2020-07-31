@@ -69,30 +69,7 @@
 
   <% end %>
 
-  <div class="retarget_cont">
-    <% if current_user.wishlist.savings.empty? %>
-
-      <div class="subtitle_w_line">
-
-        <div class="orange_line_styling"></div>
-        <h3>You may <em>like</em></h3>
-
-      </div>
-
-    <% else %>
-
-      <div class="subtitle_w_line">
-
-        <div class="orange_line_styling"></div>
-        <h3>You may also <em>like</em></h3>
-
-      </div>
-
-    <% end %>
-
-    <%= render 'shared/retarget_slider' %>
-
-  </div>
+  <%= render 'shared/retarget_slider' %>
   <%= render 'shared/footer' %>
 </div>
 
