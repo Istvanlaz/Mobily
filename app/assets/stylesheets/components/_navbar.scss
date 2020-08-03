@@ -1,27 +1,32 @@
 .navbar-mobily {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  background-color: $bright;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 100vw;
   height: 9vh;
-  position: fixed;
+  width: 100vw;
+
+  background-color: $bright;
+  box-shadow: 0px 4px 4px $black15;
   font-family: 'Roboto', sans-serif;
   margin-bottom: 0;
+
   z-index: 20000;
-  top: 0px;
-  left: 0px;
 }
 
 .navbar-links {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 8vw;
-  width: 100%;
+
   height: 9vh;
+  width: 100%;
+
+  padding: 0 8vw;
   letter-spacing: 2px;
   margin-bottom: 0px;
 }
@@ -188,7 +193,7 @@
 
 .login-sub input[type="email"], .login-sub input[type="password"] {
   border: none;
-  box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0px 0px 7px $black25;
   background: transparent;
   outline: none;
   color: $skin;
@@ -216,7 +221,7 @@
   }
 
 .login-sub input[type="email"]:focus {
-    box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0px 0px 7px $black25;
     color: $black;
     font-size: 14px;
 }
@@ -239,12 +244,200 @@
   }
 
 .login-sub input[type="password"]:focus {
-    box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0px 0px 7px $black25;
     color: $black;
     font-size: 14px;
 }
 
 .login-sub:focus {
   outline: none !important;
-  box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.25);;
+  box-shadow: inset 0px 0px 1px $black25;;
 }
+
+// Navbar responsiveness
+
+.responsive-navbar_mobily {
+  display: none;
+}
+
+.burger {
+  display: none;
+
+  cursor: pointer;
+}
+
+// .home-link {
+//   display: none;
+// }
+
+// .nav-item-small {
+//   display: none;
+// }
+
+.logo_responsive {
+  display: none;
+
+  cursor: pointer;
+}
+
+.logo_responsive a {
+  color: $black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+
+  .navbar-item :hover{
+    text-decoration: none;
+    color: $black;
+
+    cursor: pointer;
+  }
+}
+
+.burger div {
+  height: 2px;
+  width: 25px;
+  margin: 5px;
+
+  background-color: $black;
+  border-radius: 5px;
+
+  transition: all 0.3s ease;
+}
+
+
+@media screen and (max-width: 1045px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .navbar-mobily {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    justify-content: space-between;
+
+    height: 10vh;
+    padding: 0 5vw;
+  }
+
+  .responsive-navbar_mobily {
+    position: absolute;
+    top: 10vh;
+    right: 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    padding-left: 0;
+
+    height: 90vh;
+    width: 80vw;
+
+    background-color: $bright;
+
+    transform: translateX(100vw);
+    transition: transform 0.5s ease-in;
+  }
+
+  .responsive-navbar_mobily li {
+    list-style: none;
+  }
+
+  .responsive-navbar_mobily a {
+    color: $black;
+    text-decoration: none;
+  }
+
+  .responsive-navbar_mobily li {
+    opacity: 0;
+  }
+
+  .responsive-navbar_links {
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // padding: 0 8vw;
+    // width: 100%;
+    // height: 9vh;
+    letter-spacing: 2px;
+    margin-bottom: 0px;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  // .nav-item {
+  //   display: none;
+  // }
+
+  .burger {
+    display: block;
+  }
+
+  // .home-link {
+  //   display: block;
+  // }
+
+  .logo_responsive {
+    display: block;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $black;
+  }
+}
+
+.nav-active {
+  transform: translateX(0vw);
+  box-shadow: -2px 19px 12px $black15;
+
+  z-index: 3000000;
+}
+
+@keyframes navLinkFade{
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.burger_animation .line1 {
+  transform: rotate(-45deg) translate(-5px,5px);
+}
+
+.burger_animation .line2 {
+  opacity: 0;
+}
+
+.burger_animation .line3 {
+  transform: rotate(45deg) translate(-5px,-5px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

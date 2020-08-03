@@ -8,38 +8,27 @@ class ProductsController < ApplicationController
   skip_after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
   before_action :set_category, only: [:index, :show]
 
-  # before_action :encode_upload_header
-
-  # def encode_upload_header(_params = nil)
-  #   return unless request.content_mime_type&.symbol == :multipart_form
-
-  #   _params ||= params
-
-  #   _params.each do |_k, v|
-  #     case v
-  #     when ActionController::Parameters
-  #       encode_upload_header(v)
-  #     when ActionDispatch::Http::UploadedFile
-  #       headers = v.headers
-
-  #       begin
-  #         headers.encode!(Encoding::UTF_8)
-  #       rescue EncodingError
-  #         headers.force_encoding(Encoding::UTF_8)
-  #       end
-  #     end
-  #   end
-  # end
-
   def index
     @categories = policy_scope(Category)
-    @products = policy_scope(@category.products).order(created_at: :desc)
-    @sub_categories = policy_scope(@category.sub_categories).order(created_at: :asc)
+
+    if params[:query].present?
+      sql_query = "name @@ :query OR description @@ :query"
+      @products = Product.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @products = policy_scope(@category.products).order(created_at: :desc)
+      @sub_categories = policy_scope(@category.sub_categories).order(created_at: :asc)
+    end
   end
 
   def show
     @categories = policy_scope(Category)
-    authorize @product = Product.find(params[:id])
+
+    if params[:query].present?
+      sql_query = "name @@ :query OR description @@ :query"
+      @products = Product.where(sql_query, query: "%#{params[:query]}%")
+    else
+      authorize @product = Product.find(params[:id])
+    end
   end
 
   def new
@@ -166,5 +155,9 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :price, :description, :image, :category, :category_id,
                                     :sub_category, :sub_category_id, :user, :user_id, :id)
+  end
+
+  def add_to_wishlist
+    @product.wishlist = true
   end
 end

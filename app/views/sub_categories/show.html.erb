@@ -1,18 +1,38 @@
-<%#= render 'categories/banner' %>
+<%= render 'shared/banner' %>
+<%= render 'shared/sub_header_small' %>
 <div class="app-container">
 
   <div class="sub-c-banner">
-    <div class="back-btn">
-      <%= link_to "All", category_products_path(@category, @product) %>
-    </div>
-    <% @sub_categories.each do |sub_category| %>
-      <div class="<%= active_sub_cat(category_sub_category_path(@category, sub_category)) %>">
-        <%= link_to "#{sub_category.name}", category_sub_category_path(@category, sub_category) %>
+
+    <% if params[:query].present? %>
+
+      <div class="back-btn">
+        <%= link_to "All", newest_products_path %>
       </div>
+      <% @categories.each do |category| %>
+        <div class="<%= active_on_page_category("newest_products", category.id) %>">
+          <%= link_to "#{category.name}", category_products_path(category) %>
+        </div>
+      <% end %>
+      <div class="back-btn">
+        <%= link_to "Get Lucky!", '#' %>
+      </div>
+
+    <% else %>
+
+      <div class="back-btn">
+        <%= link_to "All", category_products_path(@category, @product) %>
+      </div>
+      <% @sub_categories.each do |sub_category| %>
+        <div class="<%= active_sub_cat(category_sub_category_path(@category, sub_category)) %>">
+          <%= link_to "#{sub_category.name}", category_sub_category_path(@category, sub_category) %>
+        </div>
+      <% end %>
+      <div class="back-btn">
+        <%= link_to "Get Lucky!", '#' %>
+      </div>
+
     <% end %>
-    <div class="back-btn">
-      <%= link_to "Get Lucky!", '#' %>
-    </div>
   </div>
 
   <div class="products-grid">
@@ -36,8 +56,14 @@
         <% end %>
         <div class="hover_links">
           <div class="links_product">
-            <%= link_to '#' do %>
-              <div class="link_svg"><%= show_svg('icons/heart.svg') %></div>
+            <% if product.wishlist_ids.include?(current_user.id) %>
+              <%= link_to delete_saving_path(current_user.wishlist.id, product), { method: :delete, data: { confirm: "Are you sure about deleting #{product.name} from your Wishlist?" } } do %>
+                <div class="link_svg_full"><%= show_svg('icons/heart_full.svg') %></div>
+              <% end %>
+            <% else %>
+              <%= link_to create_new_saving_path(product), method: :post do %>
+                <div class="link_svg"><%= show_svg('icons/heart.svg') %></div>
+              <% end %>
             <% end %>
             <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
           </div>
@@ -51,5 +77,6 @@
       </div>
     <% end %>
   </div>
+  <%= render 'shared/retarget_slider' %>
   <%= render 'shared/footer' %>
 </div>

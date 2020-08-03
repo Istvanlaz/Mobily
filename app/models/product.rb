@@ -7,7 +7,11 @@ class Product < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :sub_category, optional: true
   belongs_to :category, inverse_of: :products
+
   has_many :line_items
+  has_many :savings, dependent: :destroy
+  has_many :wishlists, through: :savings
+
   before_destroy :ensure_not_referenced_by_any_line_item
 
   validates :category, presence: true
@@ -18,6 +22,16 @@ class Product < ApplicationRecord
   validates_presence_of :sub_category_id, :description, :price, if: lambda { |e| e.current_step == "details" }
 
   has_one_attached :image
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_description,
+                  against: {
+                    name: 'A',
+                    description: 'B'
+                  },
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 
   # mount_uploader :image, ImageUploader
 

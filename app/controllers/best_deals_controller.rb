@@ -3,15 +3,27 @@ class BestDealsController < ApplicationController
   skip_after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
   def index
-    @products = policy_scope(Product)
     @categories = policy_scope(Category)
+
+    if params[:query].present?
+      sql_query = "name @@ :query OR description @@ :query"
+      @products = Product.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @products = policy_scope(Product)
+    end
   end
 
   def show
     authorize @category = Category.find(params[:id])
 
     @categories = policy_scope(Category)
-    @products = policy_scope(@category.products)
+    @sub_categories = policy_scope(SubCategory)
+    if params[:query].present?
+      sql_query = "name @@ :query OR description @@ :query"
+      @products = Product.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @products = policy_scope(@category.products)
+    end
   end
 
   def deal_show
@@ -27,11 +39,16 @@ class BestDealsController < ApplicationController
 
   def deal_sub_category
     @categories = policy_scope(Category)
-    @products = policy_scope(Product)
-    # @categories = policy_scope(Category)
-    authorize @product = Product.find(params[:id])
-    authorize @category = Category.find(params[:category_id])
-    authorize @sub_category = SubCategory.find(params[:id])
+
+    if params[:query].present?
+      sql_query = "name @@ :query OR description @@ :query"
+      @products = Product.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @products = policy_scope(Product)
+      authorize @product = Product.find(params[:id])
+      authorize @category = Category.find(params[:category_id])
+      authorize @sub_category = SubCategory.find(params[:id])
+    end
   end
 
   def deal_sub_category_show

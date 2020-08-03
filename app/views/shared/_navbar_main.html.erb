@@ -17,7 +17,7 @@
                   <%= text_field_tag :query,
                     params[:query],
                     class: "search-text",
-                    placeholder: "Search"
+                    placeholder: "Looking for something fancy?"
                   %>
                 <% end %>
             </form>
@@ -62,5 +62,54 @@
           <%#= link_to "New product", new_category_sub_category_product_path(@category, @sub_category) %>
         </li>
       </ul>
+
+      <!-- Navbar Responsive -->
+
+      <ul class="responsive-navbar_mobily">
+
+        <!-- <li class="responsive-navbar_links">
+          <%#= link_to "Sell", new_product_path %>
+        </li>
+
+        <li class="responsive-navbar_links">
+          <%#= link_to "#{current_user.username}", '#' %>
+        </li>
+
+        <li class="responsive-navbar_links">
+          <%#= link_to "Wishlist", wishlists_path %>
+        </li>
+
+        <li class="responsive-navbar_links">
+          <%#= link_to "Cart", '#' %>
+        </li>
+
+        <div class="separation_line"></div> -->
+
+        <li class="responsive-navbar_links">
+          <%= link_to "New", newest_products_path %>
+        </li>
+
+        <li class="responsive-navbar_links">
+          <%= link_to "Best Deals", best_deals_path %>
+        </li>
+
+        <% @categories.each do |category| %>
+          <li class="responsive-navbar_links">
+            <%= link_to "#{category.name}", category_products_path(category), method: :get%>
+          </li>
+        <% end %>
+
+      </ul>
+
+      <div class="logo_responsive">
+        <%= link_to "Mobily.", newest_products_path %>
+      </div>
+
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+
   </div>
 </nav>

@@ -3,8 +3,14 @@ class NewestProductsController < ApplicationController
   skip_after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
   def index
-    @products = policy_scope(Product)
     @categories = policy_scope(Category)
+
+    if params[:query].present?
+      sql_query = "name @@ :query OR description @@ :query"
+      @products = Product.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @products = policy_scope(Product)
+    end
   end
 
   def show
@@ -12,12 +18,22 @@ class NewestProductsController < ApplicationController
 
     @categories = policy_scope(Category)
     @sub_categories = policy_scope(SubCategory)
-    @products = policy_scope(@category.products)
+    if params[:query].present?
+      sql_query = "name @@ :query OR description @@ :query"
+      @products = Product.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @products = policy_scope(@category.products)
+    end
   end
 
   def newest_show
     @categories = policy_scope(Category)
-    authorize @product = Product.find(params[:id])
+    # if params[:query].present?
+    #   sql_query = "name @@ :query OR description @@ :query"
+    #   @products = Product.where(sql_query, query: "%#{params[:query]}%")
+    # else
+      authorize @product = Product.find(params[:id])
+    # end
   end
 
   def product_show
@@ -28,11 +44,16 @@ class NewestProductsController < ApplicationController
 
   def newest_sub_category
     @categories = policy_scope(Category)
-    @products = policy_scope(Product)
-    # @categories = policy_scope(Category)
-    authorize @category = Category.find(params[:category_id])
-    authorize @sub_category = SubCategory.find(params[:id])
-    authorize @product = Product.find(params[:id])
+
+    if params[:query].present?
+      sql_query = "name @@ :query OR description @@ :query"
+      @products = Product.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @products = policy_scope(Product)
+      authorize @category = Category.find(params[:category_id])
+      authorize @sub_category = SubCategory.find(params[:id])
+      authorize @product = Product.find(params[:id])
+    end
   end
 
   def newest_sub_category_show
@@ -48,24 +69,6 @@ class NewestProductsController < ApplicationController
     @product.destroy
     redirect_to category_products_path, notice: "#{@product.name} was successfully removed from the marketplace."
   end
-
-  # def new
-  #   authorize @product = Product.new
-  #   # @categories = policy_scope(Category)
-
-  #   # @product = @categories.products.build(params[:product])
-  #   @product.user = current_user
-  # end
-
-  # def create
-  #   authorize @product = Product.new(product_params)
-  #   @product.user = current_user
-  #   if @product.save!
-  #     redirect_to category_product_path(@category, @product), notice: "Product has been successfully added to our database"
-  #   else
-  #     render :new
-  #   end
-  # end
 
   private
 
