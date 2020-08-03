@@ -38,11 +38,11 @@
   bottom: 9vh;
   left: 0;
 
+  max-height: 0;
   width: 100vw;
 
   overflow: hidden;
   background-color: $bright;
-  max-height: 0;
 
   z-index: 20000;
 }

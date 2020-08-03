@@ -31,6 +31,10 @@
   margin-bottom: 0px;
 }
 
+.navbar_links_small {
+  display: none;
+}
+
 .navbar-links li {
   list-style: none;
 }
@@ -209,47 +213,24 @@
   font-size: 14px;
 }
 
-.login-sub input[type="email"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.login-sub input[type="email"]::-webkit-input-placeholder, .login-sub input[type="password"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: $skin;
     font-size: 14px;
   }
-  .login-sub input[type="email"]::-moz-placeholder { /* Firefox 19+ */
+  .login-sub input[type="email"]::-moz-placeholder, .login-sub input[type="password"]::-moz-placeholder { /* Firefox 19+ */
     color: $skin;
     font-size: 14px;
   }
-  .login-sub input[type="email"]:-ms-input-placeholder { /* IE 10+ */
+  .login-sub input[type="email"]:-ms-input-placeholder, .login-sub input[type="password"]:-ms-input-placeholder { /* IE 10+ */
     color: $skin;
     font-size: 14px;
   }
-  .login-sub input[type="email"]:-moz-placeholder { /* Firefox 18- */
-    color: $skin;
-    font-size: 14px;
-  }
-
-.login-sub input[type="email"]:focus {
-    box-shadow: inset 0px 0px 7px $black25;
-    color: $black;
-    font-size: 14px;
-}
-
-.login-sub input[type="password"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: $skin;
-    font-size: 14px;
-  }
-  .login-sub input[type="password"]::-moz-placeholder { /* Firefox 19+ */
-    color: $skin;
-    font-size: 14px;
-  }
-  .login-sub input[type="password"]:-ms-input-placeholder { /* IE 10+ */
-    color: $skin;
-    font-size: 14px;
-  }
-  .login-sub input[type="password"]:-moz-placeholder { /* Firefox 18- */
+  .login-sub input[type="email"]:-moz-placeholder, .login-sub input[type="password"]:-moz-placeholder { /* Firefox 18- */
     color: $skin;
     font-size: 14px;
   }
 
-.login-sub input[type="password"]:focus {
+.login-sub input[type="email"]:focus, .login-sub input[type="password"]:focus {
     box-shadow: inset 0px 0px 7px $black25;
     color: $black;
     font-size: 14px;
@@ -272,13 +253,30 @@
   cursor: pointer;
 }
 
-// .home-link {
-//   display: none;
-// }
+.login_nav_content {
+  position: fixed;
+  top: 10vh;
+  left: 0;
 
-// .nav-item-small {
-//   display: none;
-// }
+  max-height: 0;
+  width: 100vw;
+
+  overflow: hidden;
+  background-color: $orange;
+
+  z-index: 20000;
+}
+
+.login_nav_sub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 90vh;
+  width: 100vw;
+
+  background-color: $orange;
+}
 
 .logo_responsive {
   display: none;
@@ -311,6 +309,35 @@
   transition: all 0.3s ease;
 }
 
+.nav-active {
+  transform: translateX(0vw);
+  box-shadow: -2px 19px 12px $black15;
+
+  z-index: 3000000;
+}
+
+@keyframes navLinkFade{
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.burger_animation .line1 {
+  transform: rotate(-45deg) translate(-5px,5px);
+}
+
+.burger_animation .line2 {
+  opacity: 0;
+}
+
+.burger_animation .line3 {
+  transform: rotate(45deg) translate(-5px,-5px);
+}
 
 @media screen and (max-width: 1045px) {
   body {
@@ -377,17 +404,38 @@
     display: none;
   }
 
-  // .nav-item {
-  //   display: none;
-  // }
+  .navbar_links_small {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 10vh;
+    width: 100vw;
+
+    // padding: 0 8vw;
+    letter-spacing: 2px;
+    margin-bottom: 0px;
+    padding: 0 3vw;
+  }
+
+  .navbar_links_small li {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .navbar_links_small a {
+    text-decoration: none;
+  }
+  .navbar_links_small h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: $black;
+    margin-bottom: 0;
+  }
 
   .burger {
     display: block;
   }
-
-  // .home-link {
-  //   display: block;
-  // }
 
   .logo_responsive {
     display: block;
@@ -396,36 +444,74 @@
     letter-spacing: 2px;
     color: $black;
   }
-}
 
-.nav-active {
-  transform: translateX(0vw);
-  box-shadow: -2px 19px 12px $black15;
-
-  z-index: 3000000;
-}
-
-@keyframes navLinkFade{
-  from{
-    opacity: 0;
-    transform: translateX(50px);
+  .login_dropdown_active {
+    max-height: 90vh;
+    -webkit-transition: max-height 0.2s ease-in-out;
+    -moz-transition: max-height 0.2s ease-in-out;
+    transition: max-height 0.2s ease-in-out;
   }
-  to{
-    opacity: 1;
-    transform: translateX(0px);
+
+  .loginbox {
+    justify-content: space-around;
+    align-items: center;
+
+    height: 40vh;
+    width: 100vw;
   }
-}
 
-.burger_animation .line1 {
-  transform: rotate(-45deg) translate(-5px,5px);
-}
+  .login-sub {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 30vh;
+  }
 
-.burger_animation .line2 {
-  opacity: 0;
-}
+  .login-sub a {
+    font-size: 9px;
+    text-decoration: none;
+    color: $lightGrey;
+  }
 
-.burger_animation .line3 {
-  transform: rotate(45deg) translate(-5px,-5px);
+  .shared-links {
+    position: relative;
+    left: unset;
+    bottom: unset;
+  }
+
+  .shared-links a {
+    color: $bright;
+
+    text-decoration: underline;
+  }
+
+  .login-sub input {
+    margin: 0 4px;
+    color: $black;
+    border-radius: 5px;
+  }
+
+  .login-sub input[type="email"], .login-sub input[type="password"] {
+    height: 40px;
+    width: 72vw;
+
+    background-color: $bright;
+    color: $black;
+  }
+
+  .login-sub input[type="password"]::-webkit-input-placeholder, .login-sub input[type="email"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $black;
+  }
+  .login-sub input[type="password"]::-moz-placeholder, .login-sub input[type="email"]::-moz-placeholder { /* Firefox 19+ */
+    color: $black;
+  }
+  .login-sub input[type="password"]:-ms-input-placeholder, .login-sub input[type="email"]:-ms-input-placeholder { /* IE 10+ */
+    color: $black;
+  }
+  .login-sub input[type="password"]:-moz-placeholder, .login-sub input[type="email"]:-moz-placeholder { /* Firefox 18- */
+    color: $black;
+  }
 }
 
 
