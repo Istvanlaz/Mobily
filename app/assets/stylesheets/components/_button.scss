@@ -378,3 +378,22 @@ input[class="search-text"]:focus {
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (max-width: 1045px) {
+  .navbar-sell-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 30px;
+    width: 80px;
+    background-color: $skin;
+  }
+
+  .navbar-sell-btn a {
+    font-size: 15px;
+    // &:hover {
+    //   box-shadow: 0 0 10px $black05;
+    // }
+  }
+}
