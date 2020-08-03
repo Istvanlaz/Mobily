@@ -11,13 +11,34 @@
   overflow: scroll;
 }
 
+.buy-container {
+  position: absolute;
+  left: 23vw;
+
+  height: 91vh;
+  width: 77vw;
+  padding-top: 0vh;
+
+  overflow: scroll;
+}
+
 .no_overflow_app_container {
   overflow: hidden;
   background-color: $black45;
 }
 
 .show_container {
+  display: flex;
   padding: 3vw;
+
+  align-items: center;
+}
+
+.title_location {
+  margin-left: 38px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 16px;
 }
 
 .sub-c-banner {
