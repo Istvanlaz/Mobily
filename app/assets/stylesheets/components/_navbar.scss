@@ -54,6 +54,12 @@
   width: 21vw;
 }
 
+.nav-main {
+  position: relative;
+
+  cursor: pointer;
+}
+
 .nav-item {
   position: relative;
 
@@ -79,8 +85,8 @@
 
 .nav-content {
   position: absolute;
-  top: 9vh;
-  right: 9vw;
+  top: 7vh;
+  right: 0;
 
   overflow: hidden;
   background-color: $bright;
