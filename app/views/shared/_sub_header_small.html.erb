@@ -19,13 +19,40 @@
   </div>
 </div>
 
+<div class="small_nav_content">
+  <div class="small_nav_sub">
+    <ul>
+      <li>
+        <%= link_to "Invite a Friend", '#', class: "dropdown-item" %>
+        <i class="fas fa-chevron-right"></i>
+      </li>
+      <li>
+        <%= link_to "Settings", "#", class: "dropdown-item" %>
+        <i class="fas fa-chevron-right"></i>
+      </li>
+      <li>
+        <%= link_to "Privacy", "#", class: "dropdown-item" %>
+        <i class="fas fa-chevron-right"></i>
+      </li>
+      <li>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        <i class="fas fa-chevron-right"></i>
+      </li>
+      <li>
+        <%= link_to "Report a Problem", "#", class: "dropdown-item" %>
+        <i class="fas fa-chevron-right"></i>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="sub_header_darkener"></div>
+
 <div class="sub_header_small">
   <ul class="sub_header_links">
 
     <li class="sub_header_item">
-      <%#= link_to '#' do %>
-        <i class="search_svg sub_header_search_btn"><%= show_svg('icons/search.svg') %></i>
-      <%# end %>
+      <i class="search_svg sub_header_search_btn"><%= show_svg('icons/search.svg') %></i>
       <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
     </li>
 
@@ -43,10 +70,8 @@
       <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </li>
 
-    <li class="sub_header_item">
-      <%= link_to '#' do %>
-        <i class="category_img"><%= image_tag "logo/octocat.png", class: "avatar" %></i>
-      <% end %>
+    <li class="sub_header_item picto_user">
+      <i class="picto_user_img"><%= image_tag "logo/octocat.png", class: "avatar" %></i>
     </li>
 
     <li class="sub_header_item">

@@ -1,23 +1,24 @@
 const searchSmall = () => {
-  const appContainer = document.querySelector('.app-container');
   const searchBtnSmall = document.querySelector('.sub_header_search_btn');
-  const searchContent = document.querySelectorAll('.sub_search_cont');
+  const searchContent = document.querySelector('.sub_search_cont');
+  const bgDarkener = document.querySelector('.sub_header_darkener');
   const searchSvg = document.querySelector('.search_svg');
   searchBtnSmall.addEventListener('click', () => {
-    // Toggle Nav
-    searchContent.forEach((search) => {
-    console.log('heard that click')
-      search.classList.toggle('small_search_active');
-      appContainer.classList.toggle('no_overflow_app_container');
-      searchSvg.classList.toggle('search_svg_active');
-    });
+    // Toggle Search && bgDarkener
+    searchSvg.classList.toggle('search_svg_active');
+    searchContent.classList.toggle('small_search_active');
+    if (bgDarkener.style.display === "block") {
+      bgDarkener.style.display = "none";
+    } else {
+      bgDarkener.style.display = "block";
+    }
   });
-  //  Close SearchBar on body click
-  // appContainer.addEventListener('click', () => {
-  //   searchContent.forEach((content) => {
-  //     content.classList.remove('small_search_active');
-  //   });
-  // });
+  // Remove Search && bgDarkener on body click
+  bgDarkener.addEventListener('click', () => {
+    searchSvg.classList.remove('search_svg_active');
+    searchContent.classList.remove('small_search_active');
+    bgDarkener.style.display = 'none';
+  });
 }
 
 searchSmall();

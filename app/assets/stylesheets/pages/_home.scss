@@ -201,3 +201,71 @@ body {
   box-shadow: inset 0px 0px 100px red;
 }
 
+@media screen and (max-width: 1045px) {
+  .container-landing {
+    top: 1vh;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    height: 130vh;
+  }
+
+  // .bg_landing {
+  //   height: 100%;
+  // }
+
+  .bg_landing img {
+    height: 130vh;
+    max-width: 100%;
+    width: 100%;
+
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .bg_dark {
+    height: 130vh;
+  }
+
+  .title-ban {
+    height: fit-content;
+    width: 100%;
+
+    padding: 7vw;
+  }
+
+  .title-ban h1 {
+    font-size: 2rem;
+  }
+
+  .title-ban p {
+    font-size: 0.75rem;
+    margin-bottom: 0;
+  }
+
+  .signup {
+    height: fit-content;
+    width: 100%;
+
+    padding-bottom: 5vh;
+  }
+
+  .signup h2 {
+    font-size: 1.2rem;
+  }
+
+  .signup p {
+    font-size: 0.75rem;
+  }
+
+  .signup input[id="user_address"] {
+    width: 200px;
+  }
+
+  .form-styling {
+    height: 100%;
+  }
+}
