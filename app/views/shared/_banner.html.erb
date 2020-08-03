@@ -1,31 +1,40 @@
 
 <div class="categories-banner">
+
   <ul>
+
     <li class="category_card" id="username_card">
       <i class="category_img"><%= image_tag "logo/octocat.png", class: "avatar" %><%= link_to "#{current_user.username}", '#' %></i>
     </li>
+
     <li class="category_card <%= active_banner(WishlistsController) %>" id="heart_wishlist">
       <i class="category_svg"><%= show_svg('icons/heart.svg') %><%= link_to "Wishlist", wishlists_path %></i>
       <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </li>
+
     <li class="category_card <%= active_banner(CartsController) %>" id="shopping_cart">
       <i class="category_svg"><%= show_svg('icons/supermarket.svg') %><%= link_to "Cart", '#' %></i>
       <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </li>
+
     <div class="separation_line"></div>
-    <!-- <li class="category_card <%#= active_banner(newest_products_path) %> <%#= active_banner(newest_product_path(@category)) %>"> -->
-    <!-- <li class="category_card <%#= active_banner(newest_products_path) %>"> -->
+
     <li class="category_card <%= active_banner(NewestProductsController) %>">
       <%= link_to "New", newest_products_path %>
     </li>
+
     <li class="category_card <%= active_banner(BestDealsController) %>" id="best_deal_card">
       <%= link_to "Best Deals", best_deals_path %>
     </li>
+
     <% @categories.each do |category| %>
+
       <li class="category_card <%= active_category_banner(category.id) %>">
         <%= link_to "#{category.name}", category_products_path(category), method: :get%>
       </li>
+
     <% end %>
+
   </ul>
   <%#= link_to "New category", new_category_path %>
 </div>

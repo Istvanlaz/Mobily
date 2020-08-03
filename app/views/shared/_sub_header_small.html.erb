@@ -1,0 +1,59 @@
+<div class="sub_search_cont">
+  <div class="sub_header_search">
+    <form class="form-inline">
+      <%= form_tag "#", method: :get do %>
+        <%#= submit_tag <i class="fas fa-search"></i>, class: "search-glass" %>
+          <!-- <i class="fas fa-search"></i>
+        <%# end %> -->
+        <%#= button_tag(type: 'submit', class: "search-glass") do %>
+          <%#= "<i class='fas fa-search'></i>".html_safe %>
+        <%# end %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "search-text",
+          autofocus: true,
+          placeholder: "Looking for something fancy?"
+        %>
+      <% end %>
+    </form>
+  </div>
+</div>
+
+<div class="sub_header_small">
+  <ul class="sub_header_links">
+
+    <li class="sub_header_item">
+      <%#= link_to '#' do %>
+        <i class="search_svg sub_header_search_btn"><%= show_svg('icons/search.svg') %></i>
+      <%# end %>
+      <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
+    </li>
+
+    <li class="sub_header_item">
+      <%= link_to wishlists_path do %>
+        <i class="category_svg"><%= show_svg('icons/heart.svg') %></i>
+      <% end %>
+      <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    </li>
+
+    <li class="sub_header_item">
+      <%= link_to '#' do %>
+        <i class="category_svg"><%= show_svg('icons/supermarket.svg') %></i>
+      <% end %>
+      <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    </li>
+
+    <li class="sub_header_item">
+      <%= link_to '#' do %>
+        <i class="category_img"><%= image_tag "logo/octocat.png", class: "avatar" %></i>
+      <% end %>
+    </li>
+
+    <li class="sub_header_item">
+      <div class="navbar-sell-btn">
+        <%= link_to "Sell", new_product_path %>
+      </div>
+    </li>
+
+  </ul>
+</div>
