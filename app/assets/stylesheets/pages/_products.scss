@@ -9,8 +9,22 @@
   overflow: scroll;
 }
 
+.buy-container {
+  position: absolute;
+  left: 23vw;
+
+  height: 91vh;
+  width: 77vw;
+  padding-top: 0vh;
+
+  overflow: scroll;
+}
+
 .show_container {
+  display: flex;
   padding: 3vw;
+
+  align-items: center;
 }
 
 .sub-c-banner {
@@ -77,6 +91,13 @@
 .product_linker a {
   color: inherit;
   text-decoration: none;
+}
+
+.title_location {
+  margin-left: 38px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 16px;
 }
 
 .product_linker {
