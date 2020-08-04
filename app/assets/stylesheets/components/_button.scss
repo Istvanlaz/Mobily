@@ -94,7 +94,7 @@ input[class="search-text"]:focus {
   }
 }
 
-.login-btn {
+.login_btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -284,33 +284,7 @@ input[class="search-text"]:focus {
 }
 
 .exit_login_btn {
-  position: absolute;
-  top: 6vw;
-  left: 6vw;
-
-  z-index: 3;
-}
-
-.exit_login_btn i {
-  font-weight: bold;
-}
-
-.exit_login_btn a {
-  color: $bright;
-  font-size: 28px;
-  text-shadow: 0px 4px 4px $black25;
-  &:hover {
-    color: $skin;
-  }
-}
-
-.exit_login_btn {
-  color: $bright;
-  font-size: 28px;
-  text-shadow: 0px 4px 4px $black25;
-  &:hover {
-    color: $skin;
-  }
+  display: none;
 }
 
 .back-btn {
@@ -501,5 +475,37 @@ input[class="search-text"]:focus {
     // &:hover {
     //   box-shadow: 0 0 10px $black05;
     // }
+  }
+
+  .exit_login_btn {
+    position: absolute;
+    top: 6vw;
+    left: 6vw;
+
+    display: block;
+
+    z-index: 3;
+  }
+
+  .exit_login_btn i {
+    font-weight: bold;
+  }
+
+  .exit_login_btn a {
+    color: $bright;
+    font-size: 28px;
+    text-shadow: 0px 4px 4px $black25;
+    &:hover {
+      color: $skin;
+    }
+  }
+
+  .exit_login_btn {
+    color: $bright;
+    font-size: 28px;
+    text-shadow: 0px 4px 4px $black25;
+    &:hover {
+      color: $skin;
+    }
   }
 }

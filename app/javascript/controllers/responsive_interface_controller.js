@@ -17,7 +17,7 @@ const searchBtnSmall = document.querySelector('.sub_header_search_btn');
 const burger = document.querySelector('.burger');
   // on burger click
   const nav = document.querySelector('.responsive-navbar_mobily');
-  const navLinks = document.querySelectorAll('.responsive-navbar_links')
+  const navLinks = document.querySelectorAll('.responsive-navbar_links_main')
 
 
 
@@ -203,7 +203,7 @@ bgDarkener.onclick = function(){
 // const navSlide = () => {
 //   const burger = document.querySelector('.burger');
 //   const nav = document.querySelector('.responsive-navbar_mobily');
-//   const navLinks = document.querySelectorAll('.responsive-navbar_links')
+//   const navLinks = document.querySelectorAll('.responsive-navbar_links_main')
 
 //   burger.addEventListener('click', () => {
 //     // Burger Animation

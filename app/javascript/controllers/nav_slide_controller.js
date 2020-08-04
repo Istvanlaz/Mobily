@@ -1,7 +1,7 @@
 // const navSlide = () => {
 //   const burger = document.querySelector('.burger');
 //   const nav = document.querySelector('.responsive-navbar_mobily');
-//   const navLinks = document.querySelectorAll('.responsive-navbar_links')
+//   const navLinks = document.querySelectorAll('.responsive-navbar_links_main')
 //   const bgDarkener = document.querySelector('.sub_header_darkener');
 
 //   burger.addEventListener('click', () => {
