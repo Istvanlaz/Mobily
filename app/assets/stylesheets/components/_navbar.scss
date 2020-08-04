@@ -309,13 +309,6 @@
   transition: all 0.3s ease;
 }
 
-.nav-active {
-  transform: translateX(0vw);
-  box-shadow: -2px 19px 12px $black15;
-
-  z-index: 3000000;
-}
-
 @keyframes navLinkFade{
   from{
     opacity: 0;
@@ -450,6 +443,13 @@
     -webkit-transition: max-height 0.2s ease-in-out;
     -moz-transition: max-height 0.2s ease-in-out;
     transition: max-height 0.2s ease-in-out;
+  }
+
+  .nav-active {
+    transform: translateX(0vw);
+    box-shadow: -2px 19px 12px $black15;
+
+    z-index: 3000000;
   }
 
   .loginbox {

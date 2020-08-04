@@ -1,3 +1,5 @@
+import "bootstrap";
+
 const dropDownLogin = () => {
   const loginDropdown = document.querySelector('.login_dropdown');
   const loginNavContent = document.querySelector('.login_nav_content');
@@ -14,4 +16,7 @@ const dropDownLogin = () => {
   });
 }
 
+// dropDownLogin();
 dropDownLogin();
+
+
