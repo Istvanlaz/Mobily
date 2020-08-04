@@ -1,62 +1,23 @@
-<nav>
+<nav id="navbar_landing">
 
   <div class="navbar-mobily">
 
-    <ul class="navbar-links">
+    <ul class="navbar_links_landing">
 
-      <li class="navbar-logo">
-        <%= link_to "Mobily.", "#" %>
+      <li class="navbar_logo">
+        <h1>Mobily.</h1>
       </li>
 
-      <li>
-
-        <div class="loginbox" >
-
-          <%= form_for(resource, as: resource, url: session_path(resource)) do |f| %>
-
-            <div class="login-sub">
-
-              <div class="nav-search-btn">
-                  <%= f.email_field :email,
-                                   required: false,
-                                   autofocus: true,
-                                   placeholder: "Email",
-                                   label:false %>
-              </div>
-
-              <div class="nav-search-btn">
-                  <%= f.password_field :password,
-                                       required: false,
-                                       placeholder: "Password",
-                                       label:false %>
-              </div>
-
-              <%= f.submit "Login", class: "login-btn" %>
-
-            </div>
-
-          <% end %>
-
-          <div class="shared-links">
-            <%= render "devise/shared/links" %>
-          </div>
-
-        </div>
-
-      </li>
-
-    </ul>
-
-    <ul class="navbar_links_small">
-
-      <li>
+      <li class="navbar_logo_small">
         <h1>M.</h1>
       </li>
+
+      <div class="sub_header_darkener"></div>
 
       <li>
         <div class="login_dropdown">
 
-          <div class="login-btn">
+          <div class="login_btn">
             Login
           </div>
 
@@ -70,7 +31,7 @@
               <i class="far fa-times-circle"></i>
             </div>
 
-            <div class="loginbox">
+            <div class="loginbox" >
 
               <%= form_for(resource, as: resource, url: session_path(resource)) do |f| %>
 
@@ -91,7 +52,7 @@
                                            label:false %>
                   </div>
 
-                  <%= f.submit "Login", class: "login-btn" %>
+                  <%= f.submit "Login", class: "login_btn" %>
 
                 </div>
 
@@ -110,6 +71,70 @@
       </li>
 
     </ul>
+
+    <!-- <ul class="navbar_links_small">
+
+      <li>
+        <h1>M.</h1>
+      </li>
+
+      <li>
+        <div class="login_dropdown">
+
+          <div class="login_btn">
+            Login
+          </div>
+
+        </div>
+
+        <div class="login_nav_content">
+
+          <div class="login_nav_sub">
+
+            <div class="exit_login_btn">
+              <i class="far fa-times-circle"></i>
+            </div>
+
+            <div class="loginbox">
+
+              <%#= form_for(resource, as: resource, url: session_path(resource)) do |f| %>
+
+                <div class="login-sub">
+
+                  <div class="nav-search-btn">
+                      <%#= f.email_field :email,
+                                       required: false,
+                                       autofocus: true,
+                                       placeholder: "Email",
+                                       label:false %>
+                  </div>
+
+                  <div class="nav-search-btn">
+                      <%#= f.password_field :password,
+                                           required: false,
+                                           placeholder: "Password",
+                                           label:false %>
+                  </div>
+
+                  <%#= f.submit "Login", class: "login_btn" %>
+
+                </div>
+
+              <%# end %>
+
+              <div class="shared-links">
+                <%#= render "devise/shared/links" %>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </li>
+
+    </ul> -->
 
   </div>
 

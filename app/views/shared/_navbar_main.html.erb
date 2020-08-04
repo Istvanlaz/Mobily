@@ -1,7 +1,7 @@
-<nav>
+<nav id="navbar_main">
   <div class="navbar-mobily">
-      <ul class="navbar-links">
-        <li class="navbar-logo">
+      <ul class="navbar_links_main">
+        <li class="navbar_logo">
           <%= link_to "Mobily.", newest_products_path %>
         </li>
         <li>
@@ -67,16 +67,16 @@
 
       <ul class="responsive-navbar_mobily">
 
-        <li class="responsive-navbar_links">
+        <li class="responsive-navbar_links_main">
           <%= link_to "New", newest_products_path %>
         </li>
 
-        <li class="responsive-navbar_links">
+        <li class="responsive-navbar_links_main">
           <%= link_to "Best Deals", best_deals_path %>
         </li>
 
         <% @categories.each do |category| %>
-          <li class="responsive-navbar_links">
+          <li class="responsive-navbar_links_main">
             <%= link_to "#{category.name}", category_products_path(category), method: :get%>
           </li>
         <% end %>

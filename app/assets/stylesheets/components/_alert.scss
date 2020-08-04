@@ -73,3 +73,15 @@
     top: -30px;
   }
 }
+
+@media screen and (max-width: 1045px) {
+  .bg-red-500 {
+    position: relative;
+    top: 1vh;
+  }
+
+  .bg-green-500 {
+    position: relative;
+    top: 1vh;
+  }
+}
