@@ -1,8 +1,4 @@
 <div class="container-landing">
-  <div class="bg_landing">
-    <%= image_tag("login/LandingBG.jpg", alt: "alttext") %>
-    <div class="bg_dark"></div>
-  </div>
   <div class="title-ban">
     <h1>Mobily.</h1>
 
@@ -13,6 +9,10 @@
     <p>Login is required only to guarantee <strong>your</strong> personal<br>safety!</p><br>
 
     <p class="bold-white"><strong>We will be happy only when you are!</strong></p>
+  </div>
+  <div class="bg_landing">
+    <%= image_tag("login/LandingBG.jpg", alt: "Looking for something to decorate your living room or you bedroom in your new flat? You will find here everything you need!") %>
+    <div class="bg_dark"></div>
   </div>
   <div class="signup">
     <div>
@@ -27,48 +27,50 @@
         <div>
           <%= f.text_field :first_name,
                           required: true,
-                          autofocus: true,
                           placeholder: "First Name",
-                          label: false,
                           autocomplete: "off" %>
+                          <!-- autofocus: true, -->
+                          <!-- label: false, -->
 
           <%= f.text_field :family_name,
                           required: true,
                           placeholder: "Family Name",
-                          label: false,
                           autocomplete: "off" %>
+                          <!-- label: false, -->
         </div>
         <div>
           <%= f.text_field :username,
                           required: true,
                           placeholder: "Username",
-                          label: false,
                           autocomplete: "off" %>
+                          <!-- label: false, -->
+
           <%= f.email_field :email,
                            required: true,
                            placeholder: "Email",
-                           label: false,
                            autocomplete: "off" %>
+                           <!-- label: false, -->
         </div>
         <div>
           <%= f.password_field :password,
                               required: true,
                               hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                               placeholder: "Password",
-                              label: false,
                               autocomplete: "new-password" %>
+                              <!-- label: false, -->
+
           <%= f.password_field :password_confirmation,
                               required: true,
                               placeholder: "Password Confirmation",
-                              label: false,
                               autocomplete: "new-password" %>
+                              <!-- label: false, -->
         </div>
         <div>
           <%= f.text_field :address,
                           required: true,
                           placeholder: "Neighbourhood",
-                          label: false,
                           autocomplete: "off" %>
+                          <!-- label: false, -->
         </div>
         <div class="bottom-signup">
           <div class="sign-up-btn">
