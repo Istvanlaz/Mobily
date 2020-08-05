@@ -67,12 +67,12 @@
   text-decoration: none;
 }
 
-.navbar_links_landing h1 {
-  font-size: 32px;
-  font-weight: bold;
-  color: $black;
-  margin-bottom: 0;
-}
+// .navbar_links_landing h1 {
+//   font-size: 32px;
+//   font-weight: bold;
+//   color: $black;
+//   margin-bottom: 0;
+// }
 
 .navbar_logo a {
   font-size: 32px;
@@ -80,7 +80,7 @@
   color: $black;
 }
 
-.navbar_logo h1 {
+.navbar_logo {
   font-size: 32px;
   font-weight: bold;
   color: $black;
@@ -465,7 +465,7 @@
     display: block;
   }
 
-  .navbar_logo_small h1 {
+  .navbar_logo_small {
     font-size: 32px;
     font-weight: bold;
     color: $black;
