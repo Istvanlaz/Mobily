@@ -508,4 +508,13 @@ input[class="search-text"]:focus {
       color: $skin;
     }
   }
+
+  .exit_sales_btn {
+    top: 3%;
+    left: 5%;
+  }
+
+  .exit_sales_btn a {
+    font-size: 29px;
+  }
 }
