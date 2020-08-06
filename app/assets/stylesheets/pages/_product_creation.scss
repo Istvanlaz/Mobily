@@ -427,3 +427,64 @@
   }
 }
 
+@media screen and (max-width: 1045px) {
+  .container_sale {
+    top: 1vh;
+
+    height: 90vh;
+  }
+
+  #sale_background img {
+    height: 90vh;
+  }
+
+  .bg_dark_sale {
+    height: 90vh;
+  }
+
+  .sale_card {
+    width: 75vw;
+  }
+
+  .form_title h4 {
+    font-size: 0.95rem;
+  }
+
+  .form_content label {
+    font-size: 0.8rem;
+  }
+
+  .form_data_step1 {
+    font-size: 0.8rem;
+  }
+
+  .form_data_step2 {
+    font-size: 0.8rem;
+  }
+
+  .form_description {
+    font-size: 0.8rem;
+  }
+
+  .form_price {
+    font-size: 0.8rem;
+  }
+
+  .location_draft {
+    font-size: 0.8rem;
+  }
+
+  .form_content textarea::-webkit-input-placeholder, .form_content input[type="text"]::-webkit-input-placeholder, .form_content input[id="product_sub_category_id"]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      font-size: 0.8rem;
+    }
+    .form_content textarea::-moz-placeholder, .form_content input[type="text"]::-moz-placeholder, .form_content input[id="product_sub_category_id"]::-moz-placeholder { /* Firefox 19+ */
+      font-size: 0.8rem;
+    }
+    .form_content textarea:-ms-input-placeholder, .form_content input[type="text"]:-ms-input-placeholder, .form_content input[id="product_sub_category_id"]:-ms-input-placeholder { /* IE 10+ */
+      font-size: 0.8rem;
+    }
+    .form_content textarea:-moz-placeholder, .form_content input[type="text"]:-moz-placeholder, .form_content input[id="product_sub_category_id"]:-moz-placeholder { /* Firefox 18- */
+      font-size: 0.8rem;
+    }
+}
+
