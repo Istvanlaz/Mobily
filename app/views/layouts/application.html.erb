@@ -19,7 +19,9 @@
     <% else %>
       <%= render 'shared/navbar_landing' %>
     <% end %>
-    <%= yield %>
+    <div class="mobily_container">
+      <%= yield %>
+    </div>
 
     <%= javascript_include_tag 'application' %>
     <% if user_signed_in? %>
