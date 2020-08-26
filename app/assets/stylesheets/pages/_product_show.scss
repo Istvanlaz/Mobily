@@ -1,0 +1,164 @@
+.product_show_container {
+  display: flex;
+  // background: red;
+  margin: 7% 7% 2% 7%;
+  height: fit-content;
+  width: fit-content;
+}
+
+#app-container_show {
+  padding-top: 0;
+}
+
+.product_show_left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1%;
+}
+
+.product_show_img_grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 1em;
+
+  height: 60%;
+  width: 100%;
+
+  padding: 2%;
+}
+
+.show_img {
+  height: 21vh;
+  width: 100%;
+
+  border-radius: 25px;
+}
+
+.show_img img {
+  object-fit: cover;
+
+  height: 100%;
+  width: 100%;
+
+  border-radius: 25px;
+}
+
+.show_icon img {
+  height: 30px;
+  width: 31px;
+}
+
+#buy-btn_show {
+  width: 16em;
+}
+
+#contact-btn_show {
+  width: 8em;
+}
+
+.product_location_img img {
+  object-fit: cover;
+  width: 100%;
+  height: 20%;
+  border-radius: 5px;
+}
+
+#orange_line_show_location {
+  width: 50%;
+}
+
+.show_info_card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  background: $bright;
+  border-radius: 5px;
+
+  height: 90%;
+  width: 42%;
+
+  margin: 1%;
+  padding: 2%;
+}
+
+.show_info_card p {
+  // margin-bottom: 0;
+  font-size: 14px;
+}
+
+.product_show_top {
+  display: flex;
+}
+
+.product_show_wishlist_link {
+  padding: 2%;
+}
+
+.product_show_wishlist_link svg {
+  height: 30px;
+  width: 30px;
+  // position: absolute;
+  // top: 3%;
+  // right: 3%;
+}
+
+.product_show_title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+
+  height: 12vh;
+  width: 100%;
+}
+
+.show_card_location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 2%;
+}
+
+.show_count {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.show_card_location p {
+  margin-bottom: 0;
+}
+
+.location_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 35%;
+}
+
+.fine_characters p {
+  font-size: 11px;
+  font-weight: 100;
+}
+
+.retarget_show {
+  padding: 0 7%;
+}
+
+#active_img_product_show {
+  grid-column: 2/4;
+  grid-row: 1/3;
+
+  height: 44vh;
+  width: 25vw;
+}
+
+#subtitle_product_show em {
+  font-style: unset;
+  color: $skin;
+}

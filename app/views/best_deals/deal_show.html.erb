@@ -1,27 +1,189 @@
-<%= render 'shared/banner' %>
-<%= render 'shared/sub_header_small' %>
-<div class="app-container">
+<%#= render 'shared/banner' %>
+<%#= render 'shared/sub_header_small' %>
+<!-- <div class="app-container">
   <div class="show_container">
     <h1>You are seeing the BestDeals#DealShow of our Best Deals!!</h1>
 
     <div class="space-btn">
       <div class="back-btn">
-        <%= link_to "Back", best_deals_path %>
+        <%#= link_to "Back", best_deals_path %>
       </div>
     </div>
     <div class="product_show_img_card">
-      <%= cl_image_tag @product.image.key %>
+      <%#= cl_image_tag @product.image.key %>
     </div>
-    <p>Name: <%= @product.name %></p>
-    <p>Price: <%= @product.price %>€</p>
-    <p>Address: <%= @product.address %></p>
-    <p>Description: <%= @product.description %></p>
-    <% if policy(@product).update? %>
-      <p class=“btn btn-primary”><%= link_to "Edit product", edit_product_path(@product) %></p>
-    <% end %>
-    <% if policy(@product).destroy? %>
-      <p class=“btn btn-primary”><%= link_to "Remove product", delete_product_path(@product), { method: :delete, data: { confirm: "Are you Sure about Deleting #{@product.name}?" } } %></p>
-    <% end %>
+    <p>Name: <%#= @product.name %></p>
+    <p>Price: <%#= @product.price %>€</p>
+    <p>Address: <%#= @product.address %></p>
+    <p>Description: <%#= @product.description %></p>
+    <%# if policy(@product).update? %>
+      <p class=“btn btn-primary”><%#= link_to "Edit product", edit_product_path(@product) %></p>
+    <%# end %>
+    <%# if policy(@product).destroy? %>
+      <p class=“btn btn-primary”><%#= link_to "Remove product", delete_product_path(@product), { method: :delete, data: { confirm: "Are you Sure about Deleting #{@product.name}?" } } %></p>
+    <%# end %>
   </div>
+  <%#= render 'shared/footer' %>
+</div> -->
+<%= render 'shared/banner' %>
+<%= render 'shared/sub_header_small' %>
+<div class="app-container" id="app-container_show">
+
+  <div class="product_show_container">
+
+    <div class="exit_show_btn">
+      <%= link_to best_deals_path do %>
+        <i class="far fa-times-circle"></i>
+      <% end %>
+    </div>
+
+    <div class="product_show_left">
+
+      <div class="product_show_img_grid">
+
+        <div class="show_img">
+          <%= cl_image_tag @product.image.key %>
+        </div>
+
+        <div class="show_img">
+          <%= cl_image_tag @product.image.key %>
+        </div>
+
+        <div class="show_img" id="active_img_product_show">
+          <%= cl_image_tag @product.image.key %>
+        </div>
+
+      </div>
+
+      <div>
+
+        <div class="subtitle_w_line" id="subtitle_product_show">
+
+          <div class="orange_line_styling" id="orange_line_show_location"></div>
+          <h3>Pick it <em>here!</em></h3>
+
+        </div>
+
+        <div class="product_location_img">
+          <img src="/assets/logo/location-screenshot.png" alt="location">
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="show_info_card">
+
+      <div class="product_show_top">
+
+        <div class="product_show_title">
+          <h4><strong><%= @product.name %></strong></h4>
+          <h5><strong><%= @product.price %>€</strong></h5>
+        </div>
+
+        <div class="product_show_wishlist_link">
+
+          <% if @product.wishlist_ids.include?(current_user.id) %>
+
+            <%= link_to delete_saving_path(current_user.wishlist.id, @product), { method: :delete, data: { confirm: "Are you sure about deleting #{product.name} from your Wishlist?" } } do %>
+              <div class="link_svg_full"><%= show_svg('icons/heart_full.svg') %></div>
+            <% end %>
+
+          <% else %>
+
+            <%= link_to create_new_saving_path(@product), method: :post do %>
+              <div class="link_svg"><%= show_svg('icons/heart.svg') %></div>
+            <% end %>
+
+          <% end %>
+          <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        </div>
+
+      </div>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Iel quos cupiditate dicta quisquam, error nostrum odit beatae.
+      </p>
+
+      <div class="show_count">
+        <p>This announce has been seen:</p> <p><strong>48 times</strong></p>
+      </div>
+
+      <div class="show_card_location">
+
+        <div class="location_title">
+
+          <div class="show_icon">
+            <%= image_tag("icons/user_picto.png", alt: "User Rating") %>
+          </div>
+          <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
+
+          <p>Rating:</p>
+
+        </div>
+
+        <p>⭐⭐⭐⭐⭐</p>
+      </div>
+
+      <div class="show_card_location">
+
+        <div class="location_title">
+
+          <div class="show_icon">
+            <%= image_tag("icons/location.png", alt: "Localisation") %>
+          </div>
+          <div class="icon_made_by">Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></div>
+
+          <p>Where?</p>
+
+        </div>
+
+        <p><strong>Cimetière d'Ixelles</strong></p>
+
+      </div>
+
+      <% if policy(@product).update? %>
+        <p class=“btn btn-primary”><%= link_to "Edit product", edit_product_path(@product) %></p>
+      <% end %>
+
+      <% if policy(@product).destroy? %>
+        <p class=“btn btn-primary”><%= link_to "Remove product", delete_product_path(@product), { method: :delete, data: { confirm: "Are you Sure about Deleting #{@product.name}?" } } %></p>
+      <% end %>
+
+      <div class="btn-wrapper">
+
+        <div class="show-sale-btn">
+          <%= button_to 'Add to Cart', line_items_path(line_item: {product_id: @product}), {:class => "buy-btn", :id => "buy-btn_show"} %>
+        </div>
+
+        <div class="show-sale-btn">
+          <%= button_to 'Contact', line_items_path(line_item: {product_id: @product}), {:class => "contact-btn", :id => "contact-btn_show"} %>
+          <%= button_to 'Make an Offer', line_items_path(line_item: {product_id: @product}), {:class => "contact-btn", :id => "contact-btn_show"} %>
+        </div>
+
+      </div>
+      <div class="fine_characters">
+        <p>
+          MODALITÉS DE PAIMENT:<br>
+          Payez en toute sécurité par CB ou Paypal
+        </p>
+        <!-- <br> -->
+        <p>
+          SATISFAIT OU REMBOURSÉ<br>
+          Vous avez 14 jours pour changer d'avis et être remboursé
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="retarget_show">
+    <%= render 'shared/retarget_slider' %>
+  </div>
+
   <%= render 'shared/footer' %>
+
 </div>
+
