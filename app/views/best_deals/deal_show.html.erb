@@ -46,7 +46,18 @@
         </div>
 
         <div class="show_img">
-          <%= cl_image_tag @product.image.key %>
+          <%= image_tag("local/girafe.jpg", alt: "A girafe") %>
+          <div class="inacitve_img_show_small"></div>
+        </div>
+
+        <div class="show_img">
+          <%= image_tag("local/marvel_logo.png", alt: "Marvel Logo") %>
+          <div class="inacitve_img_show_small"></div>
+        </div>
+
+        <div class="show_img">
+          <%= image_tag("local/mockup.jpg", alt: "A Mockup") %>
+          <div class="inacitve_img_show_small"></div>
         </div>
 
         <div class="show_img" id="active_img_product_show">
@@ -55,7 +66,7 @@
 
       </div>
 
-      <div>
+      <div class="product_map_cont">
 
         <div class="subtitle_w_line" id="subtitle_product_show">
 
@@ -65,7 +76,7 @@
         </div>
 
         <div class="product_location_img">
-          <img src="/assets/logo/location-screenshot.png" alt="location">
+          <%= image_tag("logo/location-screenshot.png", alt: "Location") %>
         </div>
 
       </div>
@@ -101,16 +112,22 @@
 
       </div>
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Iel quos cupiditate dicta quisquam, error nostrum odit beatae.
-      </p>
+      <div class="product_show_description">
+        <p>
+          <% if @product.description.nil? %>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Iel quos cupiditate dicta quisquam, error nostrum odit beatae.
+          <% else %>
+            <%= @product.description %>
+          <% end %>
+        </p>
+      </div>
 
       <div class="show_count">
         <p>This announce has been seen:</p> <p><strong>48 times</strong></p>
       </div>
 
-      <div class="show_card_location">
+      <div class="show_card_localisation">
 
         <div class="location_title">
 
@@ -126,7 +143,7 @@
         <p>⭐⭐⭐⭐⭐</p>
       </div>
 
-      <div class="show_card_location">
+      <div class="show_card_localisation">
 
         <div class="location_title">
 
@@ -142,14 +159,6 @@
         <p><strong>Cimetière d'Ixelles</strong></p>
 
       </div>
-
-      <% if policy(@product).update? %>
-        <p class=“btn btn-primary”><%= link_to "Edit product", edit_product_path(@product) %></p>
-      <% end %>
-
-      <% if policy(@product).destroy? %>
-        <p class=“btn btn-primary”><%= link_to "Remove product", delete_product_path(@product), { method: :delete, data: { confirm: "Are you Sure about Deleting #{@product.name}?" } } %></p>
-      <% end %>
 
       <div class="btn-wrapper">
 
@@ -169,10 +178,20 @@
           Payez en toute sécurité par CB ou Paypal
         </p>
         <!-- <br> -->
-        <p>
+        <p id="last_fine_character_paragraph">
           SATISFAIT OU REMBOURSÉ<br>
           Vous avez 14 jours pour changer d'avis et être remboursé
         </p>
+      </div>
+
+      <div class="product_owner_labels">
+        <% if policy(@product).update? %>
+          <%= link_to "Edit", edit_product_path(@product) %>
+        <% end %>
+
+        <% if policy(@product).destroy? %>
+          <%= link_to "Remove", delete_product_path(@product), { method: :delete, data: { confirm: "Are you Sure about Deleting #{@product.name}?" } } %>
+        <% end %>
       </div>
 
     </div>
