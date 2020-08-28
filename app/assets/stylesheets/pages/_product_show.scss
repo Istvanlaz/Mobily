@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   // background: red;
-  margin: 6vh 4vw 2vh 4vw;
+  margin: 3vh 4vw 2vh 4vw;
   height: fit-content;
   width: fit-content;
 }
@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: space-between;
 
-  height: 80vh;
+  height: 85vh;
 
   padding: 1%;
 }
@@ -41,6 +41,10 @@
   width: 100%;
 
   border-radius: 25px;
+
+  background-color: $black;
+
+  cursor: pointer;
 }
 
 .show_img img {
@@ -49,10 +53,12 @@
   height: 100%;
   width: 100%;
 
+  opacity: 0.55;
+
   border-radius: 25px;
 }
 
-.inacitve_img_show_small {
+.inactive_img_show_small {
   position: absolute;
   left: 0;
   top: 0;
@@ -60,11 +66,15 @@
   height: 100%;
   width: 100%;
 
-  background-color: $black35;
+  background-color: $black45;
 
   border-radius: 25px;
 
   z-index: 3;
+}
+
+.active_img_show_small img {
+  opacity: 1;
 }
 
 .show_icon img {
@@ -81,7 +91,7 @@
 }
 
 .product_map_cont {
-  height: 40%;
+  height: 32%;
   width: 100%;
 }
 
@@ -112,7 +122,7 @@
   background: $bright;
   border-radius: 5px;
 
-  height: 78vh;
+  height: 83vh;
   width: 42%;
 
   margin: 1vh;
@@ -190,14 +200,14 @@
 
 .product_owner_labels {
   position: absolute;
-  bottom: -5vh;
+  bottom: -4vh;
   left: 0;
 
   display: flex;
   justify-content: flex-end;
   align-items: center;
 
-  height: 5vh;
+  height: 4vh;
   width: 100%;
 }
 
@@ -235,3 +245,116 @@
 #last_fine_character_paragraph {
   margin-bottom: 0;
 }
+
+// Carroussel Tryout
+
+.product_show_img_viewer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 67%;
+  width: 100%;
+}
+
+.product_show_nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 100%;
+  width: 17%;
+
+  list-style: none;
+  padding-left: unset;
+  margin-bottom: 0;
+}
+
+.product_show_nav li {
+  list-style: none;
+}
+
+.product_show_carroussel {
+  list-style: none;
+  padding-left: unset;
+  margin-bottom: 0;
+
+  height: 100%;
+  width: 100%;
+}
+
+.product_show_carroussel li {
+  list-style: none;
+}
+
+
+.carroussel_img_display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 80%;
+
+  // background-color: $black35;
+
+  // border-radius: 25px;
+}
+
+.show_img_carroussel {
+  display: none;
+}
+
+.show_img_carroussel img {
+  object-fit: cover;
+  height: 55.5vh;
+  width: 100%;
+
+  border-radius: 25px;
+
+  cursor: pointer;
+}
+
+.big_img_carroussel {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+  width: 100vw;
+
+  padding: 10vh 10vw;
+
+  z-index: 30000;
+}
+
+.big_img_carroussel img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+
+.show_carroussel_active {
+  display: block;
+}
+
+
+.show_img_darkener {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: none;
+
+  height: 100vh;
+  width: 100vw;
+
+  background-color: $black45;
+
+  z-index: 29999;
+}
+
+
+
+
+

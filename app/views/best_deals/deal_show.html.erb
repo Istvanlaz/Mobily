@@ -39,29 +39,83 @@
 
     <div class="product_show_left">
 
-      <div class="product_show_img_grid">
+      <!-- <div class="product_show_img_grid">
 
         <div class="show_img">
-          <%= cl_image_tag @product.image.key %>
+          <%#= cl_image_tag @product.image.key %>
         </div>
 
         <div class="show_img">
-          <%= image_tag("local/girafe.jpg", alt: "A girafe") %>
-          <div class="inacitve_img_show_small"></div>
+          <%#= image_tag("local/girafe.jpg", alt: "A girafe") %>
+          <div class="inactive_img_show_small"></div>
         </div>
 
         <div class="show_img">
-          <%= image_tag("local/marvel_logo.png", alt: "Marvel Logo") %>
-          <div class="inacitve_img_show_small"></div>
+          <%#= image_tag("local/marvel_logo.png", alt: "Marvel Logo") %>
+          <div class="inactive_img_show_small"></div>
         </div>
 
         <div class="show_img">
-          <%= image_tag("local/mockup.jpg", alt: "A Mockup") %>
-          <div class="inacitve_img_show_small"></div>
+          <%#= image_tag("local/mockup.jpg", alt: "A Mockup") %>
+          <div class="inactive_img_show_small"></div>
         </div>
 
         <div class="show_img" id="active_img_product_show">
-          <%= cl_image_tag @product.image.key %>
+          <%#= cl_image_tag @product.image.key %>
+        </div>
+
+      </div> -->
+
+      <div class="product_show_img_viewer">
+
+        <div class="show_img_darkener"></div>
+
+        <ul class="product_show_nav">
+
+          <li class="show_img active_img_show_small">
+            <%= cl_image_tag @product.image.key %>
+          </li>
+
+          <li class="show_img">
+            <%= image_tag("local/girafe.jpg", alt: "A girafe") %>
+            <!-- <div class="inactive_img_show_small"></div> -->
+          </li>
+
+
+          <li class="show_img">
+            <%= image_tag("local/empty_flat_mobily.jpg", alt: "An empty flat") %>
+            <!-- <div class="inactive_img_show_small"></div> -->
+          </li>
+
+          <li class="show_img">
+            <%= image_tag("local/mockup.jpg", alt: "A Mockup") %>
+            <!-- <div class="inactive_img_show_small"></div> -->
+          </li>
+
+        </ul>
+
+        <div class="carroussel_img_display">
+
+          <ul class="product_show_carroussel">
+
+            <li class="show_img_carroussel show_carroussel_active">
+              <%= cl_image_tag @product.image.key %>
+            </li>
+
+            <li class="show_img_carroussel">
+              <%= image_tag("local/girafe.jpg", alt: "A girafe") %>
+            </li>
+
+            <li class="show_img_carroussel">
+              <%= image_tag("local/empty_flat_mobily.jpg", alt: "An empty flat") %>
+            </li>
+
+            <li class="show_img_carroussel">
+              <%= image_tag("local/mockup.jpg", alt: "A Mockup") %>
+            </li>
+
+          </ul>
+
         </div>
 
       </div>
