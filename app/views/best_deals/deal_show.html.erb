@@ -214,15 +214,22 @@
 
       </div>
 
-      <div class="btn-wrapper">
+      <div class="btn_wrapper2">
 
-        <div class="show-sale-btn">
-          <%= button_to 'Add to Cart', line_items_path(line_item: {product_id: @product}), {:class => "buy-btn", :id => "buy-btn_show"} %>
+        <div class="show_sale_btn2">
+          <%#= button_to 'Add to Cart', line_items_path(line_item: {product_id: @product}), {:class => "buy-btn", :id => "buy-btn_show"} %>
+          <div class="buy_btn2">
+            <%= button_to 'Add to Cart', line_items_path(line_item: {product_id: @product}) %>
+          </div>
         </div>
 
-        <div class="show-sale-btn">
-          <%= button_to 'Contact', line_items_path(line_item: {product_id: @product}), {:class => "contact-btn", :id => "contact-btn_show"} %>
-          <%= button_to 'Make an Offer', line_items_path(line_item: {product_id: @product}), {:class => "contact-btn", :id => "contact-btn_show"} %>
+        <div class="show_sale_btn2">
+          <div class="contact_btn2" id="contact_btn_padding">
+            <%= button_to 'Contact', line_items_path(line_item: {product_id: @product}) %>
+          </div>
+          <div class="contact_btn2" id="offer_btn_padding">
+            <%= button_to 'Make an Offer', line_items_path(line_item: {product_id: @product}) %>
+          </div>
         </div>
 
       </div>
