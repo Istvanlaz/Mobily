@@ -28,7 +28,11 @@
 
 .cat-active {
   color: $orange;
-  font-weight: 500;
+  // font-weight: 500;
+}
+
+.cat-active a {
+  background-color: $black03;
 }
 
 .separation_line {

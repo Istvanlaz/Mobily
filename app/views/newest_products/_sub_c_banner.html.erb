@@ -1,0 +1,15 @@
+<div class="sub_c_banner_cont">
+  <div class="sub-c-banner">
+    <div class="back-btn" id="link_to_all_btn">
+      <%= link_to "All", newest_products_path %>
+    </div>
+    <% @categories.each_with_index do |category, index| %>
+      <div class="sub_banner_btn <%= active_on_page_category("newest_products", category.id) %>" id="category_id_<%= index %>">
+        <%= link_to "#{category.name}", newest_product_path(category) %>
+      </div>
+    <% end %>
+    <div class="back-btn" id="get_lucky_btn">
+      <%= link_to "Get Lucky!", '#' %>
+    </div>
+  </div>
+</div>

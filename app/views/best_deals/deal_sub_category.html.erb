@@ -1,19 +1,8 @@
 <%= render 'shared/banner' %>
 <%= render 'shared/sub_header_small' %>
 <div class="app-container">
-  <div class="sub-c-banner">
-    <div class="back-btn">
-      <%= link_to "All", best_deals_path %>
-    </div>
-    <% @categories.each do |category| %>
-      <div class="<%= active_on_page_category("best_deals", category.id) %>">
-        <%= link_to "#{category.name}", best_deal_path(category) %>
-      </div>
-    <% end %>
-    <div class="back-btn">
-      <%= link_to "Get Lucky!", '#' %>
-    </div>
-  </div>
+
+  <%= render 'best_deals/sub_c_banner' %>
 
   <% unless params[:query].present? %>
     <div class="sub-c-banner-small">
