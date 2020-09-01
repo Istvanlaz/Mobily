@@ -1,0 +1,441 @@
+.product_show_container {
+  display: flex;
+  align-items: center;
+  // background: red;
+  margin: 3vh 4vw 2vh 4vw;
+  height: fit-content;
+  width: fit-content;
+}
+
+#app-container_show {
+  padding-top: 0;
+}
+
+.product_show_left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 85vh;
+
+  padding: 1%;
+}
+
+.product_show_img_grid {
+  display: grid;
+  grid-template-columns: 0.75fr 3.25fr;
+  grid-gap: 1em;
+
+  // height: 60%;
+  height: 48vh;
+  width: 100%;
+
+  padding: 1%;
+}
+
+.show_img {
+  position: relative;
+
+  height: 10vh;
+  width: 100%;
+
+  border-radius: 25px;
+
+  background-color: $black;
+
+  cursor: pointer;
+}
+
+.show_img img {
+  object-fit: cover;
+
+  height: 100%;
+  width: 100%;
+
+  opacity: 0.55;
+
+  border-radius: 25px;
+}
+
+.inactive_img_show_small {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  height: 100%;
+  width: 100%;
+
+  background-color: $black45;
+
+  border-radius: 25px;
+
+  z-index: 3;
+}
+
+.active_img_show_small img {
+  opacity: 1;
+}
+
+.show_icon img {
+  height: 30px;
+  width: 31px;
+}
+
+#buy-btn_show {
+  width: 10em;
+}
+
+#contact-btn_show {
+  width: 7em;
+}
+
+.product_map_cont {
+  height: 32%;
+  width: 100%;
+}
+
+.product_location_img {
+  height: 70%;
+  width: 100%;
+}
+
+.product_location_img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px $black15;
+}
+
+#orange_line_show_location {
+  width: 50%;
+}
+
+.show_info_card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  background: $bright;
+  border-radius: 5px;
+
+  height: 83vh;
+  width: 42%;
+
+  margin: 1vh;
+  padding: 3%;
+
+  box-shadow: 0px 4px 4px $black15;
+}
+
+.show_info_card p {
+  // margin-bottom: 0;
+  font-size: 12px;
+}
+
+.product_show_top {
+  display: flex;
+  width: 100%;
+}
+
+.product_show_wishlist_link {
+  padding: 2%;
+}
+
+.product_show_wishlist_link svg {
+  height: 30px;
+  width: 30px;
+  // position: absolute;
+  // top: 3%;
+  // right: 3%;
+}
+
+.product_show_title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+
+  height: 12vh;
+  width: 100%;
+}
+
+.show_card_localisation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  padding: 2%;
+}
+
+.product_show_description {
+  width: 100%;
+}
+
+.show_count {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.show_card_localisation p {
+  margin-bottom: 0;
+}
+
+.location_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 35%;
+}
+
+.fine_characters p {
+  font-size: 11px;
+  font-weight: 100;
+}
+
+.product_owner_labels {
+  position: absolute;
+  bottom: -4vh;
+  left: 0;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  height: 4vh;
+  width: 100%;
+}
+
+.product_owner_labels a {
+  color: $black30;
+  font-size: 12px;
+  padding: 0 2%;
+  &:hover {
+    text-decoration: none;
+    color: $black45;
+  }
+}
+
+.retarget_show {
+  padding: 0 7%;
+}
+
+#active_img_product_show {
+  grid-column: 2/3;
+  grid-row: 1/5;
+
+  height: 47vh;
+  width: 100%;
+}
+
+#subtitle_product_show em {
+  font-style: unset;
+  color: $skin;
+}
+
+#subtitle_product_show {
+  height: 30%;
+}
+
+#last_fine_character_paragraph {
+  margin-bottom: 0;
+}
+
+// Remake btns
+
+.btn_wrapper2 {
+  // margin-top: 15px;
+  // margin-bottom: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 11vh;
+  width: 100%;
+  // background-color: red;
+}
+
+.show_sale_btn2 {
+  height: fit-content;
+  width: 100%;
+  justify-content: space-between;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.buy_btn2 {
+  display: flex;
+  background-color: $orange;
+  justify-content: center;
+  align-items: center;
+
+  height: 34px;
+  width: 100%;
+
+  border-radius: 5px;
+  &:hover {
+    box-shadow: inset 0px 0px 8px $black10;
+  }
+}
+
+.buy_btn2 input[type="submit"] {
+  background: transparent;
+  padding: 1vh 8vw;
+  outline: none;
+  border: none;
+  color: $bright;
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+.contact_btn2 {
+  //margin: 5px;
+  display: flex;
+  background-color: $skin;
+  justify-content: center;
+  align-items: center;
+
+  height: 34px;
+  width: 48%;
+
+  border-radius: 5px;
+  &:hover {
+    box-shadow: inset 0px 0px 3px $black10;
+  }
+}
+
+.contact_btn2 input[type="submit"] {
+  background: transparent;
+  // padding: 0 2vw;
+  outline: none;
+  border: none;
+  color: $bright;
+  font-size: 16px;
+}
+
+#contact_btn_padding input[type="submit"] {
+  padding: 1vh 3vw;
+}
+
+#offer_btn_padding input[type="submit"] {
+  padding: 1vh 1vw;
+}
+
+// Carroussel Tryout
+
+.product_show_img_viewer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 67%;
+  width: 100%;
+}
+
+.product_show_nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 100%;
+  width: 17%;
+
+  list-style: none;
+  padding-left: unset;
+  margin-bottom: 0;
+}
+
+.product_show_nav li {
+  list-style: none;
+}
+
+.product_show_carroussel {
+  list-style: none;
+  padding-left: unset;
+  margin-bottom: 0;
+
+  height: 100%;
+  width: 100%;
+}
+
+.product_show_carroussel li {
+  list-style: none;
+}
+
+
+.carroussel_img_display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 80%;
+}
+
+.show_img_carroussel {
+  display: none;
+}
+
+.show_img_carroussel img {
+  object-fit: cover;
+  height: 55.5vh;
+  width: 100%;
+
+  border-radius: 25px;
+
+  cursor: pointer;
+}
+
+.big_img_carroussel {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+  width: 100vw;
+
+  padding: 10vh 10vw;
+
+  z-index: 30000;
+}
+
+.big_img_carroussel img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+
+.show_carroussel_active {
+  display: block;
+}
+
+
+.show_img_darkener {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: none;
+
+  height: 100vh;
+  width: 100vw;
+
+  background-color: $black45;
+
+  z-index: 29999;
+}
+
+
+
+
+

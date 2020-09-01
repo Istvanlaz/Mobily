@@ -98,4 +98,4 @@ dotsNav.addEventListener('click', e => {
   updateDots(currentDot, targetDot);
 
   hideShowArrows(slides, prevButton, nextButton, targetIndex);
-})
+});
