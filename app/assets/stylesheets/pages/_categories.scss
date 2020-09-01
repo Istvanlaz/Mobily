@@ -28,7 +28,41 @@
 
 .cat-active {
   color: $orange;
-  font-weight: 500;
+  // font-weight: 500;
+}
+
+.cat-active a {
+  background-color: $black03;
+}
+
+.sub-cat-active {
+  color: $orange;
+}
+
+.sub-cat-active a {
+  content: '';
+  display: inline-block;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  margin-top: 5px;
+  width: 100%;
+  border-bottom: 1px solid;
+  // opacity: 0;
+  // -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  // -webkit-transform: scale(0,1);
+  // transform: scale(0,1);
+
+  // opacity: 1;
+  // -webkit-transform: scale(1);
+  // transform: scale(1);
+  // &:after {
+  //   transition: border-bottom 5s;
+  // }
+
+  &:hover {
+    border-bottom: none;
+  }
 }
 
 .separation_line {

@@ -1,0 +1,37 @@
+<div class="sub_c_banner_cont">
+
+  <div class="sub-c-banner">
+
+    <% if params[:query].present? %>
+
+      <div class="back-btn" id="link_to_all_btn">
+        <%= link_to "All", newest_products_path %>
+      </div>
+      <% @categories.each_with_index do |category, index| %>
+        <div class="sub_banner_btn <%= active_on_page_category("newest_products", category.id) %>" id="category_id_<%= index %>">
+          <%= link_to "#{category.name}", category_products_path(category) %>
+        </div>
+      <% end %>
+      <div class="back-btn" id="get_lucky_btn">
+        <%= link_to "Get Lucky!", '#' %>
+      </div>
+
+    <% else %>
+
+      <div class="back-btn" id="link_to_all_btn">
+        <%= link_to "All", category_products_path(@category, @product) %>
+      </div>
+      <% @sub_categories.each do |sub_category| %>
+        <div class="sub_banner_btn banner_products_btn <%= active_sub_cat_products_controller(category_sub_category_path(@category, sub_category)) %>">
+          <%= link_to "#{sub_category.name}", category_sub_category_path(@category, sub_category) %>
+        </div>
+      <% end %>
+      <div class="back-btn" id="get_lucky_btn">
+        <%= link_to "Get Lucky!", '#' %>
+      </div>
+
+    <% end %>
+
+  </div>
+
+</div>

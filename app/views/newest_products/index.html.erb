@@ -2,19 +2,7 @@
 <%= render 'shared/sub_header_small' %>
 <div class="app-container">
 
-  <div class="sub-c-banner">
-    <div class="back-btn">
-      <%= link_to "All", newest_products_path %>
-    </div>
-    <% @categories.each do |category| %>
-      <div class="<%= active_on_page_category("newest_products", category.id) %>">
-        <%= link_to "#{category.name}", newest_product_path(category) %>
-      </div>
-    <% end %>
-    <div class="back-btn">
-      <%= link_to "Get Lucky!", '#' %>
-    </div>
-  </div>
+  <%= render 'newest_products/sub_c_banner' %>
 
   <div class="products-grid">
     <% @sorted_products = @products.sort_by{|product| product.created_at }.reverse! %>

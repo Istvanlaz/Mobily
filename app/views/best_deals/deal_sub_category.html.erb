@@ -1,36 +1,25 @@
 <%= render 'shared/banner' %>
 <%= render 'shared/sub_header_small' %>
 <div class="app-container">
-  <div class="sub-c-banner">
-    <div class="back-btn">
-      <%= link_to "All", best_deals_path %>
-    </div>
-    <% @categories.each do |category| %>
-      <div class="<%= active_on_page_category("best_deals", category.id) %>">
-        <%= link_to "#{category.name}", best_deal_path(category) %>
-      </div>
-    <% end %>
-    <div class="back-btn">
-      <%= link_to "Get Lucky!", '#' %>
-    </div>
-  </div>
+
+  <%= render 'best_deals/sub_c_banner' %>
 
   <% unless params[:query].present? %>
     <div class="sub-c-banner-small">
-      <div class="back-btn-small">
+      <div class="sub_c_small_link">
         <%= link_to "#{@category.name}", best_deal_path(@category) %>
       </div>
       <!-- <%# cat_id = @product.category_id %> -->
       <% @selected_category = Category.find(@category.id) %>
       <% @sub_cat = @selected_category.sub_categories %>
       <% @sub_cat.each do |sub_category| %>
-        <div class="<%= active_sub_cat(deal_sub_category_path(@category, sub_category)) %>">
+        <div class="sub_c_small_link <%= active_sub_cat(deal_sub_category_path(@category, sub_category)) %>">
           <%= link_to "#{sub_category.name}", deal_sub_category_path(@category, sub_category) %>
         </div>
       <% end %>
-      <div class="back-btn-small">
-        <%= link_to "Get Lucky!", '#' %>
-      </div>
+      <!-- <div class="back-btn-small">
+        <%#= link_to "Get Lucky!", '#' %>
+      </div> -->
     </div>
   <% end %>
 
