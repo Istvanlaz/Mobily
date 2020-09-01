@@ -22,7 +22,7 @@
         <%= link_to "All", category_products_path(@category, @product) %>
       </div>
       <% @sub_categories.each do |sub_category| %>
-        <div class="sub_banner_btn banner_products_btn <%= active_sub_cat(category_sub_category_path(@category, sub_category)) %>">
+        <div class="sub_banner_btn banner_products_btn <%= active_sub_cat_products_controller(category_sub_category_path(@category, sub_category)) %>">
           <%= link_to "#{sub_category.name}", category_sub_category_path(@category, sub_category) %>
         </div>
       <% end %>

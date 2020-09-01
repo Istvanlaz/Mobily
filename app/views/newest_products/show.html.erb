@@ -5,18 +5,20 @@
   <%= render 'newest_products/sub_c_banner' %>
 
   <div class="sub-c-banner-small">
-    <div class="back-btn-small">
+    <div class="sub_c_small_link <%= active_sub_cat(newest_product_path(@category)) %>">
       <%= link_to "#{@category.name}", newest_product_path(@category) %>
     </div>
     <!-- <%# cat_id = @product.category_id %> -->
     <% selected_category = Category.find(@category.id) %>
     <% sub_cat = selected_category.sub_categories %>
     <% sub_cat.each do |sub_category| %>
-      <%= link_to "#{sub_category.name}", newest_sub_category_path(@category, sub_category) %>
+      <div class="sub_c_small_link">
+        <%= link_to "#{sub_category.name}", newest_sub_category_path(@category, sub_category) %>
+      </div>
     <% end %>
-    <div class="back-btn-small">
-      <%= link_to "Get Lucky!", '#' %>
-    </div>
+    <!-- <div class="back-btn-small">
+      <%#= link_to "Get Lucky!", '#' %>
+    </div> -->
   </div>
 
   <div class="products-grid">

@@ -17,6 +17,10 @@ module ApplicationHelper
   end
 
   def active_sub_cat(link_path)
+    current_page?(link_path) ? "sub-cat-active" : ""
+  end
+
+  def active_sub_cat_products_controller(link_path)
     current_page?(link_path) ? "cat-active" : ""
   end
 end
