@@ -300,10 +300,6 @@ input[class="search-text"]:focus {
   padding: 8px 12px;
 }
 
-#link_to_all_btn {
-
-}
-
 #category_id_0 a {
   width: 6vw;
 }
@@ -328,9 +324,6 @@ input[class="search-text"]:focus {
   width: 6vw;
 }
 
-// #category_id_6 a {
-//   width: 10vw;
-// }
 
 #get_lucky_btn {
   border-radius: 0 25px 25px 0;
@@ -580,5 +573,47 @@ input[class="search-text"]:focus {
 
   .exit_sales_btn a {
     font-size: 29px;
+  }
+
+  .sub_banner_btn a {
+    font-size: 10px;
+    padding: 8px;
+  }
+
+  .back-btn a {
+    width: 40px;
+    font-size: 10px;
+  }
+
+  #link_to_all_btn a {
+    width: 40px;
+  }
+
+  #category_id_0 a {
+    width: max-content;
+  }
+
+  #category_id_1 a {
+    width: max-content;
+  }
+
+  #category_id_2 a {
+    width: max-content;
+  }
+
+  #category_id_3 a {
+    width: max-content;
+  }
+
+  #category_id_4 a {
+    width: max-content;
+  }
+
+  #category_id_5 a {
+    width: max-content;
+  }
+
+  #get_lucky_btn a {
+    width: 80px;
   }
 }

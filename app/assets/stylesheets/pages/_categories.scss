@@ -75,4 +75,12 @@
   .categories-banner {
     display: none;
   }
+
+  .cat-active a {
+    background-color: transparent;
+  }
+
+  .sub-cat-active a {
+    margin-top: 3px;
+  }
 }
