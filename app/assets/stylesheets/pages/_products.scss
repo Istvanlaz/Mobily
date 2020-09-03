@@ -41,6 +41,10 @@
   line-height: 16px;
 }
 
+.small_screen_page_title {
+  display: none;
+}
+
 .sub_c_banner_cont {
   display: flex;
   justify-content: center;
@@ -135,12 +139,21 @@
   padding: 0 5vw;
 }
 
+.product_grid_cont {
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: min-content;
+  padding: 0 0 5vh 0;
+  width: 100%;
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
 
-  height: max-content;
+  height: fit-content;
   width: 100%;
   padding: 2vw 4vw;
 }
@@ -300,15 +313,84 @@
     overflow-x: hidden;
   }
 
+  .small_screen_page_title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: fit-content;
+    width: 100vw;
+
+    padding-top: 1vh;
+    padding-bottom: 2vh;
+  }
+
+  .small_screen_page_title h1 {
+    font-size: 1.4rem;
+    color: $orange;
+    margin-bottom: 0;
+  }
+
+  .small_screen_page_title h2 {
+    font-size: 1rem;
+    color: $orange;
+    margin-bottom: 0;
+  }
+
+  .sub_c_banner_cont {
+    // justify-content: flex-start;
+
+    justify-content: center;
+    overflow: hidden;
+
+    border-radius: 200px;
+    box-shadow: 0px 1px 4px $black15;
+
+    width: 95vw;
+
+    margin-top: 0;
+    margin: 0 2.5vw;
+  }
+
+  .sub-c-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 100%;
+    width: fit-content;
+
+    overflow-y: scroll;
+
+    // border-radius: 200px;
+    text-transform: uppercase;
+
+    // box-shadow: 0px 1px 4px $black15;
+
+    background-color: transparent;
+  }
+
+  .sub-c-banner a {
+    text-decoration: none;
+    color: inherit;
+    width: max-content;
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  .sub-c-banner-small {
+    width: 90%;
+
+    font-size: 7px;
+  }
+
   .products-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
     margin-top: 2vh;
-  }
-
-  .sub-c-banner {
-    display: none;
   }
 
   #product_placement_0 {

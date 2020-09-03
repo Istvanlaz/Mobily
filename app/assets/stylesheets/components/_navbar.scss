@@ -116,6 +116,7 @@
   align-items: center;
   justify-content: space-around;
 
+  height: 9vh;
   width: 10vw;
   color: $black;
 
@@ -134,7 +135,7 @@
 
 .nav-content {
   position: absolute;
-  top: 7vh;
+  top: 9vh;
   right: 0;
 
   overflow: hidden;
@@ -379,8 +380,9 @@
     justify-content: space-around;
 
     padding-left: 0;
+    margin-bottom: 0;
 
-    height: 90vh;
+    height: 81vh;
     width: 80vw;
 
     background-color: $bright;
