@@ -23,12 +23,32 @@ class BestDealsController < ApplicationController
       @products = Product.where(sql_query, query: "%#{params[:query]}%")
     else
       @products = policy_scope(@category.products)
+
+
+      # @markers = @product.geocoded.map do |product|
+      #   {
+      #     lat: product.latitude,
+      #     lng: product.longitude
+      #   }
+      # end
     end
   end
 
   def deal_show
     @categories = policy_scope(Category)
     authorize @product = Product.find(params[:id])
+    if @product.geocoded?
+      # binding.pry
+      @markers = [
+                    lat: @product.latitude,
+                    lng: @product.longitude,
+                    infoWindow: { content: render_to_string(partial: "/shared/map_info_window", locals: { product: @product }) }
+                  ]
+      # end
+    else
+      # binding.pry
+      return
+    end
   end
 
   def product_deal

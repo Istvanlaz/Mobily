@@ -18,6 +18,12 @@ class ProductsController < ApplicationController
       @products = policy_scope(@category.products).order(created_at: :desc)
       @sub_categories = policy_scope(@category.sub_categories).order(created_at: :asc)
     end
+    @markers = @products.geocoded.map do |product|
+      {
+        lat: product.latitude,
+        lng: product.longitude
+      }
+    end
   end
 
   def show
@@ -28,7 +34,15 @@ class ProductsController < ApplicationController
       @products = Product.where(sql_query, query: "%#{params[:query]}%")
     else
       authorize @product = Product.find(params[:id])
+
+      # @markers = @product.geocoded.map do |product|
+      #   {
+      #     lat: product.latitude,
+      #     lng: product.longitude
+      #   }
+      # end
     end
+
   end
 
   def new
@@ -153,7 +167,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :price, :description, :image, :category, :category_id,
+    params.require(:product).permit(:name, :price, :description, :address, :image, :category, :category_id,
                                     :sub_category, :sub_category_id, :user, :user_id, :id)
   end
 
