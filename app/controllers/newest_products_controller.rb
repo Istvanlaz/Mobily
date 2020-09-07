@@ -28,18 +28,27 @@ class NewestProductsController < ApplicationController
 
   def newest_show
     @categories = policy_scope(Category)
-    # if params[:query].present?
-    #   sql_query = "name @@ :query OR description @@ :query"
-    #   @products = Product.where(sql_query, query: "%#{params[:query]}%")
-    # else
-      authorize @product = Product.find(params[:id])
-    # end
+    authorize @product = Product.find(params[:id])
+    if @product.geocoded?
+      @markers = [
+                    lat: @product.latitude,
+                    lng: @product.longitude,
+                    infoWindow: { content: render_to_string(partial: "/shared/map_info_window", locals: { product: @product }) }
+                  ]
+    end
   end
 
   def product_show
     @categories = policy_scope(Category)
     authorize @product = Product.find(params[:id])
     authorize @category = Category.find(params[:category_id])
+    if @product.geocoded?
+      @markers = [
+                    lat: @product.latitude,
+                    lng: @product.longitude,
+                    infoWindow: { content: render_to_string(partial: "/shared/map_info_window", locals: { product: @product }) }
+                  ]
+    end
   end
 
   def newest_sub_category
@@ -52,7 +61,7 @@ class NewestProductsController < ApplicationController
       @products = policy_scope(Product)
       authorize @category = Category.find(params[:category_id])
       authorize @sub_category = SubCategory.find(params[:id])
-      authorize @product = Product.find(params[:id])
+      # authorize @product = Product.find(params[:id])
     end
   end
 
@@ -61,6 +70,13 @@ class NewestProductsController < ApplicationController
     authorize @product = Product.find(params[:id])
     authorize @category = Category.find(params[:category_id])
     authorize @sub_category = SubCategory.find(params[:sub_category_id])
+    if @product.geocoded?
+      @markers = [
+                    lat: @product.latitude,
+                    lng: @product.longitude,
+                    infoWindow: { content: render_to_string(partial: "/shared/map_info_window", locals: { product: @product }) }
+                  ]
+    end
   end
 
   def destroy

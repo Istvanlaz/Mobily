@@ -18,12 +18,6 @@ class ProductsController < ApplicationController
       @products = policy_scope(@category.products).order(created_at: :desc)
       @sub_categories = policy_scope(@category.sub_categories).order(created_at: :asc)
     end
-    @markers = @products.geocoded.map do |product|
-      {
-        lat: product.latitude,
-        lng: product.longitude
-      }
-    end
   end
 
   def show
@@ -35,12 +29,13 @@ class ProductsController < ApplicationController
     else
       authorize @product = Product.find(params[:id])
 
-      # @markers = @product.geocoded.map do |product|
-      #   {
-      #     lat: product.latitude,
-      #     lng: product.longitude
-      #   }
-      # end
+      if @product.geocoded?
+        @markers = [
+                      lat: @product.latitude,
+                      lng: @product.longitude,
+                      infoWindow: { content: render_to_string(partial: "/shared/map_info_window", locals: { product: @product }) }
+                    ]
+      end
     end
 
   end

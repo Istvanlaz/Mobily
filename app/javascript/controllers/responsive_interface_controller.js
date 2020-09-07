@@ -94,47 +94,55 @@ const unsetNavContainer = () => {
 
 
 // Using all of the above on click for each element
-pictoUser.onclick = function(){
-  if (pictoImg.classList.contains('picto_image_active')) {
-    unsetUserMenu();
-    unsetBgDarkener();
-  } else {
-    setBgDarkener();
-    setUserMenu();
-    unsetSearchBar();
-    unsetNavContainer();
+if (pictoUser) {
+  pictoUser.onclick = function(){
+    if (pictoImg.classList.contains('picto_image_active')) {
+      unsetUserMenu();
+      unsetBgDarkener();
+    } else {
+      setBgDarkener();
+      setUserMenu();
+      unsetSearchBar();
+      unsetNavContainer();
+    }
   }
 }
 
-searchBtnSmall.onclick = function(){
-  if (searchContent.classList.contains('small_search_active')) {
-    unsetSearchBar();
-    unsetBgDarkener();
-  } else {
-    setBgDarkener();
-    setSearchBar();
-    unsetUserMenu();
-    unsetNavContainer();
+if (searchBtnSmall) {
+  searchBtnSmall.onclick = function(){
+    if (searchContent.classList.contains('small_search_active')) {
+      unsetSearchBar();
+      unsetBgDarkener();
+    } else {
+      setBgDarkener();
+      setSearchBar();
+      unsetUserMenu();
+      unsetNavContainer();
+    }
   }
 }
 
-burger.onclick = function(){
-  if (nav.classList.contains('nav-active')) {
-    unsetNavContainer();
-    unsetBgDarkener();
-  } else {
-    setBgDarkener();
-    setNavContainer();
-    unsetSearchBar();
-    unsetUserMenu();
+if (burger) {
+  burger.onclick = function(){
+    if (nav.classList.contains('nav-active')) {
+      unsetNavContainer();
+      unsetBgDarkener();
+    } else {
+      setBgDarkener();
+      setNavContainer();
+      unsetSearchBar();
+      unsetUserMenu();
+    }
   }
 }
 
-bgDarkener.onclick = function(){
-  unsetBgDarkener();
-  unsetNavContainer();
-  unsetSearchBar();
-  unsetUserMenu();
+if (bgDarkener) {
+  bgDarkener.onclick = function(){
+    unsetBgDarkener();
+    unsetNavContainer();
+    unsetSearchBar();
+    unsetUserMenu();
+  }
 }
 
 // // Former independant functionning:

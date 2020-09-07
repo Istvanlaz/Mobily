@@ -11,6 +11,14 @@ class WishlistsController < ApplicationController
     @categories = policy_scope(Category)
 
     authorize @product = Product.find(params[:id])
+
+    if @product.geocoded?
+      @markers = [
+                    lat: @product.latitude,
+                    lng: @product.longitude,
+                    infoWindow: { content: render_to_string(partial: "/shared/map_info_window", locals: { product: @product }) }
+                  ]
+    end
   end
 
   def new
