@@ -10,6 +10,9 @@ class User < ApplicationRecord
   has_many :products, dependent: :destroy
   has_many :savings, through: :wishlist
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   validate :password_complexity
   validate :username_complexity
 

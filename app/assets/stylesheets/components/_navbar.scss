@@ -117,7 +117,7 @@
   justify-content: space-around;
 
   height: 9vh;
-  width: 10vw;
+  width: fit-content;
   color: $black;
 
   &:hover {
@@ -131,6 +131,7 @@
 
 .nav-item img {
   border: $black 1px solid;
+  margin: 0 1vw;
 }
 
 .nav-content {
@@ -370,9 +371,10 @@
   }
 
   .responsive-navbar_mobily {
-    position: absolute;
+    position: fixed;
     top: 10vh;
-    right: 0px;
+    right: 0;
+    bottom: 9vh;
 
     display: flex;
     flex-direction: column;
@@ -382,7 +384,7 @@
     padding-left: 0;
     margin-bottom: 0;
 
-    height: 81vh;
+    height: unset;
     width: 80vw;
 
     background-color: $bright;

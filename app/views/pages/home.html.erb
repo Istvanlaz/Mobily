@@ -68,10 +68,11 @@
         <div>
           <%= f.text_field :address,
                           required: true,
-                          placeholder: "Neighbourhood",
+                          placeholder: "Address",
                           autocomplete: "off" %>
                           <!-- label: false, -->
         </div>
+        <p id="small_letters_signup"><em>To be able to show you the closest products to your location</em></p>
         <div class="bottom-signup">
           <div class="sign-up-btn">
             <%= f.submit "Sign up" %>
