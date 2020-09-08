@@ -7,10 +7,11 @@ class ProductsController < ApplicationController
   skip_after_action :verify_authorized, except: :index, unless: :skip_pundit?
   skip_after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
   before_action :set_category, only: [:index, :show]
+  impressionist actions: [:show]
 
   def index
     @categories = policy_scope(Category)
-
+    impressionist @post
     if params[:query].present?
       sql_query = "name @@ :query OR description @@ :query"
       @products = Product.where(sql_query, query: "%#{params[:query]}%")
@@ -22,12 +23,12 @@ class ProductsController < ApplicationController
 
   def show
     @categories = policy_scope(Category)
-
     if params[:query].present?
       sql_query = "name @@ :query OR description @@ :query"
       @products = Product.where(sql_query, query: "%#{params[:query]}%")
     else
       authorize @product = Product.find(params[:id])
+      impressionist(@product)
 
       if @product.geocoded?
         @markers = [

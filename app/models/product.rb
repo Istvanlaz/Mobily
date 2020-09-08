@@ -1,8 +1,9 @@
 class Product < ApplicationRecord
 
   ## TODO: Disponible a partir de: !!!! A voir Timing + horloge: a disparaitre avant telle date
-
   attr_writer :current_step
+
+  is_impressionable
 
   belongs_to :user, optional: true
   belongs_to :sub_category, optional: true
