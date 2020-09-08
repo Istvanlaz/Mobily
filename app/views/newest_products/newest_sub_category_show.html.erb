@@ -73,7 +73,20 @@
         </div>
 
         <div class="product_location_img">
-          <%= image_tag("logo/location-screenshot.png", alt: "Location") %>
+
+          <div class="show_img_darkener"></div>
+
+          <span id="expand_map_action">
+            <%= image_tag("icons/expand.png", alt: "Expand") %>
+            <span class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></span>
+          </span>
+
+          <div id="map"
+               style="width: 100%; height: 100%;"
+               data-markers="<%= @markers.to_json %>"
+               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+
         </div>
 
       </div>

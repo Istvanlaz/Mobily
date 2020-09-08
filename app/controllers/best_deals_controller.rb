@@ -23,18 +23,40 @@ class BestDealsController < ApplicationController
       @products = Product.where(sql_query, query: "%#{params[:query]}%")
     else
       @products = policy_scope(@category.products)
+
+
+      # @markers = @product.geocoded.map do |product|
+      #   {
+      #     lat: product.latitude,
+      #     lng: product.longitude
+      #   }
+      # end
     end
   end
 
   def deal_show
     @categories = policy_scope(Category)
     authorize @product = Product.find(params[:id])
+    if @product.geocoded?
+      @markers = [
+                    lat: @product.latitude,
+                    lng: @product.longitude,
+                    infoWindow: { content: render_to_string(partial: "/shared/map_info_window", locals: { product: @product }) }
+                  ]
+    end
   end
 
   def product_deal
     @categories = policy_scope(Category)
     authorize @product = Product.find(params[:id])
     authorize @category = Category.find(params[:category_id])
+    if @product.geocoded?
+      @markers = [
+                    lat: @product.latitude,
+                    lng: @product.longitude,
+                    infoWindow: { content: render_to_string(partial: "/shared/map_info_window", locals: { product: @product }) }
+                  ]
+    end
   end
 
   def deal_sub_category
@@ -45,9 +67,9 @@ class BestDealsController < ApplicationController
       @products = Product.where(sql_query, query: "%#{params[:query]}%")
     else
       @products = policy_scope(Product)
-      authorize @product = Product.find(params[:id])
       authorize @category = Category.find(params[:category_id])
       authorize @sub_category = SubCategory.find(params[:id])
+      # authorize @product = Product.find(params[:id])
     end
   end
 
@@ -56,6 +78,13 @@ class BestDealsController < ApplicationController
     authorize @product = Product.find(params[:id])
     authorize @category = Category.find(params[:category_id])
     authorize @sub_category = SubCategory.find(params[:sub_category_id])
+    if @product.geocoded?
+      @markers = [
+                    lat: @product.latitude,
+                    lng: @product.longitude,
+                    infoWindow: { content: render_to_string(partial: "/shared/map_info_window", locals: { product: @product }) }
+                  ]
+    end
   end
 
   private

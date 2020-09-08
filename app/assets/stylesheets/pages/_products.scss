@@ -387,8 +387,7 @@
   }
 
   .products-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 
     margin-top: 2vh;
   }
@@ -535,5 +534,13 @@
     grid-column: unset;
     grid-row: unset;
     height: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: 1fr 1fr;
+
+    margin-top: 2vh;
   }
 }

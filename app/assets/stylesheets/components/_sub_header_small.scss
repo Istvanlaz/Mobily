@@ -8,7 +8,7 @@
   left: 0;
 
   max-height: 0;
-  height: 40px;
+  height: 100%;
   width: 100vw;
 
   background-color: $bright;
@@ -165,7 +165,7 @@
   }
 
   .small_search_active {
-    max-height: 7vh;
+    max-height: 8vh;
     -webkit-transition: max-height 0.2s ease-in-out;
     -moz-transition: max-height 0.2s ease-in-out;
     transition: max-height 0.2s ease-in-out;

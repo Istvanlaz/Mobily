@@ -5,6 +5,8 @@ gem 'bootsnap', require: false
 gem 'carrierwave', '~> 2.0'
 gem 'cloudinary', '~> 1.12.0'
 gem 'devise'
+gem 'faker'
+gem 'geocoder'
 gem 'jbuilder', '~> 2.0'
 gem 'omniauth-facebook'
 gem 'pg', '~> 0.21'

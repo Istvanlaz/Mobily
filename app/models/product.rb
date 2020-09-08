@@ -12,6 +12,9 @@ class Product < ApplicationRecord
   has_many :savings, dependent: :destroy
   has_many :wishlists, through: :savings
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   before_destroy :ensure_not_referenced_by_any_line_item
 
   validates :category, presence: true

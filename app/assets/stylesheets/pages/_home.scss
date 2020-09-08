@@ -63,6 +63,13 @@ body {
   color: $orange;
 }
 
+#small_letters_signup {
+  width: 90%;
+  text-align: right;
+  font-size: 9px;
+  margin-bottom: 6px;
+}
+
 .signup {
   display: flex;
   flex-direction: column;
@@ -71,9 +78,17 @@ body {
 
   height: 55vh;
   width: 40vw;
-  color: $bright;
+  // color: $bright;
 
   z-index: 3;
+}
+
+.signup h2 {
+  color: $bright;
+}
+
+.signup p {
+  color: $bright;
 }
 
 .signup h2 {
@@ -93,6 +108,10 @@ body {
 
   height: 40vh;
   width: 40vw;
+}
+
+.ap-input-icon {
+  outline: none !important;
 }
 
 .form-styling a {
@@ -210,12 +229,14 @@ body {
 
     flex-direction: column;
 
-    height: 130vh;
+    height: fit-content; //
   }
 
-  // .bg_landing {
-  //   height: 100%;
-  // }
+  .bg_landing {
+    position: fixed;
+    top: 10vh;
+    bottom: 0;
+  }
 
   .bg_landing img {
     height: 130vh;
@@ -246,6 +267,27 @@ body {
     margin-bottom: 0;
   }
 
+  #error_explanation {
+    font-size: 10px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 3%;
+  }
+
+  #error_explanation h5 {
+    font-size: 0.75rem;
+  }
+
+  #error_explanation ul {
+    padding-left: 7%;
+  }
+
+  .form-styling {
+    height: fit-content;
+    width: 200px;
+    margin: 0 auto;
+  }
+
   .signup {
     height: fit-content;
     width: 100%;
@@ -263,9 +305,5 @@ body {
 
   .signup input[id="user_address"] {
     width: 200px;
-  }
-
-  .form-styling {
-    height: 100%;
   }
 }
