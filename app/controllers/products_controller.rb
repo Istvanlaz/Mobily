@@ -11,7 +11,6 @@ class ProductsController < ApplicationController
 
   def index
     @categories = policy_scope(Category)
-    impressionist @post
     if params[:query].present?
       sql_query = "name @@ :query OR description @@ :query"
       @products = Product.where(sql_query, query: "%#{params[:query]}%")

@@ -1,10 +1,10 @@
 class NewestProductsController < ApplicationController
   skip_after_action :verify_authorized, except: :index, unless: :skip_pundit?
   skip_after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
+  impressionist actions: [:show]
 
   def index
     @categories = policy_scope(Category)
-
     if params[:query].present?
       sql_query = "name @@ :query OR description @@ :query"
       @products = Product.where(sql_query, query: "%#{params[:query]}%")
