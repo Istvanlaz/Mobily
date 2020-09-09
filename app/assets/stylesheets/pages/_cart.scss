@@ -1,6 +1,5 @@
 .page-cart-container {
   justify-content: center;
-  height: 10vh;
   width: 100%;
   padding-top: 1vh;
 }
@@ -166,14 +165,13 @@
 }
 
 .order-summary {
-  position: sticky;
   grid-area: order-summary;
 }
 
 .order-summary-block {
-  position: sticky;
+  position: fixed;
   margin-left: 60px;
-  max-width: 66%
+  max-width: 66%;
 }
 
 .order-summary-title {
