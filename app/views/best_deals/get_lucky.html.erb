@@ -1,0 +1,35 @@
+<%= render 'shared/banner' %>
+<%= render 'shared/sub_header_small' %>
+<div class="app-container">
+
+  <div class="small_screen_page_title">
+    <h1>Get Lucky!</h1>
+  </div>
+
+  <%= render 'best_deals/sub_c_banner' %>
+
+  <div class="page_title">
+    <h2>These are the Products closest to your address!</h2>
+    <p><em>Happy window shopping</em></p>
+  </div>
+
+  <div class="product_location_img" id="get_lucky_map">
+
+    <!-- <div class="show_img_darkener"></div>
+
+    <span id="expand_map_action">
+      <%#= image_tag("icons/expand.png", alt: "Expand") %>
+      <span class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></span>
+    </span> -->
+
+    <div id="map-index"
+         style="width: 100%; height: 100%;"
+         data-markers="<%= @markers.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+  </div>
+
+  <%= render 'shared/retarget_slider' %>
+  <%= render 'shared/footer' %>
+</div>
