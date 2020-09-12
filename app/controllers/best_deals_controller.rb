@@ -88,12 +88,15 @@ class BestDealsController < ApplicationController
     else
       # @products = policy_scope(Product).where.not(latitude: nil, longitude: nil)
 
-      @products = Product.near(current_user.address, 1.5)
+      @products = Product.near(current_user.address, 1)
       @markers = @products.map do |product|
         {
           lng: product.longitude,
           lat: product.latitude,
-          infoWindow: { content: render_to_string(partial: "/shared/map_info_window", locals: { product: product }) }
+          p_name: product.name,
+          p_price: product.price,
+          infoWindow: { content: render_to_string(partial: "/shared/map_index_info_window", locals: { product: product }) },
+          redirectPath: { content: deal_show_path(product) }
         }
       end
     end

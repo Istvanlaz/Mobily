@@ -6,7 +6,47 @@
     <h1>Get Lucky!</h1>
   </div>
 
-  <%= render 'best_deals/sub_c_banner' %>
+  <% path_referer_request = request.referer %>
+      <% split_referer = path_referer_request.split('/') %>
+      <% referer_check = split_referer[3] %>
+
+      <% if referer_check == "categories" %>
+        <% product_cont_referer_check = split_referer[5] %>
+        <% last_check = referer_check + "/" + product_cont_referer_check %>
+      <% end %>
+
+      <% if referer_check.nil? %>
+
+        <h3>Houston, We have a problem!! Go and check <strong>best_deals#get_lucky</strong> now!</h3>
+
+      <% elsif referer_check == "best_deals" %>
+
+        <%= render 'best_deals/sub_c_banner' %>
+
+      <% elsif referer_check == "newest_products" %>
+
+        <%= render 'newest_products/sub_c_banner' %>
+
+      <% elsif last_check == "categories/products" %>
+
+        <%#= render 'products/sub_c_banner' %>
+        <%= render 'best_deals/sub_c_banner' %>
+
+      <% elsif last_check == "categories/sub_categories" %>
+
+        <%#= render 'sub_categories/sub_c_banner' %>
+        <%= render 'best_deals/sub_c_banner' %>
+
+      <% else %>
+
+        <h1>Houston, We have a problem!! Go and check <strong>best_deals#get_lucky</strong> now!</h1>
+
+      <% end %>
+
+
+
+
+  <%#= render 'best_deals/sub_c_banner' %>
 
   <div class="page_title">
     <h2>These are the Products closest to your address!</h2>
@@ -14,13 +54,6 @@
   </div>
 
   <div class="product_location_img" id="get_lucky_map">
-
-    <!-- <div class="show_img_darkener"></div>
-
-    <span id="expand_map_action">
-      <%#= image_tag("icons/expand.png", alt: "Expand") %>
-      <span class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></span>
-    </span> -->
 
     <div id="map-index"
          style="width: 100%; height: 100%;"

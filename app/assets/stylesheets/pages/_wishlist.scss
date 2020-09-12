@@ -3,8 +3,10 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
 
   height: 11vh;
+  margin-top: 3vh;
   color: $orange;
 }
 
@@ -246,6 +248,18 @@
 
 
 @media screen and (max-width: 850px) {
+  .bg_empty_wishlist {
+    width: 85vw;
+  }
+
+  .subtitle_empty {
+    top: 5vh;
+    left: 5vw;
+
+    height: 90%;
+    width: 90%;
+  }
+
   .retarget_products_grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -262,12 +276,18 @@
 
 @media screen and (max-width: 420px) {
   .page_title {
-    margin-top: 3vh;
+    // margin-top: 3vh;
+    height: fit-content;
   }
 
   .page_title h1 {
     font-size: 1.25rem;
   }
+
+  .page_title h2 {
+    font-size: 1.25rem;
+  }
+
 
   .page_title p {
     font-size: 0.65rem;

@@ -19,14 +19,14 @@
           <i class="far fa-times-circle"></i>
         <% end %>
 
-      <% elsif last_referer_check  == "best_deals/products" %>
+      <% elsif last_referer_check == "best_deals/products" %>
 
         <%= link_to best_deals_path do %>
           <i class="far fa-times-circle"></i>
         <% end %>
 
-
       <% else %>
+
         <%= link_to request.referer do %>
           <i class="far fa-times-circle"></i>
         <% end %>
