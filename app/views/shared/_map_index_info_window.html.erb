@@ -1,0 +1,17 @@
+<div class="product_linker" id="map_linker">
+  <div class="product_img" id="map_hover_image">
+    <%= cl_image_tag product.image.key %>
+  </div>
+  <%= link_to deal_show_path(product) do %>
+    <div class="product_card" id="map_product_card">
+      <div class="info_card">
+        <div>
+          <%= product.name %>
+        </div>
+        <div>
+          <%= product.price %>€
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

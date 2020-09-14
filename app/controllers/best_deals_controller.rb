@@ -23,14 +23,6 @@ class BestDealsController < ApplicationController
       @products = Product.where(sql_query, query: "%#{params[:query]}%")
     else
       @products = policy_scope(@category.products)
-
-
-      # @markers = @product.geocoded.map do |product|
-      #   {
-      #     lat: product.latitude,
-      #     lng: product.longitude
-      #   }
-      # end
     end
   end
 
@@ -84,6 +76,29 @@ class BestDealsController < ApplicationController
                     lng: @product.longitude,
                     infoWindow: { content: render_to_string(partial: "/shared/map_info_window", locals: { product: @product }) }
                   ]
+    end
+  end
+
+  def get_lucky
+    @categories = policy_scope(Category)
+
+    if params[:query].present?
+      sql_query = "name @@ :query OR description @@ :query"
+      @products = Product.where(sql_query, query: "%#{params[:query]}%")
+    else
+      # @products = policy_scope(Product).where.not(latitude: nil, longitude: nil)
+
+      @products = Product.near(current_user.address, 1)
+      @markers = @products.map do |product|
+        {
+          lng: product.longitude,
+          lat: product.latitude,
+          p_name: product.name,
+          p_price: product.price,
+          infoWindow: { content: render_to_string(partial: "/shared/map_index_info_window", locals: { product: product }) },
+          redirectPath: { content: deal_show_path(product) }
+        }
+      end
     end
   end
 

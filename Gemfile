@@ -16,6 +16,7 @@ gem 'pundit'
 gem 'rails', '5.2.3'
 gem 'redis'
 
+# gem "activesupport", ">= 5.2.4.3"
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'sassc-rails'

@@ -1,12 +1,38 @@
-.mapboxgl-popup {
-  max-width: 100px;
+.mapboxgl-popup-anchor-top, .mapboxgl-popup-tip {
+  border-top-color: $bright !important;
+}
+
+#map_hover_image {
+  height: 200px;
+}
+
+#map_hover_image img {
+  height: 200px;
+  top: 0;
+  left: 0;
+}
+
+#map_product_card {
+  // position: absolute;
+  // top: -50px;
+  // left: 0;
+  // height: 300px;
+  height: 200px;
+  // padding: 50px 0;
+  background-color: transparent;
+}
+
+#map_linker {
+  height: 200px;
 }
 
 .mapboxgl-popup-content {
   color: $black;
-  padding: 10px !important;
+  padding: unset !important;
 
-  // background-color: $bright !important;
+  background-color: transparent !important;
+  width: 150px;
+  height: 200px;
 
   border-radius: 5px !important;
 
@@ -18,6 +44,7 @@
 
 .mapboxgl-marker svg g {
   fill: $orange;
+  cursor: pointer;
 }
 
 #expand_map_action {
