@@ -8,7 +8,8 @@ const mapIndex = document.getElementById('map-index');
 // Building the map for single product on show pages
 
 if (mapElement) { // only build a map if there's a div#map to inject into
-  mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
+  // mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
+  mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v10'
@@ -41,7 +42,8 @@ if (mapElement) { // only build a map if there's a div#map to inject into
 // Building the map for multiple products on get_lucky page
 
 if (mapIndex) { // only build a map-index if there's a div#map to inject into
-  mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
+  // mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
+  mapboxgl.accessToken = mapIndex.dataset.mapboxApiKey;
 
   const map = new mapboxgl.Map({
     container: 'map-index',
@@ -117,7 +119,8 @@ if (expandMap) {
   const mapContainer = document.querySelector('.product_location_img');
 
   const buildMap = () => {
-    mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
+    // mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
+    mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10'
