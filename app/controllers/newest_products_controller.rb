@@ -86,6 +86,17 @@ class NewestProductsController < ApplicationController
     redirect_to category_products_path, notice: "#{@product.name} was successfully removed from the marketplace."
   end
 
+  def who_bought
+      @categories = policy_scope(Category)
+      authorize @product = Product.find(params[:id])
+      @latest_order = @product.orders.order(:updated_at).last
+      if stale?(@latest_order)
+        respond_to do |format|
+        format.atom
+      end
+    end
+  end
+
   private
 
   def product_params

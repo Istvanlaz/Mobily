@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   post 'products/:id/savings', to: 'savings#create', as: 'create_new_saving'
   delete 'wishlists/:wishlist_id/savings/destroy/:id', to: 'savings#destroy', as: 'delete_saving'
 
+  resources :products do
+    get :who_bought, on: :member
+  end
 
   resources :categories, only: [:index, :show, :new, :edit, :destroy] do
     resources :sub_categories, only: [:index, :show, :new, :edit, :destroy]
