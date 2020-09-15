@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
   before_action :set_category, only: [:index, :show]
   impressionist actions: [:show]
 
+
   def index
     @categories = policy_scope(Category)
     if params[:query].present?

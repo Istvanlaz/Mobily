@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<%= link_to 'New Order', new_order_path, { redirect_to products_path, notice: 'My Notice.' } %>
