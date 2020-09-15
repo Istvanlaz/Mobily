@@ -61,6 +61,10 @@ class ProductPolicy < ApplicationPolicy
     is_owner?
   end
 
+  def who_bought?
+    true
+  end
+
   private
 
   def is_owner?
