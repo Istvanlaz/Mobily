@@ -1,6 +1,8 @@
-<div class="app-container">
-  <section class="depot_form">
-    <h1>Please Enter Your Details</h1>
-    <%= render 'form', order: @order %>
-  </section>
-</div>
+
+<section class="depot_form">
+  <h1>Please Enter Your Details</h1>
+
+  <%= render 'form', order: @order %>
+</section>
+
+<%= javascript_pack_tag("pay_type") %>

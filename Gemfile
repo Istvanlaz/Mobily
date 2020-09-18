@@ -22,7 +22,7 @@ gem 'font-awesome-sass', '~> 5.12.0'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
-gem 'webpacker'
+gem 'webpacker',' ~>4.2.2'
 
 gem 'impressionist', '~>1.6.1'
 
