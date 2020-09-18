@@ -28,6 +28,7 @@
     <% if user_signed_in? %>
       <%= javascript_pack_tag 'application' %>
       <%= javascript_pack_tag 'map' %>
+      <%#= javascript_pack_tag 'pay_type' %>
     <% else %>
       <%= javascript_pack_tag 'dropdown_login' %>
       <%= javascript_pack_tag 'autocomplete_signup' %>
