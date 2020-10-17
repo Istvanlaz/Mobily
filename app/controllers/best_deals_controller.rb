@@ -1,6 +1,8 @@
 class BestDealsController < ApplicationController
   skip_after_action :verify_authorized, except: :index, unless: :skip_pundit?
   skip_after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
+  impressionist actions: [:deal_show]
+
 
   def index
     @categories = policy_scope(Category)
@@ -29,6 +31,7 @@ class BestDealsController < ApplicationController
   def deal_show
     @categories = policy_scope(Category)
     authorize @product = Product.find(params[:id])
+    impressionist(@product)
     if @product.geocoded?
       @markers = [
                     lat: @product.latitude,
