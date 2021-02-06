@@ -105,6 +105,10 @@ GEM
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
     jwt (2.2.1)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.7.0)
+      launchy (~> 2.2)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -270,6 +274,7 @@ DEPENDENCIES
   geocoder
   impressionist (~> 1.6.1)
   jbuilder (~> 2.0)
+  letter_opener
   listen (~> 3.0.5)
   omniauth-facebook
   pg (~> 0.21)
@@ -286,7 +291,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   uglifier
   web-console (>= 3.3.0)
-  webpacker
+  webpacker (~> 4.2.2)
 
 RUBY VERSION
    ruby 2.6.3p62

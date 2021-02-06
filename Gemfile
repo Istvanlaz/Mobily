@@ -16,14 +16,17 @@ gem 'pundit'
 gem 'rails', '5.2.3'
 gem 'redis'
 
+
+gem 'letter_opener', group: :development
 # gem "activesupport", ">= 5.2.4.3"
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
-gem 'webpacker'
+gem 'webpacker',' ~>4.2.2'
 
+#Use impressionist to log page impressions https://github.com/charlotte-ruby/impressionist
 gem 'impressionist', '~>1.6.1'
 
 group :development do

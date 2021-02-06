@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
   before_action :set_category, only: [:index, :show]
   impressionist actions: [:show]
 
+
   def index
     @categories = policy_scope(Category)
     if params[:query].present?
@@ -153,6 +154,17 @@ class ProductsController < ApplicationController
     authorize @product = Product.find(params[:id])
     @product.destroy
     redirect_to newest_products_path, notice: "#{@product.name} was successfully removed from the marketplace."
+  end
+
+  def who_bought
+      @categories = policy_scope(Category)
+      authorize @product = Product.find(params[:id])
+      @latest_order = @product.orders.order(:updated_at).last
+      if stale?(@latest_order)
+        respond_to do |format|
+        format.atom
+      end
+    end
   end
 
   private
