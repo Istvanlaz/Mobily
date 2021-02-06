@@ -88,7 +88,26 @@ class BestDealsController < ApplicationController
     else
       # @products = policy_scope(Product).where.not(latitude: nil, longitude: nil)
 
-      @products = Product.near(current_user.address, 1)
+      # @products = Product.near(current_user.address, 1)
+      @products = Product.near(current_user.address, 30)
+      # @products = Product.all
+
+      # user_localisation = current_user
+      # @user_marker = user_localisation do |user|
+      #   {
+      #     lng: user.longitude,
+      #     lat: user.latitude,
+      #     image_url: helpers.asset_url('local/girafe.jpg')
+      #   }
+      # end
+      if current_user.geocoded?
+        @user_marker = [
+                          lat: current_user.latitude,
+                          lng: current_user.longitude,
+                          image_url: helpers.asset_url('local/girafe.jpg')
+                        ]
+      end
+
       @markers = @products.map do |product|
         {
           lng: product.longitude,
