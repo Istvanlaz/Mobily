@@ -99,18 +99,39 @@
 .order_title h4 {
   font-weight: 600;
   width: 100%;
+  z-index: 3;
 }
 
 
 .order_line_title {
   position: absolute;
-  top: 45%;
-
+  top: 57%;
   height: 1px;
   width: 100%;
+  background-color: #FF896B;
+  z-index: 1;
+}
+
+.order_line_title-2 {
+  position: absolute;
+  top: 462%;
+
+  height: 1px;
+  width: 65%;
   background-color: $orange;
 
-  z-index: 4000;
+  z-index: 2;
+}
+
+.order_title_styling {
+  position: absolute;
+  top: 56%;
+  left: 17%;
+  height: 5%;
+  width: 66%;
+  background-color: #F4F4F4;
+  z-index: 2;
+
 }
 
 .order_box {
