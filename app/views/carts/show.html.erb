@@ -1,93 +1,109 @@
-<div class="page-cart-container">
-  <div class="grid-container-cart">
-    <div class="shopping-bag-panel">
-      <div class="shopping-bag">
-        <div class="cart-title">
-          <h1>Shopping Bag</h1>
-          <div class="header-action">
-            <h3>Delivery Options</h3>
-          </div>
-        </div>
-        <div class="cart-heading">
-          <div class="item-title">
-            <p>Item</p>
-          </div>
-          <div class="item-attributes">
-            <p>Price</p>
-            <p>Quantity</p>
-            <p>Total Price</p>
-          </div>
-        </div>
+<% if @cart.line_items.length != 0  %>
+  <div class="page-cart-container">
+      <div class="grid-container-cart">
+        <div class="shopping-bag-panel">
+          <div class="shopping-bag">
+            <div class="cart-title">
+              <h1>Shopping Bag</h1>
+              <div class="header-action">
+                <h3>Delivery Options</h3>
+              </div>
+            </div>
+            <div class="cart-heading">
+              <div class="item-title">
+                <p>Item</p>
+              </div>
+              <div class="item-attributes">
+                <p>Price</p>
+                <p>Quantity</p>
+                <p>Total Price</p>
+              </div>
+            </div>
 
-        <div class="cart-items">
-          <% @cart.line_items.each do |item| %>
-            <div class="cart-items-grid">
-              <div class="cart-image">
-                <%= cl_image_tag item.product.image.key %>
+            <div class="cart-items">
+              <% @cart.line_items.each do |item| %>
+                <div class="cart-items-grid">
+                  <div class="cart-image">
+                    <%= cl_image_tag item.product.image.key %>
+                  </div>
+                  <div class="cart-attributes">
+                    <ul>
+                        <li>Name: <%= item.product.name %> </li>
+                        <li> <%= item.product.sub_category.name %> </li>
+                    </ul>
+                  </div>
+                  <div class="cart-cost">
+                    <div class="item-price__unit"> <%= item.product.price %></div>
+                    <div class="item-price__quantity"><%= item.quantity %></div>
+                    <div class="item-price__line"><%= number_to_currency(item.total_price) %></div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <button type="button" class="button_to_empty">
+              <%= link_to 'Empty Cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </button>
+          </div>
+
+          <div class="order-summary">
+            <div class="order-summary-block">
+              <div class="order-summary-title">
+                <h2>Order Summary</h2>
+                <div class="order-summary-title-action">
+                  <h3>Contact us</h3>
+                </div>
               </div>
-              <div class="cart-attributes">
-                <ul>
-                    <li>Name: <%= item.product.name %> </li>
-                    <li> <%= item.product.sub_category.name %> </li>
+              <div class="order-summary-content">
+                <ul class="order-summary-info">
+                  <li class="order-summary-item">
+                    Subtotal
+                    <span class="order-summary-values"><%= number_to_currency(@cart.total_price)%></span>
+                  </li>
+                  <li class="order-summary-item">
+                    Delivery
+                    <span class="order-summary-values">TBA</span>
+                  </li>
+                  <li class="order-summary-item">
+                    <strong>Total</strong>
+                    <span class="order-summary-values"><%= number_to_currency(@cart.total_price)%></span>
+                  </li>
                 </ul>
-              </div>
-              <div class="cart-cost">
-                <div class="item-price__unit"> <%= item.product.price %></div>
-                <div class="item-price__quantity"><%= item.quantity %></div>
-                <div class="item-price__line"><%= number_to_currency(item.total_price) %></div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </div>
-      <div class="order-summary">
-        <div class="order-summary-block">
-          <div class="order-summary-title">
-            <h2>Order Summary</h2>
-            <div class="order-summary-title-action">
-              <h3>Contact us</h3>
-            </div>
-          </div>
-          <div class="order-summary-content">
-            <ul class="order-summary-info">
-              <li class="order-summary-item">
-                Subtotal
-                <span class="order-summary-values"><%= number_to_currency(@cart.total_price)%></span>
-              </li>
-              <li class="order-summary-item">
-                Delivery
-                <span class="order-summary-values">TBA</span>
-              </li>
-              <li class="order-summary-item">
-                <strong>Total</strong>
-                <span class="order-summary-values"><%= number_to_currency(@cart.total_price)%></span>
-              </li>
-            </ul>
-            <div class="order-actions">
-              <div class="promo-code">
-                <h3>Enter Promo Code Here</h3>
-                <%= image_tag "icons/more.png" %>
-              </div>
-              <div class="order-buttons">
-                <div class="proceed-to-checkout">
-                  <button type="button" class="button-cart">
-                    <%= link_to "Proceed to Checkout", new_order_path, :method => :get %>
-                  </button>
-                </div>
-                <div class="paypal">
-                  <button type="button" class="paypal-btn">
-                    Paypal
-                  </button>
+                <div class="order-actions">
+                  <div class="promo-code">
+                    <h3>Enter Promo Code Here</h3>
+                    <%= image_tag "icons/more.png" %>
+                  </div>
+                  <div class="order-buttons">
+                    <div class="proceed-to-checkout">
+                      <button type="button" class="button-cart">
+                        <%= link_to "Proceed to Checkout", new_order_path, :method => :get %>
+                      </button>
+                    </div>
+                    <div class="paypal">
+                      <button type="button" class="paypal-btn">
+                        Paypal
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="saved-for-later">
+              <%= render 'shared/cart_slider' %>
+          </div>
         </div>
       </div>
-      <div class="saved-for-later">
-          <%= render 'shared/cart_slider' %>
+  </div>
+<% else %>
+  <div class="box-empty-cart">
+    <div class="empty-cart">
+      <div class="empty-icon">
+        <%= image_tag "icons/empty_cart.png" %>
       </div>
+      <h1>Looks like you have no items in your shopping cart.</h1>
+      <h3>Click <%= link_to "here", newest_products_path %> to continue shoping</h3>
     </div>
   </div>
-</div>
+<% end %>
 
