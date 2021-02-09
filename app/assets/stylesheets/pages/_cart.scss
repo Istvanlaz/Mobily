@@ -474,3 +474,70 @@
 }
 
 
+
+
+//Should go in order.scss
+.table-row {
+  border-color: blue;
+}
+
+.dashboard {
+  max-width: 100%;
+}
+
+
+.admin-order {
+  margin-top: 5vh;
+  margin-left: 18%;
+
+}
+
+.admin-order h1 {
+  font-weight: 900;
+  width: 110%;
+  padding-left: 1rem;
+  background: #E8D4B4;
+  border-radius: 30px;
+}
+
+.admin-order h4 {
+  color: #767676;
+  padding-left: 1rem;
+  margin-bottom: 3vh;
+}
+
+.table-container {
+  max-width: 70%;
+  margin-top: 5vh;
+  margin-left: 18%;
+  margin-right: 26%;
+  padding-left: 1rem;
+}
+
+.grid-order {
+  background: #fdf1d6;
+  height: 20vh;
+  border-radius: 10px;
+  text-align: center;
+  padding: 70px 0;
+  font-size: 600;
+}
+
+.grid-order h4 {
+  font-weight: 600;
+}
+
+.grid-order h3 {
+  font-weight: 300;
+  color: #767676;
+}
+
+
+.grid-container-order {
+  margin-left: 18%;
+  margin-right: 26%;
+  gap: 2rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
