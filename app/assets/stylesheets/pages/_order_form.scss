@@ -11,7 +11,6 @@
 .content {
   margin: 0;
   padding: 0;
-
   display: flex;
   display: -webkit-flex;
   flex-direction: column; // mobile is horizontally laid out
@@ -75,43 +74,120 @@
 }
 
 //
+.order_content {
+  height: 78vh;
+  z-index: 10;
+  // background-color: green;
+}
+
+.order_title {
+  position: relative;
+  padding: 2em 0;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+
+  height: 25%;
+  width: 100%;
+  text-align: center;
+  // text-shadow: 0px 4px 4px $black25;
+
+  z-index: 3;
+  // background: pink;
+}
+
+.order_title h4 {
+  font-weight: 600;
+  width: 100%;
+  z-index: 3;
+}
+
+
+.order_line_title {
+  position: absolute;
+  top: 57%;
+  height: 1px;
+  width: 100%;
+  background-color: #FF896B;
+  z-index: 1;
+}
+
+.order_line_title-2 {
+  position: absolute;
+  top: 462%;
+
+  height: 1px;
+  width: 65%;
+  background-color: $orange;
+
+  z-index: 2;
+}
+
+.order_title_styling {
+  position: absolute;
+  top: 56%;
+  left: 17%;
+  height: 5%;
+  width: 66%;
+  background-color: #F4F4F4;
+  z-index: 2;
+
+}
+
+.order_box {
+  background: blue;
+}
+
+
 .depot_form {
-  max-width: 49vh;
-  margin-left: 156px;
+  background: #F4F4F4;
+  width: 56vh;
   padding: 0 1em;
-  h1 {
-    font-size: 1.99em;
-    line-height: 1.41em;
-    margin-bottom: 0.5em;
-    padding: 0;
-  }
+  border-radius: 5px;
+  // h1 {
+  //   font-size: 1.99em;
+  //   line-height: 1.41em;
+  //   margin-bottom: 0.5em;
+  //   padding: 0;
+  // }
+
   .field, .actions {
     margin-bottom: 0.5em;
     padding: 0;
   }
+
   .actions {
-    text-align: right;
-    padding: 1em 0;
+    margin-left: 67%;
+    padding: 2em 0;
+    width: 175px;
   }
+
   input, textarea, select, option {
-    border: solid thin #888;
-    box-sizing: border-box;
-    font-size: 1em;
-    padding: 0.5em;
+    height: 42px;
     width: 100%;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 3%;
+    font-size: 14px;
+    background-color: #F4F4F4;
+    box-shadow: inset 0px 0px 7px rgba(0,0,0,0.25);
   }
+
   label {
     padding: 0.5em 0;
   }
+
   input[type="submit"] {
-    background-color: #bfb;
+    background-color: #FF896B;
     border-radius: 0.354em;
-    border: solid thin #888;
-    color: black;
+    // border: solid thin #888;
+    color: #F4F4F4;
     font-size: 1.41em;
     font-weight: bold;
-    padding: 0.354em 1em;
+    // padding: 0.354em 1em;
   }
+
   input[type="submit"]:hover {
     background-color: #9d9;
   }
@@ -138,6 +214,7 @@
       }
     }
   }
+
   .field_with_errors {
     background: none;
     color: red;

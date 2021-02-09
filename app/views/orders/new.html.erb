@@ -1,8 +1,17 @@
-
-<section class="depot_form">
-  <h1>Please Enter Your Details</h1>
-
-  <%= render 'form', order: @order %>
-</section>
+<div class="container_sale">
+  <div class="bg_landing" id="sale_background" style="filter: blur(12px)">
+    <%= image_tag("login/LandingBG.jpg", alt: "alttext") %>
+  </div>
+  <div class="order_content">
+    <section class="depot_form">
+      <div class="order_title">
+        <h4>Almost done! 🎉 <br> Please Enter Your Details Below</h4>
+        <div class="order_title_styling"></div>
+        <div class="order_line_title"></div>
+      </div>
+      <%= render 'form', order: @order %>
+    </section>
+  </div>
+</div>
 
 <%= javascript_pack_tag("pay_type") %>

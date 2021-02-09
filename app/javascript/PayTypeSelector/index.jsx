@@ -1,5 +1,4 @@
 import React from 'react'
-
 import NoPayType            from './NoPayType';
 import CreditCardPayType    from './CreditCardPayType';
 import CheckPayType         from './CheckPayType';
@@ -27,7 +26,7 @@ class PayTypeSelector extends React.Component {
     }
     return (
       <div>
-        <div className="field">
+        <div className="field" >
           <label htmlFor="order_pay_type">Pay type</label>
           <select id="pay_type" onChange={this.onPayTypeSelected}
             name="order[pay_type]">
