@@ -13,7 +13,7 @@
     </li>
 
     <li class="category_card <%= active_banner(CartsController) %>" id="shopping_cart">
-      <i class="category_svg"><%= show_svg('icons/supermarket.svg') %><%= link_to "Cart", '#' %></i>
+      <i class="category_svg"><%= show_svg('icons/supermarket.svg') %><%= link_to "my cart", cart_path(current_cart), :class =>'headertab' %></i>
       <div class="icon_made_by">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </li>
 
