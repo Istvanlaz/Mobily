@@ -326,6 +326,8 @@
   -webkit-font-smoothing: antialiased;
 }
 
+
+
 .button-cart a {
   font-weight: 700;
   line-height: 1.4;
@@ -423,3 +425,52 @@
 
   }
 }
+
+
+
+// Empty cart front end
+
+.empty-cart {
+  align-items: center;
+  vertical-align: middle;
+  margin-top: 17vh;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.empty-cart a {
+  color: #FF896B;
+}
+
+.button_to_empty {
+  padding: 10px 20px;
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: .05rem;
+  cursor: pointer;
+  min-height: 45px;
+  background: white;
+}
+
+
+.button_to_empty  a {
+  cursor: pointer;
+  transition-duration: .2s;
+  transition-property: color,background-color,border-color;
+  min-height: 45px;
+  color: black;
+}
+
+.empty-icon img {
+  width: 157px;
+  height: 8%;
+  margin-block-start: 1em;
+  margin-bottom: 5vh;
+}
+
+.empty-icon a {
+  color: #E8D4B4;
+}
+
+
