@@ -506,11 +506,14 @@
   margin-bottom: 3vh;
 }
 
+.admin-order h3 {
+  color: #767676;
+  padding-left: 1rem;
+}
+
 .table-container {
-  max-width: 70%;
-  margin-top: 5vh;
-  margin-left: 18%;
-  margin-right: 26%;
+  max-width: 100%;
+  margin-top: 2vh;
   padding-left: 1rem;
 }
 
@@ -541,3 +544,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
+.table-box {
+  overflow: auto;
+  height: 50vh;
+  margin-left: 18%;
+  margin-right: 26%;
+  border-radius: 10px;
+  background: #F4F4F4;
+}
+
