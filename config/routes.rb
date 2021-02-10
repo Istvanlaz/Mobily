@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   resources :carts
   devise_for :users, controllers: {
     sessions: 'users/sessions',
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    controller: 'users/controller'
   }
+
+  resources :users
 
   root to: 'pages#home'
 

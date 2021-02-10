@@ -41,6 +41,10 @@
                     <i class="fas fa-chevron-right"></i>
                   </li>
                   <li>
+                    <%= link_to "My Profile", user_path(current_user.id), class: "dropdown-item" %>
+                    <i class="fas fa-chevron-right"></i>
+                  </li>
+                  <li>
                     <%= link_to "Settings", "#", class: "dropdown-item" %>
                     <i class="fas fa-chevron-right"></i>
                   </li>

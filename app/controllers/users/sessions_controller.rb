@@ -9,6 +9,11 @@ class Users::SessionsController < Devise::SessionsController
     flash.notice = "Welcome back #{current_user.first_name}." if flash.key?(:notice)
   end
 
+
+  # def index
+  #   super
+  # end
+
   # GET /resource/sign_in
   # def new
   #   super
