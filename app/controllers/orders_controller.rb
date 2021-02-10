@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
     @categories = policy_scope(Category)
     authorize @cart = current_cart
     if @cart.line_items.empty?
-      redirect_to root_url, :notice => "Your cart is empty"
+      redirect_to newest_products_path, :notice => "Your cart is empty"
       return
     end
 
@@ -36,6 +36,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
+    authorize @categories = policy_scope(Category)
   end
 
   # POST /orders

@@ -1,33 +1,90 @@
-<p id="notice"><%= notice %></p>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
 
-<h1>Orders</h1>
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Email</th>
-      <th>Pay type</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  tr:nth-child(even) {
+    background-color: #fdf1d6;
+  }
+</style>
 
-  <tbody>
-    <% @orders.each do |order| %>
-      <tr>
-        <td><%= order.name %></td>
-        <td><%= order.address %></td>
-        <td><%= order.email %></td>
-        <td><%= order.pay_type %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Order', new_order_path, { redirect_to products_path, notice: 'My Notice.' } %>
+
+<div class="dashboard">
+
+  <div class="admin-order">
+    <h1>Welcome <%= current_user.username %> </h1>
+    <br>
+    <h4>Dashboard Overview</h4>
+  </div>
+
+  <div class="grid-container-order">
+    <div class="grid-order">
+      <h4>Monthly Target</h4>
+      <h3>€ 21.472,09 / €40 000</h3>
+    </div>
+    <div class="grid-order">
+      <h4>Customer</h4>
+      <h3>491</h3>
+    </div>
+    <div class="grid-order">
+      <h4>Sales</h4>
+      <h3>230</h3>
+    </div>
+  </div>
+
+  <div class="admin-order">
+    <h3>Recent Orders</h3>
+  </div>
+
+  <div class="table-box">
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Pay type</th>
+            <th colspan="3"> Actions</th>
+          </tr>
+        </thead>
+
+
+        <tbody>
+          <% @orders.each do |order| %>
+            <tr>
+              <div class="table-row">
+                <td><%= order.name %></td>
+              </div>
+              <div class="table-row">
+                <td><%= order.address %></td>
+              </div>
+              <div class="table-row">
+                <td><%= order.email %></td>
+              </div>
+              <div class="table-row">
+                <td><%= order.pay_type %></td>
+              </div>
+              <div class="table-row">
+                <td><%= link_to 'Show', order %></td>
+                <td><%= link_to 'Edit', edit_order_path(order) %></td>
+                <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </div>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <br>
+</div>
+
