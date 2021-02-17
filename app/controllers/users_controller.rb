@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def index
     @categories = policy_scope(Category)
     @users = User.all
+    authorize @users
   end
 
 

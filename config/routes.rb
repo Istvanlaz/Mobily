@@ -48,5 +48,12 @@ Rails.application.routes.draw do
   resources :shopingcarts, only: [:index, :show, :new, :edit, :destroy]
   resources :wishlists, only: [:index, :show, :new, :create, :destroy]
 
+  # API routing
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :orders, only: [ :index, :show, :create ]
+    end
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -9,6 +9,8 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_pack_tag 'map' %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'hello_react' %>
+
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
@@ -28,6 +30,7 @@
     <% if user_signed_in? %>
       <%= javascript_pack_tag 'application' %>
       <%= javascript_pack_tag 'map' %>
+
       <%#= javascript_pack_tag 'pay_type' %>
     <% else %>
       <%= javascript_pack_tag 'dropdown_login' %>
