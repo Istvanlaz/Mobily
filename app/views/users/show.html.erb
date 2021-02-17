@@ -12,5 +12,8 @@
   <% end %>
 </td>
 <td>
-  <%= link_to("Delete user", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button') unless @user == current_user %>
+  <%= link_to("Delete user", user_path(@user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button') unless @user == current_user %>
 </td>
+<div id=root>
+  <%= javascript_pack_tag 'order' %>
+</div>
