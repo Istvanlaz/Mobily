@@ -13,7 +13,7 @@ import OrdersReducer from './reducers/orders_reducer';
 import OrdersIndex from './containers/orders_index';
 
 const reducers = combineReducers({
-  orders: OrdersReducer;
+  orders: OrdersReducer,
 });
 
 const middlewares = applyMiddleware(reduxPromise, logger);
