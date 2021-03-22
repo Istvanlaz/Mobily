@@ -33,7 +33,7 @@
               <div>
                 <ul class="nav-sub">
                   <li>
-                    <%= link_to "Invite a Friend", '#', class: "dropdown-item" %>
+                    <%= link_to "My Profile", user_path(current_user.id), class: "dropdown-item" %>
                     <i class="fas fa-chevron-right"></i>
                   </li>
                   <li>
@@ -41,23 +41,19 @@
                     <i class="fas fa-chevron-right"></i>
                   </li>
                   <li>
-                    <%= link_to "My Profile", user_path(current_user.id), class: "dropdown-item" %>
-                    <i class="fas fa-chevron-right"></i>
-                  </li>
-                  <li>
-                    <%= link_to "Settings", "#", class: "dropdown-item" %>
-                    <i class="fas fa-chevron-right"></i>
-                  </li>
-                  <li>
                     <%= link_to "Privacy", "#", class: "dropdown-item" %>
                     <i class="fas fa-chevron-right"></i>
                   </li>
                   <li>
-                    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                    <%= link_to "Invite a Friend", '#', class: "dropdown-item" %>
                     <i class="fas fa-chevron-right"></i>
                   </li>
                   <li>
                     <%= link_to "Report a Problem", "#", class: "dropdown-item" %>
+                    <i class="fas fa-chevron-right"></i>
+                  </li>
+                  <li>
+                    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
                     <i class="fas fa-chevron-right"></i>
                   </li>
                 </ul>

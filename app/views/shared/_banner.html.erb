@@ -4,7 +4,7 @@
   <ul>
 
     <li class="category_card" id="username_card">
-      <i class="category_img"><%= image_tag "logo/octocat.png", class: "avatar" %><%= link_to "#{current_user.username}", '#' %></i>
+      <i class="category_img"><%= image_tag "logo/octocat.png", class: "avatar" %><%= link_to "#{current_user.username}", user_path(current_user.id) %></i>
     </li>
 
     <li class="category_card <%= active_banner(WishlistsController) %>" id="heart_wishlist">
