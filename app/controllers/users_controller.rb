@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   def index
     @categories = policy_scope(Category)
     @users = User.all
+    authorize @users
+    # @users = policy_scope(User)
   end
 
 
@@ -12,6 +14,8 @@ class UsersController < ApplicationController
     @categories = policy_scope(Category)
     @user = User.find(params[:id])
     authorize @user
+
+    @products = Product.all.where(user_id: @user)
   end
 
   def destroy

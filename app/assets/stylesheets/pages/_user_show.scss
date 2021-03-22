@@ -1,0 +1,188 @@
+#container_user_show {
+  flex-direction: inherit;
+}
+
+.user_profile_card {
+  height: 75vh;
+  width: 22vw;
+
+  border-radius: 5px;
+
+  background-color: $bright;
+  z-index: 5;
+}
+
+.user_profile_card p {
+  margin-bottom: 0;
+  padding: 10px 0;
+}
+
+.user_profile_padding {
+  padding:  0 20px;
+  width: 100%;
+}
+
+.user_profile_scroll_box {
+  overflow: scroll;
+  height: 66vh;
+}
+
+#user_profile_top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 50vh;
+
+  // background-color: red;
+}
+
+.user_profile_img_and_name {
+  height: 32vh;
+}
+
+#user_profile_rating {
+  height: 6vh;
+
+  // background-color: green;
+}
+
+#user_profile_location {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 10vh;
+  font-size: 0.8rem;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  // background-color: yellow;
+}
+
+#user_profile_location p {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+#user_profile_buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  height: 9vh;
+
+  // background-color: purple;
+}
+
+#user_profile_buttons a {
+  color: $skin;
+
+  border: 1px solid $skin;
+  border-radius: 3px;
+  padding: 0.6rem 1rem;
+
+  &:hover {
+    text-decoration: none;
+    box-shadow: inset 0px 0px 2px $black15;
+  }
+}
+
+#user_follow_btn a {
+  color: $bright;
+  background-color: $skin;
+}
+
+.user_profile_img {
+  width: 10rem;
+  border-radius: 50%;
+  padding-top: 10px;
+  margin: 20px auto 0;
+}
+
+.user_profile_picture {
+  display: flex;
+
+  width: 100%;
+}
+
+
+.user_profile_name {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $black;
+}
+
+.user_profile_description {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  min-height: 18vh;
+  font-size: .7rem;
+  color: $lightGrey;
+}
+
+.grey_line {
+  height: 1px;
+  width: 100%;
+  background-color: $grey;
+}
+
+// User Show Product Grid
+
+.user_profile_product_container {
+  height: 75vh;
+  width: 55vw;
+  border-radius: 5px;
+
+  background-color: $bright;
+  z-index: 5;
+}
+
+#user_show_product_grid {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.user_profile_product_grid {
+  height: 66vh;
+  overflow: scroll;
+}
+
+.user_profile_product_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 9vh;
+  padding: 0 3vw;
+  border-bottom: 1px solid $grey;
+}
+
+.user_profile_products_filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 100%;
+  width: 33%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
