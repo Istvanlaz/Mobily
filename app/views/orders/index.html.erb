@@ -47,44 +47,12 @@
 
   <div class="table-box">
     <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Address</th>
-            <th>Email</th>
-            <th>Pay type</th>
-            <th colspan="3"> Actions</th>
-          </tr>
-        </thead>
-
-
-        <tbody>
-          <% @orders.each do |order| %>
-            <tr>
-              <div class="table-row">
-                <td><%= order.name %></td>
-              </div>
-              <div class="table-row">
-                <td><%= order.address %></td>
-              </div>
-              <div class="table-row">
-                <td><%= order.email %></td>
-              </div>
-              <div class="table-row">
-                <td><%= order.pay_type %></td>
-              </div>
-              <div class="table-row">
-                <td><%= link_to 'Show', order %></td>
-                <td><%= link_to 'Edit', edit_order_path(order) %></td>
-                <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </div>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+      <div id=root>
+        <%= javascript_pack_tag 'order' %>
+      </div>
     </div>
   </div>
   <br>
 </div>
 
+<%= javascript_pack_tag("hello_react") %>
